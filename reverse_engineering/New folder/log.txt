@@ -1,0 +1,3801 @@
+Cleared previous log.txt
+
+--- Analyzing lodmodel1.rws.PS3.preinstanced ---
+Searching for fixed signature: 0211010002000000 in lodmodel1.rws.PS3.preinstanced...
+Searching for fixed signature: 0211010002000000140000002d00021c in lodmodel1.rws.PS3.preinstanced...
+Searching for fixed signature: 0211010002000000180000002d00021c in lodmodel1.rws.PS3.preinstanced...
+Searching for fixed signature: 905920010000803f0000803f0000803f in lodmodel1.rws.PS3.preinstanced...
+Searching for start-end pattern: Start=33ea0000, End=2d00021c in lodmodel1.rws.PS3.preinstanced (max distance 512)...
+
+--- Analyzing lisa_hog.dff.PS3.preinstanced ---
+Searching for fixed signature: 0211010002000000 in lisa_hog.dff.PS3.preinstanced...
+Searching for fixed signature: 0211010002000000140000002d00021c in lisa_hog.dff.PS3.preinstanced...
+Searching for fixed signature: 0211010002000000180000002d00021c in lisa_hog.dff.PS3.preinstanced...
+Searching for fixed signature: 905920010000803f0000803f0000803f in lisa_hog.dff.PS3.preinstanced...
+Searching for start-end pattern: Start=33ea0000, End=2d00021c in lisa_hog.dff.PS3.preinstanced (max distance 512)...
+
+--- Analyzing prop_lodmodel1.rws.PS3.preinstanced ---
+Searching for fixed signature: 0211010002000000 in prop_lodmodel1.rws.PS3.preinstanced...
+Searching for fixed signature: 0211010002000000140000002d00021c in prop_lodmodel1.rws.PS3.preinstanced...
+Searching for fixed signature: 0211010002000000180000002d00021c in prop_lodmodel1.rws.PS3.preinstanced...
+Searching for fixed signature: 905920010000803f0000803f0000803f in prop_lodmodel1.rws.PS3.preinstanced...
+Searching for start-end pattern: Start=33ea0000, End=2d00021c in prop_lodmodel1.rws.PS3.preinstanced (max distance 512)...
+
+
+================================================================================
+ CONSOLIDATED ANALYSIS RESULTS
+================================================================================
+
+Searched in 3 file(s).
+Configured 4 fixed signature(s) and 1 start-end pattern(s).
+
+--- Fixed Signature Summary Across All Files ---
+Signature 'String Block Header (General, 8 bytes)' (0211010002000000):
+  Total Occurrences Found: 205
+  Total Valid Strings Found at Relative Offset: 205
+Signature 'String Block Header (Subtype A, 16 bytes)' (0211010002000000140000002d00021c):
+  Total Occurrences Found: 121
+  Total Valid Strings Found at Relative Offset: 121
+Signature 'String Block Header (Subtype B, 16 bytes) - Hypothesized' (0211010002000000180000002d00021c):
+  Total Occurrences Found: 30
+  Total Valid Strings Found at Relative Offset: 30
+Signature 'Another Block Type Header (16 bytes)' (905920010000803f0000803f0000803f):
+  Total Occurrences Found: 0
+  Total Valid Strings Found at Relative Offset: 0
+
+--- Start-End Pattern Summary Across All Files ---
+Pattern 'Mesh Chunk Header Pattern' (Starts with 33ea0000, Ends with 2d00021c):
+  Total Occurrences Found: 16
+
+--- Grand Totals ---
+Total Fixed Signature Occurrences (all types, all files): 356
+Total Start-End Pattern Occurrences (all types, all files): 16
+Total Valid Strings Found (associated with fixed signatures at relative offsets): 356
+
+--- Detailed Match List ---
+
+--- Match 1 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lisa_hog.dff.PS3.preinstanced
+  Signature Offset: 000002AC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d70736f6e73
+  String Offset   : 000002BC
+  Found String    : 002d00021c | simpsons_palette_skin | 0000000200
+
+--- Match 2 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lisa_hog.dff.PS3.preinstanced
+  Signature Offset: 000002AC
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 000002BC
+  Found String    : 002d00021c | simpsons_palette_skin | 0000000200
+
+--- Match 3 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lisa_hog.dff.PS3.preinstanced
+  Pattern Start Offset: 0000DFA4
+  Pattern End Offset  : 0000DFB0
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : 5c7a01002d00021c10000000a0030000
+
+--- Match 4 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lisa_hog.dff.PS3.preinstanced
+  Signature Offset: 00025AB8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d70736f6e73
+  String Offset   : 00025AC8
+  Found String    : 002d00021c | simpsons_palette_skin | 0000000200
+
+--- Match 5 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lisa_hog.dff.PS3.preinstanced
+  Signature Offset: 00025AB8
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00025AC8
+  Found String    : 002d00021c | simpsons_palette_skin | 0000000200
+
+--- Match 6 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lisa_hog.dff.PS3.preinstanced
+  Pattern Start Offset: 000267FD
+  Pattern End Offset  : 00026809
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : 181000002d00021c10000000a0030000
+
+--- Match 7 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013864
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00013874
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 8 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013864
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00013874
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 9 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013954
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c676c6173735f7768
+  String Offset   : 00013964
+  Found String    : 002d00021c | glass_whiteline | 0002000000
+
+--- Match 10 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000139D4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 000139E4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 11 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000139D4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 000139E4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 12 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013B20
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 0c0000002d00021c666f6f7462616c6c
+  String Offset   : 00013B30
+  Found String    : 002d00021c | football_ea | 0002000000
+
+--- Match 13 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013B9C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00013BAC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 14 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013B9C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00013BAC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 15 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013CE8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c6361727065745f64
+  String Offset   : 00013CF8
+  Found String    : 002d00021c | carpet_dualtone | 0002000000
+
+--- Match 16 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013D68
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00013D78
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 17 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013D68
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00013D78
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 18 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013EB4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00013EC4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 19 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013EB4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00013EC4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 20 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013FA4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f6d616767
+  String Offset   : 00013FB4
+  Found String    : 002d00021c | sim_maggie_elfposter | 0000000002
+
+--- Match 21 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00013FA4
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6d61676769655f656c66706f
+  String Offset   : 00013FB4
+  Found String    : 002d00021c | sim_maggie_elfposter | 0000000002
+
+--- Match 22 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0001402C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 0001403C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 23 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0001402C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 0001403C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 24 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014178
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 1c0000002d00021c6d61676769655f65
+  String Offset   : 00014188
+  Found String    : 002d00021c | maggie_elfpostermushrooms | 0000000200
+
+--- Match 25 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014204
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00014214
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 26 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014204
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00014214
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 27 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014350
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c647265737365725f
+  String Offset   : 00014360
+  Found String    : 002d00021c | dresser_simpsonslisa | 0000000002
+
+--- Match 28 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014350
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 647265737365725f73696d70736f6e73
+  String Offset   : 00014360
+  Found String    : 002d00021c | dresser_simpsonslisa | 0000000002
+
+--- Match 29 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000143D8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 000143E8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 30 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000143D8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 000143E8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 31 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014524
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f6b697463
+  String Offset   : 00014534
+  Found String    : 002d00021c | sim_kitchen_dishrack | 0000000002
+
+--- Match 32 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014524
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6b69746368656e5f64697368
+  String Offset   : 00014534
+  Found String    : 002d00021c | sim_kitchen_dishrack | 0000000002
+
+--- Match 33 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000145AC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 000145BC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 34 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000145AC
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 000145BC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 35 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000146F8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d5f63757274
+  String Offset   : 00014708
+  Found String    : 002d00021c | sim_curtain_kitchen | 0002000000
+
+--- Match 36 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000146F8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6375727461696e5f6b697463
+  String Offset   : 00014708
+  Found String    : 002d00021c | sim_curtain_kitchen | 0002000000
+
+--- Match 37 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0001477C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 0001478C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 38 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0001477C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 0001478C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 39 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000148C8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c6d6963726f775f62
+  String Offset   : 000148D8
+  Found String    : 002d00021c | microw_buttons | 0000020000
+
+--- Match 40 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014948
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00014958
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 41 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014948
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00014958
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 42 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014A94
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c7368656c7665735f
+  String Offset   : 00014AA4
+  Found String    : 002d00021c | shelves_simpsonsmaggie | 0000020000
+
+--- Match 43 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014A94
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 7368656c7665735f73696d70736f6e73
+  String Offset   : 00014AA4
+  Found String    : 002d00021c | shelves_simpsonsmaggie | 0000020000
+
+--- Match 44 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014B1C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00014B2C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 45 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014B1C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00014B2C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 46 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014C68
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c73696d5f6265645f
+  String Offset   : 00014C78
+  Found String    : 002d00021c | sim_bed_bart | 0000000002
+
+--- Match 47 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014CE8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00014CF8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 48 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014CE8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00014CF8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 49 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014E34
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c666c61766f725f67
+  String Offset   : 00014E44
+  Found String    : 002d00021c | flavor_goldgloss_r | 0000020000
+
+--- Match 50 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014E34
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 666c61766f725f676f6c64676c6f7373
+  String Offset   : 00014E44
+  Found String    : 002d00021c | flavor_goldgloss_r | 0000020000
+
+--- Match 51 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014EB8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00014EC8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 52 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00014EB8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00014EC8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 53 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00015004
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 0c0000002d00021c6261736562616c6c
+  String Offset   : 00015014
+  Found String    : 002d00021c | baseballbat | 0002000000
+
+--- Match 54 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00015080
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00015090
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 55 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00015080
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00015090
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 56 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000151CC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 0c0000002d00021c6261736562616c6c
+  String Offset   : 000151DC
+  Found String    : 002d00021c | baseball | 0000000002
+
+--- Match 57 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00015248
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00015258
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 58 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00015248
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00015258
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 59 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 00015430
+  Pattern End Offset  : 0001543C
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : 20030e002d00021c10000000802a0000
+
+--- Match 60 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000F5810
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c736861646f775f63
+  String Offset   : 000F5820
+  Found String    : 002d00021c | shadow_ceiling | 0000020000
+
+--- Match 61 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000F58FC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c736861646f775f77
+  String Offset   : 000F590C
+  Found String    : 002d00021c | shadow_wall2 | 0000000002
+
+--- Match 62 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000F59E8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 0c0000002d00021c736861646f775f77
+  String Offset   : 000F59F8
+  Found String    : 002d00021c | shadow_wall | 0002000000
+
+--- Match 63 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 000F5B04
+  Pattern End Offset  : 000F5B10
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : 3c4600002d00021c10000000b0070000
+
+--- Match 64 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000FA1FC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c736861646f775f63
+  String Offset   : 000FA20C
+  Found String    : 002d00021c | shadow_ceiling | 0000020000
+
+--- Match 65 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000FA2E8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c736861646f775f77
+  String Offset   : 000FA2F8
+  Found String    : 002d00021c | shadow_wall2 | 0000000002
+
+--- Match 66 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 000FA400
+  Pattern End Offset  : 000FA40C
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : a42700002d00021c1000000080050000
+
+--- Match 67 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000FCC60
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c616c7068615f7369
+  String Offset   : 000FCC70
+  Found String    : 002d00021c | alpha_simpsons_palette | 0000020000
+
+--- Match 68 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000FCC60
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 616c7068615f73696d70736f6e735f70
+  String Offset   : 000FCC70
+  Found String    : 002d00021c | alpha_simpsons_palette | 0000020000
+
+--- Match 69 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000FCD54
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c7370725f73696d5f
+  String Offset   : 000FCD64
+  Found String    : 002d00021c | spr_sim_pottedfloor | 0002000000
+
+--- Match 70 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000FCD54
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 7370725f73696d5f706f74746564666c
+  String Offset   : 000FCD64
+  Found String    : 002d00021c | spr_sim_pottedfloor | 0002000000
+
+--- Match 71 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 000FCE70
+  Pattern End Offset  : 000FCE7C
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : f84c00002d00021c10000000d0060000
+
+--- Match 72 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00101C28
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c726f6164735f6475
+  String Offset   : 00101C38
+  Found String    : 002d00021c | roads_dualtone | 0000020000
+
+--- Match 73 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00101CA8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00101CB8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 74 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00101CA8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00101CB8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 75 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00101DF4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00101E04
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 76 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00101DF4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00101E04
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 77 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00101EE4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 0c0000002d00021c7370725f67726173
+  String Offset   : 00101EF4
+  Found String    : 002d00021c | spr_grass | 0000000200
+
+--- Match 78 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00101F60
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00101F70
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 79 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00101F60
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00101F70
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 80 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 001020E0
+  Pattern End Offset  : 001020EC
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : 5c1800002d00021c1000000080090000
+
+--- Match 81 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00103A0C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f746f6f6c
+  String Offset   : 00103A1C
+  Found String    : 002d00021c | sim_toolwallorganizer | 0000000200
+
+--- Match 82 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00103A0C
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f746f6f6c77616c6c6f726761
+  String Offset   : 00103A1C
+  Found String    : 002d00021c | sim_toolwallorganizer | 0000000200
+
+--- Match 83 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00103B00
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c746f6f6c7261636b
+  String Offset   : 00103B10
+  Found String    : 002d00021c | toolrack_simpsonsgarage | 0002000000
+
+--- Match 84 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00103B00
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 746f6f6c7261636b5f73696d70736f6e
+  String Offset   : 00103B10
+  Found String    : 002d00021c | toolrack_simpsonsgarage | 0002000000
+
+--- Match 85 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00103BF4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f6d616767
+  String Offset   : 00103C04
+  Found String    : 002d00021c | sim_maggieelfwallpaper | 0000020000
+
+--- Match 86 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00103BF4
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6d6167676965656c6677616c
+  String Offset   : 00103C04
+  Found String    : 002d00021c | sim_maggieelfwallpaper | 0000020000
+
+--- Match 87 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00103CE8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c736861646f775f77
+  String Offset   : 00103CF8
+  Found String    : 002d00021c | shadow_wall2 | 0000000002
+
+--- Match 88 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00103DD4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c736861646f775f63
+  String Offset   : 00103DE4
+  Found String    : 002d00021c | shadow_ceiling | 0000020000
+
+--- Match 89 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00103EC0
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 0c0000002d00021c736861646f775f77
+  String Offset   : 00103ED0
+  Found String    : 002d00021c | shadow_wall | 0002000000
+
+--- Match 90 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00103FA8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c676c6173735f7768
+  String Offset   : 00103FB8
+  Found String    : 002d00021c | glass_whiteline | 0002000000
+
+--- Match 91 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00104028
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00104038
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 92 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00104028
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00104038
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 93 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 001041C8
+  Pattern End Offset  : 001041D4
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : 0cc901002d00021c1000000040130000
+
+--- Match 94 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00120BE8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00120BF8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 95 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00120BE8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00120BF8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 96 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00120CD8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d5f6d616767
+  String Offset   : 00120CE8
+  Found String    : 002d00021c | sim_maggiewallphoto | 0002000000
+
+--- Match 97 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00120CD8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6d616767696577616c6c7068
+  String Offset   : 00120CE8
+  Found String    : 002d00021c | sim_maggiewallphoto | 0002000000
+
+--- Match 98 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00120D5C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00120D6C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 99 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00120D5C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00120D6C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 100 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00120EA8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f6c697361
+  String Offset   : 00120EB8
+  Found String    : 002d00021c | sim_lisa_jazzfestposter | 0002000000
+
+--- Match 101 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00120EA8
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6c6973615f6a617a7a666573
+  String Offset   : 00120EB8
+  Found String    : 002d00021c | sim_lisa_jazzfestposter | 0002000000
+
+--- Match 102 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00120F30
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00120F40
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 103 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00120F30
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00120F40
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 104 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0012107C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 1c0000002d00021c73696d5f6c697361
+  String Offset   : 0012108C
+  Found String    : 002d00021c | sim_lisa_bleedinggumsphoto | 0000020000
+
+--- Match 105 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121108
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00121118
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 106 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121108
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00121118
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 107 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121254
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f6b727573
+  String Offset   : 00121264
+  Found String    : 002d00021c | sim_krustywaveposter | 0000000002
+
+--- Match 108 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121254
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6b727573747977617665706f
+  String Offset   : 00121264
+  Found String    : 002d00021c | sim_krustywaveposter | 0000000002
+
+--- Match 109 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001212DC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 001212EC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 110 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001212DC
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 001212EC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 111 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121428
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f6b727573
+  String Offset   : 00121438
+  Found String    : 002d00021c | sim_krustyradondetect | 0000000200
+
+--- Match 112 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121428
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6b72757374797261646f6e64
+  String Offset   : 00121438
+  Found String    : 002d00021c | sim_krustyradondetect | 0000000200
+
+--- Match 113 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001214B0
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 001214C0
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 114 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001214B0
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 001214C0
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 115 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001215FC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f6b727573
+  String Offset   : 0012160C
+  Found String    : 002d00021c | sim_krustyframedpicture | 0002000000
+
+--- Match 116 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001215FC
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6b72757374796672616d6564
+  String Offset   : 0012160C
+  Found String    : 002d00021c | sim_krustyframedpicture | 0002000000
+
+--- Match 117 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121684
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00121694
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 118 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121684
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00121694
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 119 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001217D0
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f6b697463
+  String Offset   : 001217E0
+  Found String    : 002d00021c | sim_kitchendishwasher | 0000000200
+
+--- Match 120 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001217D0
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6b69746368656e6469736877
+  String Offset   : 001217E0
+  Found String    : 002d00021c | sim_kitchendishwasher | 0000000200
+
+--- Match 121 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121858
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00121868
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 122 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121858
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00121868
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 123 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001219A4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d5f6b697463
+  String Offset   : 001219B4
+  Found String    : 002d00021c | sim_kitchenchair | 0000000002
+
+--- Match 124 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001219A4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6b69746368656e6368616972
+  String Offset   : 001219B4
+  Found String    : 002d00021c | sim_kitchenchair | 0000000002
+
+--- Match 125 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121A28
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00121A38
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 126 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121A28
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00121A38
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 127 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121B74
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c706963747572655f
+  String Offset   : 00121B84
+  Found String    : 002d00021c | picture_maggie | 0000020000
+
+--- Match 128 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121BF4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00121C04
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 129 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121BF4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00121C04
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 130 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121D40
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f6772616e
+  String Offset   : 00121D50
+  Found String    : 002d00021c | sim_grandfather_clock | 0000000200
+
+--- Match 131 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121D40
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6772616e646661746865725f
+  String Offset   : 00121D50
+  Found String    : 002d00021c | sim_grandfather_clock | 0000000200
+
+--- Match 132 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121DC8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00121DD8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 133 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121DC8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00121DD8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 134 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121F14
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c73696d5f656c6670
+  String Offset   : 00121F24
+  Found String    : 002d00021c | sim_elfpicture | 0000020000
+
+--- Match 135 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121F94
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00121FA4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 136 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00121F94
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00121FA4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 137 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001220E0
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c7368656c7665735f
+  String Offset   : 001220F0
+  Found String    : 002d00021c | shelves_simpsonsmaggie | 0000020000
+
+--- Match 138 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001220E0
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 7368656c7665735f73696d70736f6e73
+  String Offset   : 001220F0
+  Found String    : 002d00021c | shelves_simpsonsmaggie | 0000020000
+
+--- Match 139 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122168
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00122178
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 140 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122168
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00122178
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 141 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001222B4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c7368656c7665735f
+  String Offset   : 001222C4
+  Found String    : 002d00021c | shelves_simpsonslisa | 0000000002
+
+--- Match 142 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001222B4
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 7368656c7665735f73696d70736f6e73
+  String Offset   : 001222C4
+  Found String    : 002d00021c | shelves_simpsonslisa | 0000000002
+
+--- Match 143 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0012233C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 0012234C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 144 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0012233C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 0012234C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 145 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122488
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c73696d5f7275675f
+  String Offset   : 00122498
+  Found String    : 002d00021c | sim_rug_pink | 0000000002
+
+--- Match 146 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122508
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00122518
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 147 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122508
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00122518
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 148 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122654
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 200000002d00021c686f7573655f7072
+  String Offset   : 00122664
+  Found String    : 002d00021c | house_prop_bb_picture_rocket | 0000000002
+
+--- Match 149 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001226E4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 001226F4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 150 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001226E4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 001226F4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 151 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122830
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c546167426f617264
+  String Offset   : 00122840
+  Found String    : 002d00021c | TagBoardParts | 0000000200
+
+--- Match 152 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001228B0
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 001228C0
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 153 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001228B0
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 001228C0
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 154 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001229FC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00122A0C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 155 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001229FC
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00122A0C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 156 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122AEC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c676c6173735f7768
+  String Offset   : 00122AFC
+  Found String    : 002d00021c | glass_whiteline | 0002000000
+
+--- Match 157 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122B6C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00122B7C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 158 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122B6C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00122B7C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 159 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122CB8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c666c61766f725f67
+  String Offset   : 00122CC8
+  Found String    : 002d00021c | flavor_goldgloss_r | 0000020000
+
+--- Match 160 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122CB8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 666c61766f725f676f6c64676c6f7373
+  String Offset   : 00122CC8
+  Found String    : 002d00021c | flavor_goldgloss_r | 0000020000
+
+--- Match 161 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122D3C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00122D4C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 162 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122D3C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00122D4C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 163 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122E88
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f6d616767
+  String Offset   : 00122E98
+  Found String    : 002d00021c | sim_maggie_highchair | 0000000002
+
+--- Match 164 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122E88
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6d61676769655f6869676863
+  String Offset   : 00122E98
+  Found String    : 002d00021c | sim_maggie_highchair | 0000000002
+
+--- Match 165 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122F10
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00122F20
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 166 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00122F10
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00122F20
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 167 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0012305C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c647265737365725f
+  String Offset   : 0012306C
+  Found String    : 002d00021c | dresser_simponsmaggie | 0000000200
+
+--- Match 168 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0012305C
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 647265737365725f73696d706f6e736d
+  String Offset   : 0012306C
+  Found String    : 002d00021c | dresser_simponsmaggie | 0000000200
+
+--- Match 169 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001230E4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 001230F4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 170 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001230E4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 001230F4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 171 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00123230
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c696e677265646965
+  String Offset   : 00123240
+  Found String    : 002d00021c | ingredientjars_generic | 0000020000
+
+--- Match 172 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00123230
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 696e6772656469656e746a6172735f67
+  String Offset   : 00123240
+  Found String    : 002d00021c | ingredientjars_generic | 0000020000
+
+--- Match 173 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001232B8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 001232C8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 174 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 001232B8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 001232C8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 175 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00123404
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c636f756e7465725f
+  String Offset   : 00123414
+  Found String    : 002d00021c | counter_dualtone | 0000000002
+
+--- Match 176 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00123404
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 636f756e7465725f6475616c746f6e65
+  String Offset   : 00123414
+  Found String    : 002d00021c | counter_dualtone | 0000000002
+
+--- Match 177 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00123488
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00123498
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 178 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00123488
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00123498
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 179 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 001236B0
+  Pattern End Offset  : 001236BC
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : b4430f002d00021c10000000c03c0000
+
+--- Match 180 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00217B54
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00217B64
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 181 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00217B54
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00217B64
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 182 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00217C44
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c7370725f6b727573
+  String Offset   : 00217C54
+  Found String    : 002d00021c | spr_krustyphone | 0002000000
+
+--- Match 183 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00217CC4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00217CD4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 184 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00217CC4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00217CD4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 185 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00217E10
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c7370725f6b727573
+  String Offset   : 00217E20
+  Found String    : 002d00021c | spr_krustydoll | 0000020000
+
+--- Match 186 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00217E90
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00217EA0
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 187 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00217E90
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00217EA0
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 188 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00217FDC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d5f6b727573
+  String Offset   : 00217FEC
+  Found String    : 002d00021c | sim_krustycalendar2 | 0002000000
+
+--- Match 189 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00217FDC
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6b727573747963616c656e64
+  String Offset   : 00217FEC
+  Found String    : 002d00021c | sim_krustycalendar2 | 0002000000
+
+--- Match 190 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218060
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00218070
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 191 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218060
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00218070
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 192 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002181AC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d5f6b727573
+  String Offset   : 002181BC
+  Found String    : 002d00021c | sim_krustycalendar1 | 0002000000
+
+--- Match 193 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002181AC
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6b727573747963616c656e64
+  String Offset   : 002181BC
+  Found String    : 002d00021c | sim_krustycalendar1 | 0002000000
+
+--- Match 194 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218230
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00218240
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 195 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218230
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00218240
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 196 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0021837C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c7370725f6b727573
+  String Offset   : 0021838C
+  Found String    : 002d00021c | spr_krustyalarmclock | 0000000002
+
+--- Match 197 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0021837C
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 7370725f6b7275737479616c61726d63
+  String Offset   : 0021838C
+  Found String    : 002d00021c | spr_krustyalarmclock | 0000000002
+
+--- Match 198 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218404
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00218414
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 199 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218404
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00218414
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 200 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218550
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 200000002d00021c6465736b5f73696d
+  String Offset   : 00218560
+  Found String    : 002d00021c | desk_simpsonsgarage_workbench | 0000000200
+
+--- Match 201 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002185E0
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 002185F0
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 202 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002185E0
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 002185F0
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 203 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0021872C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f77656464
+  String Offset   : 0021873C
+  Found String    : 002d00021c | sim_weddingwallphoto | 0000000002
+
+--- Match 204 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0021872C
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f77656464696e6777616c6c70
+  String Offset   : 0021873C
+  Found String    : 002d00021c | sim_weddingwallphoto | 0000000002
+
+--- Match 205 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002187B4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 002187C4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 206 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002187B4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 002187C4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 207 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218900
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d5f76616e69
+  String Offset   : 00218910
+  Found String    : 002d00021c | sim_vanity_marge | 0000000002
+
+--- Match 208 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218900
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f76616e6974795f6d61726765
+  String Offset   : 00218910
+  Found String    : 002d00021c | sim_vanity_marge | 0000000002
+
+--- Match 209 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218984
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00218994
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 210 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218984
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00218994
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 211 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218AD0
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f76616361
+  String Offset   : 00218AE0
+  Found String    : 002d00021c | sim_vacationwallphoto | 0000000200
+
+--- Match 212 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218AD0
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f7661636174696f6e77616c6c
+  String Offset   : 00218AE0
+  Found String    : 002d00021c | sim_vacationwallphoto | 0000000200
+
+--- Match 213 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218B58
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00218B68
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 214 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218B58
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00218B68
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 215 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218CA4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c73696d5f706f7472
+  String Offset   : 00218CB4
+  Found String    : 002d00021c | sim_potrait01 | 0000000200
+
+--- Match 216 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218D24
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00218D34
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 217 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218D24
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00218D34
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 218 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218E70
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c706963747572655f
+  String Offset   : 00218E80
+  Found String    : 002d00021c | picture_bartboat | 0000000002
+
+--- Match 219 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218E70
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 706963747572655f62617274626f6174
+  String Offset   : 00218E80
+  Found String    : 002d00021c | picture_bartboat | 0000000002
+
+--- Match 220 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218EF4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00218F04
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 221 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00218EF4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00218F04
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 222 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00219040
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d5f6d757369
+  String Offset   : 00219050
+  Found String    : 002d00021c | sim_musicstandlisa | 0000020000
+
+--- Match 223 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00219040
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6d757369637374616e646c69
+  String Offset   : 00219050
+  Found String    : 002d00021c | sim_musicstandlisa | 0000020000
+
+--- Match 224 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002190C4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 002190D4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 225 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002190C4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 002190D4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 226 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00219210
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c73696d5f6c697361
+  String Offset   : 00219220
+  Found String    : 002d00021c | sim_lisavanity | 0000020000
+
+--- Match 227 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00219290
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 002192A0
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 228 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00219290
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 002192A0
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 229 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002193DC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 0c0000002d00021c73696d5f6c697361
+  String Offset   : 002193EC
+  Found String    : 002d00021c | sim_lisabed | 0002000000
+
+--- Match 230 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00219458
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00219468
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 231 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00219458
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00219468
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 232 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 00219638
+  Pattern End Offset  : 00219644
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : dcde0c002d00021c1000000070240000
+
+--- Match 233 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E75E0
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 002E75F0
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 234 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E75E0
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 002E75F0
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 235 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E76D0
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c73696d5f64696e69
+  String Offset   : 002E76E0
+  Found String    : 002d00021c | sim_diningplant | 0002000000
+
+--- Match 236 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E7750
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 002E7760
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 237 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E7750
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 002E7760
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 238 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E789C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c7370725f636f726e
+  String Offset   : 002E78AC
+  Found String    : 002d00021c | spr_cornerhedge | 0002000000
+
+--- Match 239 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E791C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 002E792C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 240 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E791C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 002E792C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 241 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E7A68
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c6774735f6d616767
+  String Offset   : 002E7A78
+  Found String    : 002d00021c | gts_maggie_duct | 0002000000
+
+--- Match 242 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E7AE8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 002E7AF8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 243 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E7AE8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 002E7AF8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 244 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E7C34
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c74696c696e675f72
+  String Offset   : 002E7C44
+  Found String    : 002d00021c | tiling_red_pattem | 0000000200
+
+--- Match 245 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E7C34
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 74696c696e675f7265645f7061747465
+  String Offset   : 002E7C44
+  Found String    : 002d00021c | tiling_red_pattem | 0000000200
+
+--- Match 246 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 002E7D24
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 0c0000002d00021c706c6174655f6c69
+  String Offset   : 002E7D34
+  Found String    : 002d00021c | plate_lines | 0002000000
+
+--- Match 247 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 002E7E58
+  Pattern End Offset  : 002E7E64
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : e8b506002d00021c1000000040120000
+
+--- Match 248 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0035351C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 0035352C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 249 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0035351C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 0035352C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 250 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0035360C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c7370725f636f726e
+  String Offset   : 0035361C
+  Found String    : 002d00021c | spr_cornerhedge | 0002000000
+
+--- Match 251 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0035368C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 0035369C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 252 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0035368C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 0035369C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 253 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 003537D8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c686f7573655f7072
+  String Offset   : 003537E8
+  Found String    : 002d00021c | house_prop_plant_b | 0000020000
+
+--- Match 254 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 003537D8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 686f7573655f70726f705f706c616e74
+  String Offset   : 003537E8
+  Found String    : 002d00021c | house_prop_plant_b | 0000020000
+
+--- Match 255 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0035385C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 0035386C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 256 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0035385C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 0035386C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 257 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 003539A8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c706963747572655f
+  String Offset   : 003539B8
+  Found String    : 002d00021c | picture_marge_round | 0002000000
+
+--- Match 258 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 003539A8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 706963747572655f6d617267655f726f
+  String Offset   : 003539B8
+  Found String    : 002d00021c | picture_marge_round | 0002000000
+
+--- Match 259 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353A2C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00353A3C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 260 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353A2C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00353A3C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 261 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353B78
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d5f6d616767
+  String Offset   : 00353B88
+  Found String    : 002d00021c | sim_maggiewallphoto | 0002000000
+
+--- Match 262 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353B78
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6d616767696577616c6c7068
+  String Offset   : 00353B88
+  Found String    : 002d00021c | sim_maggiewallphoto | 0002000000
+
+--- Match 263 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353BFC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00353C0C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 264 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353BFC
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00353C0C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 265 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353D48
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c73696d5f7069635f
+  String Offset   : 00353D58
+  Found String    : 002d00021c | sim_pic_homer | 0000000200
+
+--- Match 266 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353DC8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00353DD8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 267 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353DC8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00353DD8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 268 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353F14
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c686f7573655f7072
+  String Offset   : 00353F24
+  Found String    : 002d00021c | house_prop_rug_tvroom2 | 0000020000
+
+--- Match 269 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353F14
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 686f7573655f70726f705f7275675f74
+  String Offset   : 00353F24
+  Found String    : 002d00021c | house_prop_rug_tvroom2 | 0000020000
+
+--- Match 270 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353F9C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00353FAC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 271 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00353F9C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00353FAC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 272 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 003540E8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c686f7573655f7072
+  String Offset   : 003540F8
+  Found String    : 002d00021c | house_prop_rug_tvroom1 | 0000020000
+
+--- Match 273 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 003540E8
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 686f7573655f70726f705f7275675f74
+  String Offset   : 003540F8
+  Found String    : 002d00021c | house_prop_rug_tvroom1 | 0000020000
+
+--- Match 274 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00354170
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00354180
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 275 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00354170
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00354180
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 276 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 003542BC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d5f6d617374
+  String Offset   : 003542CC
+  Found String    : 002d00021c | sim_masterbartlisa | 0000020000
+
+--- Match 277 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 003542BC
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6d6173746572626172746c69
+  String Offset   : 003542CC
+  Found String    : 002d00021c | sim_masterbartlisa | 0000020000
+
+--- Match 278 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00354340
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00354350
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 279 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00354340
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00354350
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 280 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0035448C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c676c6173735f7768
+  String Offset   : 0035449C
+  Found String    : 002d00021c | glass_whiteline | 0002000000
+
+--- Match 281 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0035450C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 0035451C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 282 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0035450C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 0035451C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 283 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 003546C4
+  Pattern End Offset  : 003546D0
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : 40350c002d00021c10000000b01b0000
+
+--- Match 284 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00417CF0
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00417D00
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 285 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00417CF0
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00417D00
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 286 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00417DE0
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c6361727065745f64
+  String Offset   : 00417DF0
+  Found String    : 002d00021c | carpet_dualtone | 0002000000
+
+--- Match 287 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00417E60
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00417E70
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 288 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00417E60
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00417E70
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 289 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00417FAC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c7461626c655f7369
+  String Offset   : 00417FBC
+  Found String    : 002d00021c | table_simpsonsdining | 0000000002
+
+--- Match 290 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00417FAC
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 7461626c655f73696d70736f6e736469
+  String Offset   : 00417FBC
+  Found String    : 002d00021c | table_simpsonsdining | 0000000002
+
+--- Match 291 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418034
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00418044
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 292 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418034
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00418044
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 293 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418180
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f796f756e
+  String Offset   : 00418190
+  Found String    : 002d00021c | sim_youngmargewallphoto | 0002000000
+
+--- Match 294 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418180
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f796f756e676d617267657761
+  String Offset   : 00418190
+  Found String    : 002d00021c | sim_youngmargewallphoto | 0002000000
+
+--- Match 295 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418208
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00418218
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 296 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418208
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00418218
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 297 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418354
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f6b696473
+  String Offset   : 00418364
+  Found String    : 002d00021c | sim_kidswallportrait | 0000000002
+
+--- Match 298 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418354
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6b69647377616c6c706f7274
+  String Offset   : 00418364
+  Found String    : 002d00021c | sim_kidswallportrait | 0000000002
+
+--- Match 299 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004183DC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 004183EC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 300 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004183DC
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 004183EC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 301 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418528
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d5f666f7965
+  String Offset   : 00418538
+  Found String    : 002d00021c | sim_foyer_mirror | 0000000002
+
+--- Match 302 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418528
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f666f7965725f6d6972726f72
+  String Offset   : 00418538
+  Found String    : 002d00021c | sim_foyer_mirror | 0000000002
+
+--- Match 303 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004185AC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 004185BC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 304 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004185AC
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 004185BC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 305 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004186F8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 180000002d00021c73696d5f62617274
+  String Offset   : 00418708
+  Found String    : 002d00021c | sim_bartbabyportrait | 0000000002
+
+--- Match 306 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004186F8
+  Signature       : 0211010002000000180000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d5f6261727462616279706f7274
+  String Offset   : 00418708
+  Found String    : 002d00021c | sim_bartbabyportrait | 0000000002
+
+--- Match 307 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418780
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00418790
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 308 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418780
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00418790
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 309 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004188CC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c73696d5f7275675f
+  String Offset   : 004188DC
+  Found String    : 002d00021c | sim_rug_green | 0000000200
+
+--- Match 310 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0041894C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 0041895C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 311 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0041894C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 0041895C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 312 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418A98
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c6774735f6d616767
+  String Offset   : 00418AA8
+  Found String    : 002d00021c | gts_maggie_duct | 0002000000
+
+--- Match 313 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418B18
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00418B28
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 314 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418B18
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00418B28
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 315 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418C64
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c706963747572655f
+  String Offset   : 00418C74
+  Found String    : 002d00021c | picture_landscape | 0000000200
+
+--- Match 316 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418C64
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 706963747572655f6c616e6473636170
+  String Offset   : 00418C74
+  Found String    : 002d00021c | picture_landscape | 0000000200
+
+--- Match 317 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418CE8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00418CF8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 318 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418CE8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00418CF8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 319 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418E34
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c676c6173735f7768
+  String Offset   : 00418E44
+  Found String    : 002d00021c | glass_whiteline | 0002000000
+
+--- Match 320 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418EB4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00418EC4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 321 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00418EB4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00418EC4
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 322 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00419000
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c726f6164735f6475
+  String Offset   : 00419010
+  Found String    : 002d00021c | roads_dualtone | 0000020000
+
+--- Match 323 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00419080
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00419090
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 324 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00419080
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00419090
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 325 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004191CC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 0c0000002d00021c7370725f67726173
+  String Offset   : 004191DC
+  Found String    : 002d00021c | spr_grass | 0000000200
+
+--- Match 326 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00419248
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00419258
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 327 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00419248
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00419258
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 328 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00419394
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 1c0000002d00021c73696d5f61627374
+  String Offset   : 004193A4
+  Found String    : 002d00021c | sim_abstractwallpainting | 0000000002
+
+--- Match 329 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00419420
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00419430
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 330 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00419420
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00419430
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 331 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 004195F8
+  Pattern End Offset  : 00419604
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : e01e0e002d00021c1000000050250000
+
+--- Match 332 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FB5A8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 004FB5B8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 333 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FB5A8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 004FB5B8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 334 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FB698
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 1c0000002d00021c73696d5f706f7765
+  String Offset   : 004FB6A8
+  Found String    : 002d00021c | sim_powerplantwallphoto02 | 0000000200
+
+--- Match 335 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FB790
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c706963747572655f
+  String Offset   : 004FB7A0
+  Found String    : 002d00021c | picture_grandpa | 0002000000
+
+--- Match 336 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FB810
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 004FB820
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 337 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FB810
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 004FB820
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 338 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FB95C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c73696d5f7069616e
+  String Offset   : 004FB96C
+  Found String    : 002d00021c | sim_pianonotes | 0000020000
+
+--- Match 339 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FB9DC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 004FB9EC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 340 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FB9DC
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 004FB9EC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 341 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FBB28
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c706963747572655f
+  String Offset   : 004FBB38
+  Found String    : 002d00021c | picture_maggie | 0000020000
+
+--- Match 342 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FBBA8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 004FBBB8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 343 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FBBA8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 004FBBB8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 344 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FBCF4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c6c6976696e675f70
+  String Offset   : 004FBD04
+  Found String    : 002d00021c | living_pic_grandpa | 0000020000
+
+--- Match 345 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FBCF4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 6c6976696e675f7069635f6772616e64
+  String Offset   : 004FBD04
+  Found String    : 002d00021c | living_pic_grandpa | 0000020000
+
+--- Match 346 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FBD78
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 004FBD88
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 347 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FBD78
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 004FBD88
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 348 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FBEC4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 1c0000002d00021c66697265706c6163
+  String Offset   : 004FBED4
+  Found String    : 002d00021c | fireplace_simpsonsliving | 0000000002
+
+--- Match 349 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FBF50
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 004FBF60
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 350 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 004FBF50
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 004FBF60
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 351 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 004FC0F0
+  Pattern End Offset  : 004FC0FC
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : 344b07002d00021c1000000030120000
+
+--- Match 352 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00570CEC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00570CFC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 353 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00570CEC
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00570CFC
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 354 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00570DDC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c666c61766f725f67
+  String Offset   : 00570DEC
+  Found String    : 002d00021c | flavor_goldgloss_r | 0000020000
+
+--- Match 355 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00570DDC
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 666c61766f725f676f6c64676c6f7373
+  String Offset   : 00570DEC
+  Found String    : 002d00021c | flavor_goldgloss_r | 0000020000
+
+--- Match 356 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00570E60
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00570E70
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 357 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00570E60
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00570E70
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 358 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00570FAC
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c7370725f636f726e
+  String Offset   : 00570FBC
+  Found String    : 002d00021c | spr_cornerhedge | 0002000000
+
+--- Match 359 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0057102C
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 0057103C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 360 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 0057102C
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 0057103C
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 361 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00571178
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c6774735f6d616767
+  String Offset   : 00571188
+  Found String    : 002d00021c | gts_maggie_duct | 0002000000
+
+--- Match 362 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 005711F8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00571208
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 363 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 005711F8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00571208
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 364 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00571344
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c7370725f6b727573
+  String Offset   : 00571354
+  Found String    : 002d00021c | spr_krustywallclock | 0002000000
+
+--- Match 365 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00571344
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 7370725f6b727573747977616c6c636c
+  String Offset   : 00571354
+  Found String    : 002d00021c | spr_krustywallclock | 0002000000
+
+--- Match 366 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 005713C8
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 005713D8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 367 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 005713C8
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 005713D8
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 368 / 372 ---
+  Type           : Start End Pattern
+  File Path      : lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 00571558
+  Pattern End Offset  : 00571564
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : 08b40a002d00021c1000000050100000
+
+--- Match 369 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : prop_lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 00000208
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 100000002d00021c62696e5f38626974
+  String Offset   : 00000218
+  Found String    : 002d00021c | bin_8bitduff_v2 | 0002000000
+
+--- Match 370 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : prop_lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000002F4
+  Signature       : 0211010002000000
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 140000002d00021c73696d70736f6e73
+  String Offset   : 00000304
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 371 / 372 ---
+  Type           : Fixed Signature String
+  File Path      : prop_lodmodel1.rws.PS3.preinstanced
+  Signature Offset: 000002F4
+  Signature       : 0211010002000000140000002d00021c
+  Context Before  : 2d00021c01000000040000002d00021c
+  Context After   : 73696d70736f6e735f70616c65747465
+  String Offset   : 00000304
+  Found String    : 002d00021c | simpsons_palette | 0000000002
+
+--- Match 372 / 372 ---
+  Type           : Start End Pattern
+  File Path      : prop_lodmodel1.rws.PS3.preinstanced
+  Pattern Start Offset: 00000410
+  Pattern End Offset  : 0000041C
+  Pattern Length    : 12
+  Start Marker      : 33ea0000
+  End Marker        : 2d00021c
+  Context Before    : 080000002d00021c0000000000000000
+  Context After     : 2c1100002d00021c1000000090060000
+----------------------------------------
+Configuration:
+Max String Length: 64
+Min String Length: 4
+Signature/Start Context Size: 16
+String Context Size: 5
+Mesh Chunk Pattern Search Max Distance: 512
+----------------------------------------
+Analysis complete. Check the detailed match list and summaries.
+================================================================================

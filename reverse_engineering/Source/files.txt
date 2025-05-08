@@ -1,0 +1,779 @@
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\(no extension)\Map_3-00_SprHub\spr_hub_str\LightTOC
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 40 F2 00 01 00 00 00 10 00 00 00 00 00 01 00 00 @ò �   �     �  
+0000000000000010 EE B2 C9 98 45 0E 50 CA                         î²É�E�PÊ
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\(no extension)\Map_3-00_SprHub\spr_hub_str\StreamSetConfig
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 03 00 00 00 1A 00 00 02 65 07 7D 77 B5    �   �  �e�}wµ
+0000000000000010 00 00 00 01 00 00 00 00                            �    
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\alb\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\audio\streams++dialog\dialog_en\homr++alias\eps_gam_homr.alb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 06 00 0D 00 00 00 08 04 64 84 62 2C 04 E1 25  � �   ��d�b,�á%
+0000000000000010 27 8B 42 62 27 8B 42 62                         '�Bb'�Bb
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\amb\Map_3-00_GameHub\gamehub_global_str\EU_EN\assets++shared\aems++char++shared++pole_ladder_slides\char_poles_and_ladders.amb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 09 00 09 4C 4C 00 00 00 D8 00 09 4C 4C    � �LL   Ø �LL
+0000000000000010 00 00 00 00 2C 82 F4 EE                             ,�ôî
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\aub\Assets_2_Frontend\frontend_str\EU_EN\assets\shared\audio\config\global.aub
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 00 00 00 00 00 00 00 0C 00 00 00 0A            �   �
+0000000000000010 00 00 00 37 00 00 00 05                            7   �
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\bin\hud\Assets_2_Frontend\frontend_str\EU_EN\assets\shared\ui\hud\hud_simpsons_frontend.hud.bin
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 01 20 00 3F 00 00 00 03 00 00 00 03 00 00 02 80 �  ?   �   �  ��
+0000000000000010 00 00 01 40 00 00 01 40                           �@  �@
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\bsp\Map_3-00_GameHub\gamehub\zone01_str\EU_EN\assets\environs++gamehub++gamehub++zone01\opt\zone01.bsp
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 0B 00 00 00 00 00 00 00 06 00 00 00 70    �       �   p
+0000000000000010 00 00 00 00 01 73 00 64                             �s d
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ctb\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\audio\streams++dialog\cht\eps_gam_frin.ctb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 06 00 00 00 00 00 00 00 00 00 00 40 A0 00 00  �          @ 
+0000000000000010 00 11 3B 03 00 00 00 18                          �;�   �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\dat\Map_3-00_GameHub\gamehub\zone13_str\00000000.dat
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 53 69 6D 47 00 00 00 01 9D 47 54 3E     SimG   ��GT>
+0000000000000010 00 00 00 01 00 00 00 B0                            �   °
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\graph\Map_3-00_GameHub\gamehub_str\EU_EN\ASSET_RWS\graph\{316D093A-E43C-4107-8F20-28423FCCB80B}.graph
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 00 00 00 00 00 00 00 10 01 18 02 F7            ����÷
+0000000000000010 2C 04 E1 25 41 07 E4 3C                         ,�á%A�ä<
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\imb\Map_3-00_GameHub\gamehub_str\EU_EN\ASSET_RWS\impact_table\impact_table_football_player.imb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 5B A0 8C AA 00 02 00 10 00 33 00 06 00 00 00 1C [ �ª � � 3 �   �
+0000000000000010 00 00 06 80 00 00 07 40                           ��  �@
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\inf\Assets_2_Frontend\frontend_str\EU_EN\assets\shared\fonts\LetterGothicStdBold2424b.inf
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 46 4F 4E 54 00 00 1A 20 00 06 00 BF 00 00 04 34 FONT  �  � ¿  �4
+0000000000000010 00 00 00 00 00 00 00 14                                �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\lh2\en\Map_3-00_GameHub\text\81DE1738_str++EU_EN++assets++localization\simpsons_global.en.LH2
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 32 48 43 4C 00 02 32 6D 00 00 00 01 00 00 00 00 2HCL �2m   �
+0000000000000010 00 00 0D 18 00 00 00 01                           ��   �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\lh2\Map_3-00_GameHub\gamehub_str\EU_EN\ASSET_RWS\{1D68E110-E110-1D68-10E1-681D10E1681D}.LH2
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 32 48 43 4C 00 00 27 F3 00 00 00 01 00 00 00 00 2HCL  'ó   �
+0000000000000010 00 00 00 2A 00 00 00 05                            *   �
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\lh2\ss\simpsons_global.ss.LH2
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 32 48 43 4C 00 01 65 D8 00 00 00 01 00 00 00 00 2HCL �eØ   �
+0000000000000010 00 00 0D 18 00 00 00 01                           ��   �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\mib\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\audio\mix++eps_gamehub\mix_gamehub_indoor_01.mib
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 00 00 00 00 00 00 00 18 00 00 00 00            �
+0000000000000010 00 00 00 00 00 00 00 00
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\msb\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\audio\pathfinder++eps_gamehub\hub_mus.msb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 00 00 00 00 00 00 00 20 00 00 00 00
+0000000000000010 00 00 00 00 00 00 00 00
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\preinstanced\ps3\dff\Map_3-00_GameHub\gamehub_str\EU_EN\assets\chars\frink\bound++export\lod3_model.dff.PS3.preinstanced
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 10 00 00 00 77 30 08 00 2D 00 02 1C 01 00 00 00 �   w0� - ���
+0000000000000010 0C 00 00 00 2D 00 02 1C                         �   - ��
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\preinstanced\ps3\rws\Map_3-00_GameHub\gamehub\zone13_str\EU_EN\assets\props\spr_interiors\int_simpsonshse\spr_margesalonchair++geo++export++spr_margesalonchair\lodmodel1.rws.PS3.preinstanced
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 10 00 00 00 65 82 00 00 2D 00 02 1C 01 00 00 00 �   e�  - ���
+0000000000000010 0C 00 00 00 2D 00 02 1C                         �   - ��
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\acs\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\collision\marge.acs.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 01 09 00 00 00 00 00 50 DC BB A7 F2 F8 E3 10 95 ��     PÜ»§òøã��
+0000000000000010 00 06 43 00 00 73 00 00                          �C  s
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\bbn\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\bonebindings\player_default.bbn.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+0000000000000010 B1 83 33 23 00 00 00 02                         ±�3#   �
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\bnk\Map_3-00_GameHub\gamehub_str\EU_EN\assets\chars\frink\cct++export\frink_specific.bnk.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 02 4A E0 00 00 00 09 37 15 84 51 FC 59 46 DA  �Jà   �7��QüYFÚ
+0000000000000010 00 00 00 00 00 00 00 00
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\cec\Assets_2_Characters_Simpsons\simpsons_chars_global_str\EU_EN\assets++shared\controller\configurations\basic_player.cec.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 01 00 00 47 39 FC E8 8F 00 62 61 73 69 63 70 6C �  G9üè� basicpl
+0000000000000010 61 79 65 72 00 00 00 00                         ayer
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\hko\Map_3-00_GameHub\gamehub_str\EU_EN\assets\chars\frink\bound++export\frink_lods.hko.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 48 6B 78 10 09 00 00 00 00 00 00 00 00 00 00 00 Hkx��
+0000000000000010 57 E0 E0 57 10 C0 C0 10                         WààW�ÀÀ�
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\hkt\Map_3-00_GameHub\gamehub\zone13_str\EU_EN\assets\props\spr_interiors\int_simpsonshse\spr_margesalonchair++geo++export++spr_margesalonchair\collisionmodel1.hkt.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 48 6B 78 10 09 00 00 00 00 00 00 00 00 00 00 00 Hkx��
+0000000000000010 57 E0 E0 57 10 C0 C0 10                         WààW�ÀÀ�
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\rcb\Map_3-00_GameHub\gamehub_str\EU_EN\assets\chars\frink\cct++export\frink.rcb.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 53 A8 00 00 00 17 FC 59 46 DA 00 00 00 00   S¨   �üYFÚ
+0000000000000010 00 00 00 00 00 00 00 00
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\shk\Assets_2_Characters_Simpsons\simpsons_chars_global_str\EU_EN\assets++shared\controller\vibrations\shooting\shooting_shotgun.shk.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 2A F8 4D D8 00 01 00 04 2C AF 61 00 00 00 01 FF *øMØ � �,¯a   �ÿ
+0000000000000010 00 32 01 00 00 64 01 FF                          2�  d�ÿ
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\tox\Map_3-01_LandOfChocolate\loc_global_str\EU_EN\assets\movies++tox\loc_igc01.tox.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 31 42 4F 54 00 00 00 90 00 00 00 00 00 00 00 08 1BOT   �       �
+0000000000000010 19 59 2C 63 00 00 04 10                         �Y,c  ��
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\xml\Map_3-01_LandOfChocolate\loc\Story_Mode\Story_Mode_Design++sim_Outside++loc_igcs\igc_11_folderstream_str\EU_EN++assets++igcs++source++loc++loc_igc11++shots\loc_igc11_shot01.xml.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 73 65 71 6D 00 00 08 88 00 00 00 01 00 00 00 10 seqm  ��   �   �
+0000000000000010 00 00 04 10 BB BB BB BB                           ��»»»»
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\rcm_b\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\audio\audioscripts++char++voc\teri\gam_teri.rcm_b
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 01 00 05 00 00 00 10 EF BE 00 00 00 00 00 74  � �   �ï¾     t
+0000000000000010 07 42 68 BB 2C 04 E1 25                         �Bh»,�á%
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\sbk\Map_3-00_GameHub\gamehub_str\EU_EN\ASSET_RWS\streams\gamehub.sbk
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 6B 6E 62 73 00 00 00 CB 00 00 EB FC 00 34 B8 D8 knbs   Ë  ëü 4¸Ø
+0000000000000010 00 00 EC 40 00 34 B8 D8                           ì@ 4¸Ø
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\smb\Map_3-00_GameHub\gamehub_str\EU_EN\ASSET_RWS\streams\gamehub.smb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 00 00 00 00 00 00 00 0C 00 00 00 0D            �   �
+0000000000000010 00 00 00 CA 00 00 00 18                            Ê   �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\toc\Map_3-00_SprHub\spr_hub_global_str\stream.toc
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 9C BA 7B 28 00 00 00 09 00 00 09 D1 00 00 03 DC �º{(   �  �Ñ  �Ü
+0000000000000010 00 28 00 27 00 00 00 04                          ( '   �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\toc\occ\str\Map_3-00_SprHub\spr_hub_str\EU_EN\ASSET_RWS\occlusion\spr_hub.str.occ.toc
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 6F 63 74 63 00 00 00 03 00 00 00 2E 00 00 00 10 octc   �   .   �
+0000000000000010 3A 2B 38 F4 00 00 02 40                         :+8ô  �@
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\txd\Map_3-00_GameHub\gamehub\zone13_str\EU_EN\ASSET_RWS\texture_dictionary++gamehub\zone13.txd
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 16 00 00 00 04 FA 0F 00 2D 00 02 1C 01 00 00 00 �   �ú� - ���
+0000000000000010 04 00 00 00 2D 00 02 1C                         �   - ��
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\txt\localereftableD4815ED6.txt
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 32 0A 65 6E 0A 66 72 6F 6E 74 65 6E 64 5C 74 65 2�en�frontend\te
+0000000000000010 78 74 5C 38 31 44 45 31                         xt\81DE1
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\uix\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\ui++menus\bus_stop\bus_stop.uix
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 75 69 78 66 00 04 23 60 74 69 74 6C 00 00 00 11 uixf �#`titl   �
+0000000000000010 62 75 73 5F 73 74 6F 70                         bus_stop
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\vfb\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\vfx\character\Lisa\lisa_spin.vfb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 6C 69 73 61 5F 73 70 69 6E 00 00 00 00 00 00 00 lisa_spin
+0000000000000010 00 00 00 06 00 00 00 31                            �   1
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\xml\meta\Map_3-00_GameHub\gamehub\zone01_str\EU_EN\assets\environs++gamehub++gamehub++zone01\opt\zone01.meta.xml
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 4D 4D 64 6C 00 00 00 0A 00 00 04 70 00 00 00 00 MMdl   �  �p
+0000000000000010 0B 50 45 30 B9 E4 A9 11                         �PE0¹ä©�
+
+
+PS A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source> . 'A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\hex.ps1' > files.txt
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\(no extension)\Map_3-00_SprHub\spr_hub_str\LightTOC
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 40 F2 00 01 00 00 00 10 00 00 00 00 00 01 00 00 @ò �   �     �
+0000000000000010 EE B2 C9 98 45 0E 50 CA                         î²É�E�PÊ
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\(no extension)\Map_3-00_SprHub\spr_hub_str\StreamSetConfig
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 03 00 00 00 1A 00 00 02 65 07 7D 77 B5    �   �  �e�}wµ
+0000000000000010 00 00 00 01 00 00 00 00                            �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\alb\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\audio\streams++dialog\dialog_en\homr++alias\eps_gam_homr.alb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 06 00 0D 00 00 00 08 04 64 84 62 2C 04 E1 25  � �   ��d�b,�á%
+0000000000000010 27 8B 42 62 27 8B 42 62                         '�Bb'�Bb
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\amb\Map_3-00_GameHub\gamehub_global_str\EU_EN\assets++shared\aems++char++shared++pole_ladder_slides\char_poles_and_ladders.amb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 09 00 09 4C 4C 00 00 00 D8 00 09 4C 4C    � �LL   Ø �LL
+0000000000000010 00 00 00 00 2C 82 F4 EE                             ,�ôî
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\aub\Assets_2_Frontend\frontend_str\EU_EN\assets\shared\audio\config\global.aub
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 00 00 00 00 00 00 00 0C 00 00 00 0A            �   �
+0000000000000010 00 00 00 37 00 00 00 05                            7   �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\bin\hud\Assets_2_Frontend\frontend_str\EU_EN\assets\shared\ui\hud\hud_simpsons_frontend.hud.bin
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 01 20 00 3F 00 00 00 03 00 00 00 03 00 00 02 80 �  ?   �   �  ��
+0000000000000010 00 00 01 40 00 00 01 40                           �@  �@
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\bsp\Map_3-00_GameHub\gamehub\zone01_str\EU_EN\assets\environs++gamehub++gamehub++zone01\opt\zone01.bsp
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 0B 00 00 00 00 00 00 00 06 00 00 00 70    �       �   p
+0000000000000010 00 00 00 00 01 73 00 64                             �s d
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ctb\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\audio\streams++dialog\cht\eps_gam_frin.ctb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 06 00 00 00 00 00 00 00 00 00 00 40 A0 00 00  �          @ 
+0000000000000010 00 11 3B 03 00 00 00 18                          �;�   �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\dat\Map_3-00_GameHub\gamehub\zone13_str\00000000.dat
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 53 69 6D 47 00 00 00 01 9D 47 54 3E     SimG   ��GT>
+0000000000000010 00 00 00 01 00 00 00 B0                            �   °
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\graph\Map_3-00_GameHub\gamehub_str\EU_EN\ASSET_RWS\graph\{316D093A-E43C-4107-8F20-28423FCCB80B}.graph
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 00 00 00 00 00 00 00 10 01 18 02 F7            ����÷
+0000000000000010 2C 04 E1 25 41 07 E4 3C                         ,�á%A�ä<
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\imb\Map_3-00_GameHub\gamehub_str\EU_EN\ASSET_RWS\impact_table\impact_table_football_player.imb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 5B A0 8C AA 00 02 00 10 00 33 00 06 00 00 00 1C [ �ª � � 3 �   �
+0000000000000010 00 00 06 80 00 00 07 40                           ��  �@
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\inf\Assets_2_Frontend\frontend_str\EU_EN\assets\shared\fonts\LetterGothicStdBold2424b.inf
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 46 4F 4E 54 00 00 1A 20 00 06 00 BF 00 00 04 34 FONT  �  � ¿  �4
+0000000000000010 00 00 00 00 00 00 00 14                                �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\lh2\en\Map_3-00_GameHub\text\81DE1738_str++EU_EN++assets++localization\simpsons_global.en.LH2
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 32 48 43 4C 00 02 32 6D 00 00 00 01 00 00 00 00 2HCL �2m   �
+0000000000000010 00 00 0D 18 00 00 00 01                           ��   �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\lh2\Map_3-00_GameHub\gamehub_str\EU_EN\ASSET_RWS\{1D68E110-E110-1D68-10E1-681D10E1681D}.LH2
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 32 48 43 4C 00 00 27 F3 00 00 00 01 00 00 00 00 2HCL  'ó   �
+0000000000000010 00 00 00 2A 00 00 00 05                            *   �
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\lh2\ss\simpsons_global.ss.LH2
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 32 48 43 4C 00 01 65 D8 00 00 00 01 00 00 00 00 2HCL �eØ   �
+0000000000000010 00 00 0D 18 00 00 00 01                           ��   �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\mib\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\audio\mix++eps_gamehub\mix_gamehub_indoor_01.mib
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 00 00 00 00 00 00 00 18 00 00 00 00            �
+0000000000000010 00 00 00 00 00 00 00 00
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\msb\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\audio\pathfinder++eps_gamehub\hub_mus.msb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 00 00 00 00 00 00 00 20 00 00 00 00
+0000000000000010 00 00 00 00 00 00 00 00
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\preinstanced\ps3\dff\Map_3-00_GameHub\gamehub_str\EU_EN\assets\chars\frink\bound++export\lod3_model.dff.PS3.preinstanced
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 10 00 00 00 77 30 08 00 2D 00 02 1C 01 00 00 00 �   w0� - ���
+0000000000000010 0C 00 00 00 2D 00 02 1C                         �   - ��
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\preinstanced\ps3\rws\Map_3-00_GameHub\gamehub\zone13_str\EU_EN\assets\props\spr_interiors\int_simpsonshse\spr_margesalonchair++geo++export++spr_margesalonchair\lodmodel1.rws.PS3.preinstanced
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 10 00 00 00 65 82 00 00 2D 00 02 1C 01 00 00 00 �   e�  - ���
+0000000000000010 0C 00 00 00 2D 00 02 1C                         �   - ��
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\acs\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\collision\marge.acs.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 01 09 00 00 00 00 00 50 DC BB A7 F2 F8 E3 10 95 ��     PÜ»§òøã��
+0000000000000010 00 06 43 00 00 73 00 00                          �C  s
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\bbn\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\bonebindings\player_default.bbn.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+0000000000000010 B1 83 33 23 00 00 00 02                         ±�3#   �
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\bnk\Map_3-00_GameHub\gamehub_str\EU_EN\assets\chars\frink\cct++export\frink_specific.bnk.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 02 4A E0 00 00 00 09 37 15 84 51 FC 59 46 DA  �Jà   �7��QüYFÚ
+0000000000000010 00 00 00 00 00 00 00 00
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\cec\Assets_2_Characters_Simpsons\simpsons_chars_global_str\EU_EN\assets++shared\controller\configurations\basic_player.cec.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 01 00 00 47 39 FC E8 8F 00 62 61 73 69 63 70 6C �  G9üè� basicpl
+0000000000000010 61 79 65 72 00 00 00 00                         ayer
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\hko\Map_3-00_GameHub\gamehub_str\EU_EN\assets\chars\frink\bound++export\frink_lods.hko.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 48 6B 78 10 09 00 00 00 00 00 00 00 00 00 00 00 Hkx��
+0000000000000010 57 E0 E0 57 10 C0 C0 10                         WààW�ÀÀ�
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\hkt\Map_3-00_GameHub\gamehub\zone13_str\EU_EN\assets\props\spr_interiors\int_simpsonshse\spr_margesalonchair++geo++export++spr_margesalonchair\collisionmodel1.hkt.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 48 6B 78 10 09 00 00 00 00 00 00 00 00 00 00 00 Hkx��
+0000000000000010 57 E0 E0 57 10 C0 C0 10                         WààW�ÀÀ�
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\rcb\Map_3-00_GameHub\gamehub_str\EU_EN\assets\chars\frink\cct++export\frink.rcb.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 53 A8 00 00 00 17 FC 59 46 DA 00 00 00 00   S¨   �üYFÚ
+0000000000000010 00 00 00 00 00 00 00 00
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\shk\Assets_2_Characters_Simpsons\simpsons_chars_global_str\EU_EN\assets++shared\controller\vibrations\shooting\shooting_shotgun.shk.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 2A F8 4D D8 00 01 00 04 2C AF 61 00 00 00 01 FF *øMØ � �,¯a   �ÿ
+0000000000000010 00 32 01 00 00 64 01 FF                          2�  d�ÿ
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\tox\Map_3-01_LandOfChocolate\loc_global_str\EU_EN\assets\movies++tox\loc_igc01.tox.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 31 42 4F 54 00 00 00 90 00 00 00 00 00 00 00 08 1BOT   �       �
+0000000000000010 19 59 2C 63 00 00 04 10                         �Y,c  ��
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\ps3\xml\Map_3-01_LandOfChocolate\loc\Story_Mode\Story_Mode_Design++sim_Outside++loc_igcs\igc_11_folderstream_str\EU_EN++assets++igcs++source++loc++loc_igc11++shots\loc_igc11_shot01.xml.PS3
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 73 65 71 6D 00 00 08 88 00 00 00 01 00 00 00 10 seqm  ��   �   �
+0000000000000010 00 00 04 10 BB BB BB BB                           ��»»»»
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\rcm_b\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\audio\audioscripts++char++voc\teri\gam_teri.rcm_b
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 01 00 05 00 00 00 10 EF BE 00 00 00 00 00 74  � �   �ï¾     t
+0000000000000010 07 42 68 BB 2C 04 E1 25                         �Bh»,�á%
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\sbk\Map_3-00_GameHub\gamehub_str\EU_EN\ASSET_RWS\streams\gamehub.sbk
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 6B 6E 62 73 00 00 00 CB 00 00 EB FC 00 34 B8 D8 knbs   Ë  ëü 4¸Ø
+0000000000000010 00 00 EC 40 00 34 B8 D8                           ì@ 4¸Ø
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\smb\Map_3-00_GameHub\gamehub_str\EU_EN\ASSET_RWS\streams\gamehub.smb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 00 00 00 00 00 00 00 00 00 00 0C 00 00 00 0D            �   �
+0000000000000010 00 00 00 CA 00 00 00 18                            Ê   �
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\toc\Map_3-00_SprHub\spr_hub_global_str\stream.toc
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 9C BA 7B 28 00 00 00 09 00 00 09 D1 00 00 03 DC �º{(   �  �Ñ  �Ü
+0000000000000010 00 28 00 27 00 00 00 04                          ( '   �
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\toc\occ\str\Map_3-00_SprHub\spr_hub_str\EU_EN\ASSET_RWS\occlusion\spr_hub.str.occ.toc
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 6F 63 74 63 00 00 00 03 00 00 00 2E 00 00 00 10 octc   �   .   �
+0000000000000010 3A 2B 38 F4 00 00 02 40                         :+8ô  �@
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\txd\Map_3-00_GameHub\gamehub\zone13_str\EU_EN\ASSET_RWS\texture_dictionary++gamehub\zone13.txd
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 16 00 00 00 04 FA 0F 00 2D 00 02 1C 01 00 00 00 �   �ú� - ���
+0000000000000010 04 00 00 00 2D 00 02 1C                         �   - ��
+
+
+hex first 24:
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\txt\localereftableD4815ED6.txt
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 32 0A 65 6E 0A 66 72 6F 6E 74 65 6E 64 5C 74 65 2�en�frontend\te
+0000000000000010 78 74 5C 38 31 44 45 31                         xt\81DE1
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\uix\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\ui++menus\bus_stop\bus_stop.uix
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 75 69 78 66 00 04 23 60 74 69 74 6C 00 00 00 11 uixf �#`titl   �
+0000000000000010 62 75 73 5F 73 74 6F 70                         bus_stop
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\vfb\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\vfx\character\Lisa\lisa_spin.vfb
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 6C 69 73 61 5F 73 70 69 6E 00 00 00 00 00 00 00 lisa_spin
+0000000000000010 00 00 00 06 00 00 00 31                            �   1
+
+
+hex first 24: 
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\Extracted\xml\meta\Map_3-00_GameHub\gamehub\zone01_str\EU_EN\assets\environs++gamehub++gamehub++zone01\opt\zone01.meta.xml
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 4D 4D 64 6C 00 00 00 0A 00 00 04 70 00 00 00 00 MMdl   �  �p
+0000000000000010 0B 50 45 30 B9 E4 A9 11                         �PE0¹ä©�

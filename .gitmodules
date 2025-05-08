@@ -1,0 +1,18 @@
+[submodule "Modules/Model"]
+    path = Modules/Model
+    url = https://github.com/Superposition28/Model_Assets.git
+[submodule "Modules/Audio"]
+    path = Modules/Audio
+    url = https://github.com/Superposition28/Audio_Assets.git
+[submodule "Modules/Video"]
+    path = Modules/Video
+    url = https://github.com/Superposition28/Video_Assets.git
+[submodule "Modules/Extract"]
+    path = Modules/Extract
+    url = https://github.com/Superposition28/QBMS_TSG.git
+[submodule "Modules/Texture"]
+    path = Modules/Texture
+    url = https://github.com/Superposition28/Texture_Assets.git
+[submodule "Modules/Godot"]
+    path = Modules/Godot
+    url = https://github.com/Superposition28/Godot_Game.git

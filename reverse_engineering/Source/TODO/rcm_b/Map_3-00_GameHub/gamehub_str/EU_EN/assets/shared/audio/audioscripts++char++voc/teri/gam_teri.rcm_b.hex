@@ -1,0 +1,16 @@
+
+   Label: A:\Dev\Games\TheSimpsonsGame\PAL\reverse_engineering\Source\TODO\rcm_b\Map_3-00_GameHub\gamehub_str\EU_EN\assets\shared\audio\audioscripts++char++voc\teri\gam_teri.rcm_b
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 00 01 00 05 00 00 00 10 EF BE 00 00 00 00 00 74  � �   �ï¾     t
+0000000000000010 07 42 68 BB 2C 04 E1 25 6D 5C E5 B3 6D 5C E5 B3 �Bh»,�á%m\å³m\å³
+0000000000000020 6D 5C E5 B3 09 A7 B1 FC 2C 04 E1 25 7E E5 7E 32 m\å³�§±ü,�á%~å~2
+0000000000000030 7E E5 7E 32 7E E5 7E 32 B5 59 68 38 2C 04 E1 25 ~å~2~å~2µYh8,�á%
+0000000000000040 51 A5 E0 5E 51 A5 E0 5E 51 A5 E0 5E B9 E7 26 FB Q¥à^Q¥à^Q¥à^¹ç&û
+0000000000000050 2C 04 E1 25 E8 FB 09 73 E8 FB 09 73 E8 FB 09 73 ,�á%èû�sèû�sèû�s
+0000000000000060 E6 6E C7 57 2C 04 E1 25 0E 19 FB 7F 0E 19 FB 7F ænÇW,�á%��û���û�
+0000000000000070 0E 19 FB 7F                                     ��û�
+
+

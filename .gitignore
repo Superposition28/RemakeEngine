@@ -1,0 +1,88 @@
+# Build/Game artifacts
+GameFiles/
+Game/
+Modules/
+
+# Configuration/History
+.history
+config.ini
+project.json
+
+
+# IDE/Editor specific
+.vscode/
+.VSCodeCounter/
+
+# Logs
+*.log
+main.log
+
+# Tools executables/scripts/temp
+Tools/quickbms/*.exe
+Tools/quickbms/*.bat
+Tools/quickbms/*.ps1
+Tools/quickbms/*.txt
+Tools/blender/exe/
+
+# Temporary/Backup
+old/
+
+# Asset/Texture mapping
+texture_mapping.json
+asset_mapping.json
+
+# Python cache
+__pycache__
+/__pycache__/
+__pycache__/
+*.pyc
+.pyc
+**/__pycache__/init.cpython-313.pyc
+
+
+
+# no no files
+localereftableD4815ED6.txt
+LightTOC
+StreamSetConfig
+*.preinstanced
+*.ps3
+*.ps3
+*.snu
+*.vp6
+*.mus
+/Source/
+/SourceData/
+*.vfb
+*.xml
+*.dat
+*.txd
+*.lh2
+*.alb
+*.ctb
+*.graph
+*.rcm_b
+*.sbk
+*.bsp
+*.smb
+*.mib
+*.amb
+*.uix
+*.imb
+*.toc
+*.msb
+*.inf
+*.bin
+*.aub
+*.xml
+
+.test/
+test/
+
+#uv_map_extract/
+
+investigation_tools/blank.blend
+investigation_tools/blank.blend1
+
+*.blend1
+*.blend1
