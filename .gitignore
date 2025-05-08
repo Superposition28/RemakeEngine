@@ -1,7 +1,6 @@
 # Build/Game artifacts
 GameFiles/
 Game/
-Modules/
 
 # Configuration/History
 .history
