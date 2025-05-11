@@ -16,6 +16,9 @@ project.json
 *.log
 main.log
 
+/OldModules/
+/OldRemakeRegistry/
+
 # Tools executables/scripts/temp
 Tools/QuickBMS/*.exe
 Tools/QuickBMS/*.bat
