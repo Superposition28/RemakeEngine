@@ -7,6 +7,22 @@ import builtins
 import sys
 import os  # Import os for environment variable check
 
+def printc(message: str, colour: str | None = None) -> None:
+    """Prints a message to the console with optional colour support."""
+    # Simple colour support for Windows/cmd
+    colours = {
+        'red': '\033[91m', 'green': '\033[92m', 'yellow': '\033[93m',
+        'blue': '\033[94m', 'magenta': '\033[95m', 'cyan': '\033[96m',
+        'white': '\033[97m', 'darkcyan': '\033[36m', 'darkyellow': '\033[33m',
+        'darkred': '\033[31m', 'reset': '\033[0m'
+    }
+    endc = '\033[0m'
+    if colour and colour.lower() in colours:
+        builtins.print(f"{colours['magenta']}BLENDER-SCRIPT:{endc} {colours[colour.lower()]}{message}{endc}")
+    else:
+        builtins.print(f"{colours['magenta']}BLENDER-SCRIPT:{endc} {colours['darkcyan']}{message}{endc}")
+
+
 # --- ANSI colour Codes ---
 class colours(object):
     """
@@ -22,6 +38,7 @@ class colours(object):
     CYAN = '\033[96m'
     GRAY = '\033[90m'
     DARK_GREEN = '\033[32m'
+    DARKGRAY = '\033[38;5;240m'
 
 # --- Logging Functions ---
 def print(colour: str, message: str) -> None:  # Removed default colour

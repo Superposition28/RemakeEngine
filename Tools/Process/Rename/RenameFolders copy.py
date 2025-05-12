@@ -1,9 +1,10 @@
-import os
+
 import json
-try:
-	from ....printer import print, print_error, print_verbose, print_debug, colours
-except ImportError:
-	from printer import print, print_error, print_verbose, print_debug, colours
+
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'Utils')))
+from printer import print, colours, print_error, print_verbose, print_debug, printc
 
 def main(project_dir, module_dir) -> None:
 

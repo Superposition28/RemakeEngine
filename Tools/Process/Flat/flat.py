@@ -3,8 +3,6 @@
 # Example:
 # python flat_cli.py ".\Source\RootDir" ".\Destination\Flattened" --rules ".\custom_rules.json" --separator "__" -v
 
-import sys
-import os
 import shutil
 import hashlib
 import re
@@ -13,8 +11,10 @@ import json
 import argparse # Added for CLI argument parsing
 from pathlib import Path
 
-# Assuming printer.py is in the same directory or accessible via PYTHONPATH
-from printer import print, print_error, print_verbose, print_debug, colours
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'Utils')))
+from printer import print, colours, print_error, print_verbose, print_debug, printc
 
 # -- Begin Global Variables --
 
