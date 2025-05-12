@@ -1,9 +1,13 @@
-import os
+
 import argparse
 import sqlite3
 import json # Added for potential future use, e.g., JSON map file
 
-from printer import print, print_error, print_verbose, print_debug, colours
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'Utils')))
+from printer import print, colours, print_error, print_verbose, print_debug, printc
+
 
 def load_map_from_db(db_path: str, table_name: str = "rename_mappings") -> dict:
     """Loads the rename map from a SQLite database."""

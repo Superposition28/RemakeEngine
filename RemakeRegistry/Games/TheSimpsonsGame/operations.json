@@ -44,45 +44,45 @@
 		{
 			"Name": "Convert Models (.preinstanced -> .blend)",
 			"python_executable": "python",
-			"script": "",
+			"script": "RemakeRegistry/Games/TheSimpsonsGame/Scripts/Blender/Main/run.py",
+			"args": [],
 			"prompts": [
-			{
-				"type": "confirm",
-				"Name": "verbose",
-				"message": "Model Conversion: Enable verbose output?",
-				"default": false,
-				"cli_arg": "--verbose"
-			},
-			{
-				"type": "confirm",
-				"Name": "debug_sleep",
-				"message": "Model Conversion: Enable debug sleep?",
-				"default": false,
-				"cli_arg": "--debug-sleep"
-			},
-			{
-				"type": "confirm",
-				"Name": "enable_export",
-				"message": "Model Conversion: Export additional formats (FBX/GLTF)?",
-				"default": false
-			},
-			{
-				"type": "checkbox",
-				"Name": "export_formats",
-				"message": "Select export formats:",
-				"choices": ["fbx", "glb"],
-				"cli_prefix": "--export",
-				"condition": "enable_export",
-				"validation": {"required": true, "message": "You must select at least one format."}
-			}
-			],
-			"args": []
+				{
+					"type": "confirm",
+					"Name": "verbose",
+					"message": "Model Conversion: Enable verbose output?",
+					"default": false,
+					"cli_arg": "--verbose"
+				},
+				{
+					"type": "confirm",
+					"Name": "debug_sleep",
+					"message": "Model Conversion: Enable debug sleep?",
+					"default": false,
+					"cli_arg": "--debug-sleep"
+				},
+				{
+					"type": "confirm",
+					"Name": "enable_export",
+					"message": "Model Conversion: Export additional formats (FBX/GLTF)?",
+					"default": false
+				},
+				{
+					"type": "checkbox",
+					"Name": "export_formats",
+					"message": "Select export formats:",
+					"choices": ["fbx", "glb"],
+					"cli_prefix": "--export",
+					"condition": "enable_export",
+					"validation": {"required": true, "message": "You must select at least one format."}
+				}
+			]
 		},
 		{
 			"Name": "Convert Videos (.vp6 -> .ogv)",
 			"python_executable": "python",
-			"script": "",
-			"args": []
+			"script": "Tools/ffmpeg-vgmstream/convert.py",
+			"args": ["-m", "ffmpeg", "-s", "{{RemakeEngine.Directories.SourcePath}}\\Assets_1_Video_Movies", "-t", "GameFiles\\STROUT\\Assets_1_Video_Movies", "-f", "ffmpeg.exe", "-i", ".vp6", "-o", ".ogv", "--overwrite"]
 		},
 		{
 			"Name": "Reorganise Audio Files",
@@ -93,8 +93,8 @@
 		{
 			"Name": "Convert Audio (.snu -> .wav)",
 			"python_executable": "python",
-			"script": "",
-			"args": ["{{RemakeEngine.Directories.SourcePath}}\\Assets_1_Audio_Streams", "GameFiles\\STROUT\\Assets_1_Audio_Streams"]
+			"script": "Tools/ffmpeg-vgmstream/convert.py",
+			"args": ["-m", "vgmstream", "-s", "{{RemakeEngine.Directories.SourcePath}}\\Assets_1_Audio_Streams", "-t", "GameFiles\\STROUT\\Assets_1_Audio_Streams", "--vgmstream-cli", "vgmstream-cli.exe", "-i", ".snu", "-o", ".wav"]
 		},
 		{
 			"Name": "flatten folder structure",

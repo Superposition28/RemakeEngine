@@ -41,13 +41,14 @@ def printc(message: str, colour: str | None = None) -> None:
         'red': '\033[91m', 'green': '\033[92m', 'yellow': '\033[93m',
         'blue': '\033[94m', 'magenta': '\033[95m', 'cyan': '\033[96m',
         'white': '\033[97m', 'darkcyan': '\033[36m', 'darkyellow': '\033[33m',
-        'darkred': '\033[31m'
+        'darkred': '\033[31m', 'reset': '\033[0m'
     }
     endc = '\033[0m'
     if colour and colour.lower() in colours:
-        print(f"{colours[colour.lower()]}{message}{endc}")
+        print(f"{colours['magenta']}EXTENSION:{endc} {colours[colour.lower()]}{message}{endc}")
     else:
-        print(message)
+        print(f"{colours['magenta']}EXTENSION:{endc} {colours['blue']}{message}{endc}")
+
 
 def get_unique_metadata_key(container: dict, base_key: str) -> str:
     """Finds a unique metadata key by appending .001, .002, etc. if needed."""
@@ -84,7 +85,7 @@ def bPrinter(
             debug_mode = bpy.context.preferences.addons[__name__].preferences.debugmode
     except Exception as e:
         # Catch any other potential errors during preference access
-        print(f"[Log Error] Could not access addon preferences for '{__name__}': {e}. Assuming debug_mode=False.")
+        printc(f"[Log Error] Could not access addon preferences for '{__name__}': {e}. Assuming debug_mode=False.")
         debug_mode = False # Fallback safely
 
     # Only proceed if debug mode is not required OR if it is required and enabled

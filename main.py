@@ -6,12 +6,15 @@ operations, validating scripts, and running selected operations interactively.
 
 import questionary
 from pathlib import Path
-from printer import print, colours
-
-import os
 import re
 import json
 import subprocess
+
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'Utils')))
+from printer import print, colours, print_error, print_verbose, print_debug, printc
+
 
 # --- Define your custom style (as per your example) ---
 custom_style_fancy = questionary.Style([

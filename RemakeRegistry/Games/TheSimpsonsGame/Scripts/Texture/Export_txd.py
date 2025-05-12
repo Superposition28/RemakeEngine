@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 import struct
-import os
 import re
 import argparse # Added for CLI argument parsing
-import sys
 import time
 
-from printer import print, colours # this is valid, no need for placeholder or checks
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', '..', 'Utils')))
+from printer import print, colours, print_error, print_verbose, print_debug, printc
 
 # --- Morton Unswizzling Helper ---
 # The morton_encode_2d function uses a more direct bit manipulation approach.

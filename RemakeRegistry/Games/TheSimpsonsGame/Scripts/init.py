@@ -2,36 +2,13 @@
 This module initializes the configuration and validates the source directory for the RemakeEngine.
 """
 import builtins
-import sys
 import json
-import os
 import shutil # Import shutil for file operations
-#from printer import print, colours
 
-class colours(object):
-    """
-    A collection of ANSI colour codes for terminal text formatting.
-    """
-    RESET = '\033[0m'
-    WHITE = '\033[97m'
-    RED = '\033[91m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    BLUE = '\033[94m'
-    MAGENTA = '\033[95m'
-    CYAN = '\033[96m'
-    GRAY = '\033[90m'
-    DARK_GREEN = '\033[32m'
-
-# --- Logging Functions ---
-def print(colour: str, message: str) -> None:  # Removed default colour
-    """
-    Logs a message to the standard output stream with the specified colour.
-
-    :param colour: The ANSI colour code to format the message.
-    :param message: The message to log.
-    """
-    builtins.print(f"{colour}{message}{colours.RESET}", file=sys.stdout)
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', 'Utils')))
+from printer import print, colours, print_error, print_verbose, print_debug, printc
 
 
 # --- Constants for Directory Lists ---
