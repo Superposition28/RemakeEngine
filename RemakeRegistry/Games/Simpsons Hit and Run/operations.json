@@ -1,0 +1,11 @@
+{
+	"The Simpsons Hit and Run": [
+		{
+			"Name": "Extract Archives",
+			"Instructions": "run quickbms script using RemakeRegistry/Games/Simpsons Hit and Run/Scripts/atg_core_cement.bms",
+			"python_executable": "python",
+			"script": "Tools/QuickBMS/extract_str.py",
+			"args": ["--quickbms", "Tools/QuickBMS/exe/quickbms.exe", "--script", "RemakeRegistry/Games/Simpsons Hit and Run/Scripts/atg_core_cement.bms", "--input", "{{RemakeEngine.Directories.SourcePath}}", "--output", "GameFiles/STROUT", "--extension", ".str"]
+		}
+	]
+}

@@ -8,18 +8,18 @@
 			"args": []
 		},
 		{
-			"Name": "validate game files",
-			"Instructions": "run validate against the `RemakeRegistry/Games/TheSimpsonsGame/Primary_Index.db`, specifically the root files in the source folder",
-			"python_executable": "python",
-			"script": "",
-			"args": []
-		},
-		{
 			"Name": "Rename base folders",
 			"Instructions": "run rename script",
 			"python_executable": "python",
 			"script": "Tools/Process/Rename/RenameFolders.py",
 			"args": ["{{RemakeEngine.Directories.SourcePath}}", "--map-db-file", "RemakeRegistry/Games/TheSimpsonsGame/RenameMap.db"]
+		},
+		{
+			"Name": "validate game files",
+			"Instructions": "run validate against the `RemakeRegistry/Games/TheSimpsonsGame/PrimaryIndex.db`, specifically the root files in the source folder",
+			"python_executable": "python",
+			"script": "RemakeRegistry/Games/TheSimpsonsGame/Scripts/ValidateSource-1.py",
+			"args": ["RemakeRegistry/Games/TheSimpsonsGame/PrimaryIndex.db", "{{RemakeEngine.Directories.SourcePath}}"]
 		},
 		{
 			"Name": "Extract Archives (.STR)",
@@ -36,17 +36,10 @@
 		},
 		{
 			"Name": "validate extracted game files",
-			"Instructions": "run validate against the `RemakeRegistry/Games/TheSimpsonsGame/Primary_Index.db`",
+			"Instructions": "run validate against the `RemakeRegistry/Games/TheSimpsonsGame/PrimaryIndex.db`",
 			"python_executable": "python",
-			"script": "",
-			"args": []
-		},
-		{
-			"Name": "flatten folder structure",
-			"Instructions": "run flatten script",
-			"python_executable": "python",
-			"script": "Tools/Process/Flat/flat.py",
-			"args": ["GameFiles/STROUT", "GameFiles/ExtractedOut", "--rules", "RemakeRegistry/Games/TheSimpsonsGame/PathRules.json", "--separator", "++", "--verbose"]
+			"script": "RemakeRegistry/Games/TheSimpsonsGame/Scripts/ValidateExtracted-1.py",
+			"args": ["RemakeRegistry/Games/TheSimpsonsGame/PrimaryIndex.db", "GameFiles/STROUT"]
 		},
 		{
 			"Name": "Convert Models (.preinstanced -> .blend)",
@@ -92,10 +85,23 @@
 			"args": []
 		},
 		{
+			"Name": "Reorganise Audio Files",
+			"python_executable": "python",
+			"script": "RemakeRegistry/Games/TheSimpsonsGame/Scripts/SetupAudioDir.py",
+			"args": ["{{RemakeEngine.Directories.SourcePath}}\\Assets_1_Audio_Streams"]
+		},
+		{
 			"Name": "Convert Audio (.snu -> .wav)",
 			"python_executable": "python",
 			"script": "",
-			"args": []
+			"args": ["{{RemakeEngine.Directories.SourcePath}}\\Assets_1_Audio_Streams", "GameFiles\\STROUT\\Assets_1_Audio_Streams"]
+		},
+		{
+			"Name": "flatten folder structure",
+			"Instructions": "run flatten script",
+			"python_executable": "python",
+			"script": "Tools/Process/Flat/flat.py",
+			"args": ["GameFiles/STROUT", "GameFiles/ExtractedOut", "--rules", "RemakeRegistry/Games/TheSimpsonsGame/PathRules.json", "--separator", "++", "--verbose"]
 		}
 	]
 }
