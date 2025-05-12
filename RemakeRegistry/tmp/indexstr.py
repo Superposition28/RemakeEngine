@@ -8,7 +8,7 @@ import time
 # IMPORTANT: Adjust these paths to your actual environment
 STR_INPUT_DIR = r"Source\USRDIR"
 OUTPUT_BASE_DIR = r"GameFiles\STROUT"
-DB_PATH = r"RemakeRegistry\Games\TheSimpsonsGame\str_index_refactored_with_dds.db" # Consider a new DB name
+DB_PATH = r"RemakeRegistry\Games\TheSimpsonsGame\str_index_refactored_with_dds.db"
 
 QUICKBMS_EXE = r"Tools\QuickBMS\exe\quickbms.exe"
 BMS_SCRIPT = r"RemakeRegistry\Games\TheSimpsonsGame\Scripts\simpsons_str.bms"
