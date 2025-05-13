@@ -85,15 +85,15 @@ def extract_byte_sequences(txd_filepath,
     Scans the TXD file for the 12-byte pattern. If found, extracts subsequent
     byte sequences (BYTES_A to Z, where A starts with the pattern) and adds them to unique sets.
     """
-    print(colours.CYAN, f"Processing TXD file: {txd_filepath}")
+    print(Colours.CYAN, f"Processing TXD file: {txd_filepath}")
     try:
         with open(txd_filepath, "rb") as f:
             data = f.read()
     except FileNotFoundError:
-        print(colours.RED, f"Error: File not found: {txd_filepath}")
+        print(Colours.RED, f"Error: File not found: {txd_filepath}")
         return 0
     except Exception as e:
-        print(colours.RED, f"Error reading file {txd_filepath}: {e}")
+        print(Colours.RED, f"Error reading file {txd_filepath}: {e}")
         return 0
 
     structures_found_in_file = 0
@@ -158,9 +158,9 @@ def extract_byte_sequences(txd_filepath,
         current_pos = found_idx + 1 # Advance search position to find next potential pattern
 
     if structures_found_in_file > 0:
-        print(colours.GREEN, f"  Found and processed {structures_found_in_file} instance(s) of the {TOTAL_COMPONENTS_LEN}-byte data structure (A-Z) in '{os.path.basename(txd_filepath)}'.")
+        print(Colours.GREEN, f"  Found and processed {structures_found_in_file} instance(s) of the {TOTAL_COMPONENTS_LEN}-byte data structure (A-Z) in '{os.path.basename(txd_filepath)}'.")
     else:
-        print(colours.BLUE, f"  No data structures matching the 12-byte pattern '{FULL_PATTERN_STR}' followed by all components A-Z were found in '{os.path.basename(txd_filepath)}'.")
+        print(Colours.BLUE, f"  No data structures matching the 12-byte pattern '{FULL_PATTERN_STR}' followed by all components A-Z were found in '{os.path.basename(txd_filepath)}'.")
 
     return structures_found_in_file
 
@@ -235,7 +235,7 @@ def main():
     }
 
     if not os.path.exists(input_path_abs):
-        print(colours.RED, f"Error: Input path '{input_path_abs}' does not exist.")
+        print(Colours.RED, f"Error: Input path '{input_path_abs}' does not exist.")
         sys.exit(1)
 
     txd_files_to_process = []
@@ -243,32 +243,32 @@ def main():
         if input_path_abs.lower().endswith(".txd"):
             txd_files_to_process.append(input_path_abs)
         else:
-            print(colours.RED, f"Error: Input file '{input_path_abs}' is not a .txd file.")
+            print(Colours.RED, f"Error: Input file '{input_path_abs}' is not a .txd file.")
             sys.exit(1)
     elif os.path.isdir(input_path_abs):
-        print(colours.CYAN, f"Scanning directory: {input_path_abs}")
+        print(Colours.CYAN, f"Scanning directory: {input_path_abs}")
         for root, _, files in os.walk(input_path_abs):
             for file_name in files:
                 if file_name.lower().endswith(".txd"):
                     txd_files_to_process.append(os.path.join(root, file_name))
         if not txd_files_to_process:
-            print(colours.YELLOW, f"No .txd files found in directory '{input_path_abs}'.")
+            print(Colours.YELLOW, f"No .txd files found in directory '{input_path_abs}'.")
             return
     else: 
-        print(colours.RED, f"Error: Input path '{input_path_abs}' is not a valid file or directory.")
+        print(Colours.RED, f"Error: Input path '{input_path_abs}' is not a valid file or directory.")
         sys.exit(1)
 
     if not txd_files_to_process:
-        print(colours.YELLOW, "No .txd files to process.")
+        print(Colours.YELLOW, "No .txd files to process.")
         return
 
-    print(colours.CYAN, f"Found {len(txd_files_to_process)} .txd file(s) to process.")
-    print(colours.CYAN, f"Searching for structures starting with the {FULL_PATTERN_LENGTH}-byte signature: {FULL_PATTERN_STR}")
-    print(colours.CYAN, f"If found, the following {TOTAL_COMPONENTS_LEN}-byte data components (A-Z) will be extracted.")
+    print(Colours.CYAN, f"Found {len(txd_files_to_process)} .txd file(s) to process.")
+    print(Colours.CYAN, f"Searching for structures starting with the {FULL_PATTERN_LENGTH}-byte signature: {FULL_PATTERN_STR}")
+    print(Colours.CYAN, f"If found, the following {TOTAL_COMPONENTS_LEN}-byte data components (A-Z) will be extracted.")
 
 
     for txd_file_path in txd_files_to_process:
-        print(colours.CYAN, f"\n--- Analyzing file: {os.path.basename(txd_file_path)} ---")
+        print(Colours.CYAN, f"\n--- Analyzing file: {os.path.basename(txd_file_path)} ---")
         structures_in_current_file = extract_byte_sequences(
             txd_file_path,
             master_unique_sets["BYTES_A"], master_unique_sets["BYTES_B"], master_unique_sets["BYTES_C"],
@@ -286,10 +286,10 @@ def main():
             overall_structures_found += structures_in_current_file
         files_processed_count += 1
 
-    print(colours.CYAN, "\n--- Summary ---")
-    print(colours.CYAN, f"Attempted to process {len(txd_files_to_process)} .txd file(s).")
-    print(colours.CYAN, f"Files effectively scanned: {files_processed_count}.")
-    print(colours.CYAN, f"Total instances of the data structure (A-Z components) found following the signature: {overall_structures_found}.")
+    print(Colours.CYAN, "\n--- Summary ---")
+    print(Colours.CYAN, f"Attempted to process {len(txd_files_to_process)} .txd file(s).")
+    print(Colours.CYAN, f"Files effectively scanned: {files_processed_count}.")
+    print(Colours.CYAN, f"Total instances of the data structure (A-Z components) found following the signature: {overall_structures_found}.")
     
     lengths_map = {
         "BYTES_A": LEN_BYTES_A, "BYTES_B": LEN_BYTES_B, "BYTES_C": LEN_BYTES_C,
@@ -341,7 +341,7 @@ def main():
 
         if byte_set:
             all_sets_empty = False
-            print(colours.GREEN, f"Found {len(byte_set)} unique {setName} sequences ({setDescription}).")
+            print(Colours.GREEN, f"Found {len(byte_set)} unique {setName} sequences ({setDescription}).")
             try:
                 os.makedirs(os.path.dirname(log_path), exist_ok=True) # Ensure directory exists
                 with open(log_path, "w") as lf:
@@ -353,14 +353,14 @@ def main():
                         lf.write(f"# {setName} follows prior data components within such structures.\n")
                     for seq in sorted(list(byte_set)): 
                         lf.write(f"{seq.hex()}\n")
-                print(colours.GREEN, f"Successfully wrote unique {setName} sequences to '{log_path}'.")
+                print(Colours.GREEN, f"Successfully wrote unique {setName} sequences to '{log_path}'.")
             except IOError as e:
-                print(colours.RED, f"Error writing to {setName} log file '{log_path}': {e}")
+                print(Colours.RED, f"Error writing to {setName} log file '{log_path}': {e}")
         else:
-            print(colours.YELLOW, f"No unique {setName} sequences were found.")
+            print(Colours.YELLOW, f"No unique {setName} sequences were found.")
     
     if all_sets_empty and overall_structures_found == 0 :
-        print(colours.YELLOW, f"No instances of structures starting with the pattern '{FULL_PATTERN_STR}' were found in any file.")
+        print(Colours.YELLOW, f"No instances of structures starting with the pattern '{FULL_PATTERN_STR}' were found in any file.")
 
 if __name__ == '__main__':
     main()

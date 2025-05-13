@@ -6,7 +6,7 @@ import json # Added for potential future use, e.g., JSON map file
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'Utils')))
-from printer import print, colours, print_error, print_verbose, print_debug, printc
+from printer import print, Colours, print_error, print_verbose, print_debug, printc
 
 
 def load_map_from_db(db_path: str, table_name: str = "rename_mappings") -> dict:
@@ -30,7 +30,7 @@ def load_map_from_db(db_path: str, table_name: str = "rename_mappings") -> dict:
         for row in cursor.fetchall():
             rename_map[row[0]] = row[1]
         conn.close()
-        print(colours.GREEN, f"Successfully loaded rename map from DB: {db_path} (Table: {table_name})")
+        print(Colours.GREEN, f"Successfully loaded rename map from DB: {db_path} (Table: {table_name})")
         return rename_map
     except sqlite3.Error as e:
         print_error(f"SQLite error while reading {db_path}: {e}")
@@ -42,7 +42,7 @@ def load_map_from_cli_args(cli_map_args: list) -> dict:
     if cli_map_args:
         for old_name, new_name in cli_map_args:
             rename_map[old_name] = new_name
-        print(colours.GREEN, "Successfully loaded rename map from CLI arguments.")
+        print(Colours.GREEN, "Successfully loaded rename map from CLI arguments.")
     return rename_map
 
 def rename_subdirectories(target_directory: str, rename_map: dict) -> None:
@@ -53,7 +53,7 @@ def rename_subdirectories(target_directory: str, rename_map: dict) -> None:
         print_error("Rename map is empty. No renaming operations will be performed.")
         return
 
-    print(colours.YELLOW, f"Processing directory: {target_directory}")
+    print(Colours.YELLOW, f"Processing directory: {target_directory}")
 
     if not os.path.isdir(target_directory):
         print_error(f"Error: The specified directory '{target_directory}' does not exist or is not a directory.")
@@ -81,8 +81,8 @@ def rename_subdirectories(target_directory: str, rename_map: dict) -> None:
                 new_name = rename_map[item_name]
                 new_path = os.path.join(target_directory, new_name)
 
-                print(colours.GRAY, f"  Old name: {item_name} (Path: {item_path})")
-                print(colours.GRAY, f"  New name: {new_name} (Path: {new_path})")
+                print(Colours.GRAY, f"  Old name: {item_name} (Path: {item_path})")
+                print(Colours.GRAY, f"  New name: {new_name} (Path: {new_path})")
 
                 try:
                     if os.path.exists(new_path):
@@ -90,19 +90,19 @@ def rename_subdirectories(target_directory: str, rename_map: dict) -> None:
                         skipped_items +=1
                     else:
                         os.rename(item_path, new_path)
-                        print(colours.GREEN, f"  Successfully renamed '{item_name}' to '{new_name}'")
+                        print(Colours.GREEN, f"  Successfully renamed '{item_name}' to '{new_name}'")
                         renamed_items += 1
                 except OSError as e:
                     print_error(f"  Error renaming '{item_name}' to '{new_name}': {e}")
                     skipped_items += 1
             else:
-                print(colours.CYAN, f"  Skipped '{item_name}' - no matching key in rename map.")
+                print(Colours.CYAN, f"  Skipped '{item_name}' - no matching key in rename map.")
                 skipped_items += 1
 
-    print(colours.GREEN, "\n--- Processing Summary ---")
-    print(colours.GREEN, f"Total directories inspected: {total_dirs_inspected}")
-    print(colours.GREEN, f"Directories renamed: {renamed_items}")
-    print(colours.GREEN, f"Directories skipped (no match, error, or target exists): {skipped_items}")
+    print(Colours.GREEN, "\n--- Processing Summary ---")
+    print(Colours.GREEN, f"Total directories inspected: {total_dirs_inspected}")
+    print(Colours.GREEN, f"Directories renamed: {renamed_items}")
+    print(Colours.GREEN, f"Directories skipped (no match, error, or target exists): {skipped_items}")
 
 
 def main():
@@ -171,7 +171,7 @@ def main():
         try:
             with open(args.map_json_file, 'r') as f:
                 active_rename_map = json.load(f)
-            print(colours.GREEN, f"Successfully loaded rename map from JSON file: {args.map_json_file}")
+            print(Colours.GREEN, f"Successfully loaded rename map from JSON file: {args.map_json_file}")
             map_source_description = f"JSON file '{args.map_json_file}'"
         except json.JSONDecodeError as e:
             print_error(f"Error decoding JSON from {args.map_json_file}: {e}")
@@ -187,9 +187,9 @@ def main():
         print_error("Failed to load rename map from the specified source. Exiting.")
         return 1 # Exit with error
 
-    print(colours.YELLOW, f"Using rename map from: {map_source_description}")
+    print(Colours.YELLOW, f"Using rename map from: {map_source_description}")
     if not active_rename_map: # If map is empty (e.g. empty db table, no cli args)
-        print(colours.YELLOW, "Warning: The rename map is empty. No renames will occur.")
+        print(Colours.YELLOW, "Warning: The rename map is empty. No renames will occur.")
 
 
     rename_subdirectories(args.target_directory, active_rename_map)

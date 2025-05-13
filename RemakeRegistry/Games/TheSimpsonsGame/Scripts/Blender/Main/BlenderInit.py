@@ -10,7 +10,7 @@ import argparse
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', '..', '..', 'Utils')))
-from printer import print, colours, print_error, print_verbose, print_debug, printc
+from printer import print, Colours, print_error, print_verbose, print_debug, printc
 
 
 
@@ -25,9 +25,9 @@ def extract_map_subdirectory(full_path, markerParam):
         if parts:
             return parts[0]
         else:
-            print(colours.CYAN, f"Warning: Could not extract map subdirectory from path: {full_path}")
+            print(Colours.CYAN, f"Warning: Could not extract map subdirectory from path: {full_path}")
     else:
-        print(colours.CYAN, f"Warning: Marker '{marker}' not found in path: {full_path}")
+        print(Colours.CYAN, f"Warning: Marker '{marker}' not found in path: {full_path}")
         exit(1)
     return "_UNKNOWN_MAP"
 
@@ -57,12 +57,12 @@ def generate_asset_mapping(root_drive, preinstanced_root, blend_root, marker, gl
             glb_full = os.path.join(glb_root, glb_rel) if glb_root else None
 
             if check_existence and not os.path.isfile(blend_full):
-                print(colours.CYAN, f"Warning: Corresponding blend file not found: {blend_full}")
+                print(Colours.CYAN, f"Warning: Corresponding blend file not found: {blend_full}")
                 continue
 
             map_subdir = extract_map_subdirectory(preinstanced_file, marker)
             if VERBOSE:
-                print(colours.CYAN, f"Extracted Map Subdirectory: {map_subdir} for {preinstanced_file}")
+                print(Colours.CYAN, f"Extracted Map Subdirectory: {map_subdir} for {preinstanced_file}")
 
             identifier = md5_hash(preinstanced_rel.replace('\\', '/'))
             asset_info = {
@@ -85,9 +85,9 @@ def create_symlink(src, dst, is_dir=True):
             os.symlink(src, dst, target_is_directory=True)
         else:
             os.symlink(src, dst)
-        print(colours.CYAN, f"Created symlink: {dst} -> {src}")
+        print(Colours.CYAN, f"Created symlink: {dst} -> {src}")
     except Exception as e:
-        print(colours.CYAN, f"Error creating symlink {dst} -> {src}: {e}")
+        print(Colours.CYAN, f"Error creating symlink {dst} -> {src}: {e}")
         if self.debug_sleep:
             time.sleep(2)
 
@@ -96,7 +96,7 @@ def create_symbolic_links(asset_map, root_drive):
     for identifier, paths in asset_map.items():
         map_subdir = paths.get("map_subdirectory")
         if not map_subdir:
-            print(colours.CYAN, f"Error: Missing map subdirectory for {identifier}. Skipping.")
+            print(Colours.CYAN, f"Error: Missing map subdirectory for {identifier}. Skipping.")
             continue
         target_base = os.path.join(root_drive, map_subdir)
         os.makedirs(target_base, exist_ok=True)
@@ -126,7 +126,7 @@ def create_symbolic_links(asset_map, root_drive):
                 create_symlink(src_folder, link_folder)
                 asset_map[identifier]["glb_symlink"] = link_folder
 
-        print(colours.CYAN, f"Created symbolic links for {identifier} in {map_subdir}")
+        print(Colours.CYAN, f"Created symbolic links for {identifier} in {map_subdir}")
         if VERBOSE:
             if self.debug_sleep:
                 time.sleep(0.1)
@@ -142,18 +142,18 @@ class PreinstancedFileProcessor:
 
     def process_files(self):
         if not self.input_dir or not os.path.isdir(self.input_dir):
-            print(colours.RED, f"Error: InputDirectory '{self.input_dir}' is not set or does not exist.")
+            print(Colours.RED, f"Error: InputDirectory '{self.input_dir}' is not set or does not exist.")
             exit(1)
         if not self.blend_dir:
-            print(colours.RED, "Error: BlendDirectory is not set.")
+            print(Colours.RED, "Error: BlendDirectory is not set.")
             exit(1)
         os.makedirs(self.blend_dir, exist_ok=True)
         if not self.glb_dir:
-            print(colours.RED, "Error: GLBOutputDirectory is not set.")
+            print(Colours.RED, "Error: GLBOutputDirectory is not set.")
             exit(1)
         os.makedirs(self.glb_dir, exist_ok=True)
         if not self.blank_blend_source or not os.path.isfile(self.blank_blend_source):
-            print(colours.RED, f"Error: BlankBlendSource '{self.blank_blend_source}' is not set or does not exist.")
+            print(Colours.RED, f"Error: BlankBlendSource '{self.blank_blend_source}' is not set or does not exist.")
             exit(1)
 
         preinstanced_files = []
@@ -162,11 +162,11 @@ class PreinstancedFileProcessor:
                 if file.endswith('.preinstanced'):
                     preinstanced_files.append(os.path.join(dirpath, file))
 
-        print(colours.CYAN, f"Found {len(preinstanced_files)} .preinstanced files in {self.input_dir}.")
+        print(Colours.CYAN, f"Found {len(preinstanced_files)} .preinstanced files in {self.input_dir}.")
         input_dir_abs = os.path.abspath(self.input_dir)
 
         for preinst in preinstanced_files:
-            print(colours.CYAN, f"Processing preinstanced file: {preinst}")
+            print(Colours.CYAN, f"Processing preinstanced file: {preinst}")
             rel_path = os.path.relpath(preinst, input_dir_abs)
             blend_dest_dir = os.path.join(self.blend_dir, os.path.dirname(rel_path))
             glb_dest_dir = os.path.join(self.glb_dir, os.path.dirname(rel_path))
@@ -177,45 +177,45 @@ class PreinstancedFileProcessor:
                 try:
                     shutil.copy2(self.blank_blend_source, blend_dest)
                     if VERBOSE:
-                        print(colours.CYAN, f"Copied {self.blank_blend_source} to {blend_dest}")
+                        print(Colours.CYAN, f"Copied {self.blank_blend_source} to {blend_dest}")
                 except Exception as ex:
-                    print(colours.RED, f"Error copying blank blend file to '{blend_dest}': {ex}")
+                    print(Colours.RED, f"Error copying blank blend file to '{blend_dest}': {ex}")
                     if self.debug_sleep:
                         time.sleep(1)
             else:
                 if VERBOSE:
-                    print(colours.BLUE, f"{os.path.basename(blend_dest)} already exists, skipping copy.")
+                    print(Colours.BLUE, f"{os.path.basename(blend_dest)} already exists, skipping copy.")
             if self.debug_sleep:
                 time.sleep(1)
-        print(colours.CYAN, f"Total .preinstanced files processed: {len(preinstanced_files)}")
+        print(Colours.CYAN, f"Total .preinstanced files processed: {len(preinstanced_files)}")
 
 def run(args):
     global VERBOSE
-    print(colours.CYAN, f"input args: {args}")
+    print(Colours.CYAN, f"input args: {args}")
 
     marker = args.marker
-    print(colours.CYAN, f"Marker: {marker}")
+    print(Colours.CYAN, f"Marker: {marker}")
     preinstanced_dir = args.preinstanced_dir
-    print(colours.CYAN, f"Preinstanced Directory: {preinstanced_dir}")
+    print(Colours.CYAN, f"Preinstanced Directory: {preinstanced_dir}")
     blend_dir = args.blend_dir
-    print(colours.CYAN, f"Blend Directory: {blend_dir}")
+    print(Colours.CYAN, f"Blend Directory: {blend_dir}")
     glb_dir = args.glb_dir
-    print(colours.CYAN, f"GLB Directory: {glb_dir}")
+    print(Colours.CYAN, f"GLB Directory: {glb_dir}")
     output_dir = args.output_dir
-    print(colours.CYAN, f"Output Directory: {output_dir}")
+    print(Colours.CYAN, f"Output Directory: {output_dir}")
     output_file = args.output_file
-    print(colours.CYAN, f"Output File: {output_file}")
+    print(Colours.CYAN, f"Output File: {output_file}")
     root_drive = args.root_drive
-    print(colours.CYAN, f"Root Drive: {root_drive}")
+    print(Colours.CYAN, f"Root Drive: {root_drive}")
     blank_blend_source = args.blank_blend_source
-    print(colours.CYAN, f"Blank Blend Source: {blank_blend_source}")
+    print(Colours.CYAN, f"Blank Blend Source: {blank_blend_source}")
     debug_sleep = args.debug_sleep
-    print(colours.CYAN, f"Debug Sleep: {debug_sleep}")
+    print(Colours.CYAN, f"Debug Sleep: {debug_sleep}")
     VERBOSE = args.verbose
-    print(colours.CYAN, f"Verbose: {VERBOSE}")
+    print(Colours.CYAN, f"Verbose: {VERBOSE}")
 
     # Step 1: Process Preinstanced Files
-    print(colours.CYAN, "--- Step 1: Processing Preinstanced Files ---")
+    print(Colours.CYAN, "--- Step 1: Processing Preinstanced Files ---")
     processor = PreinstancedFileProcessor(
         input_dir=preinstanced_dir,
         blend_dir=blend_dir,
@@ -223,63 +223,63 @@ def run(args):
         blank_blend_source=blank_blend_source,
         debug_sleep=debug_sleep
     )
-    print(colours.CYAN, f"Starting to process files in: {preinstanced_dir}")
+    print(Colours.CYAN, f"Starting to process files in: {preinstanced_dir}")
     if debug_sleep:
         time.sleep(1)
     processor.process_files()
-    print(colours.CYAN, "--- Step 1: Completed ---")
+    print(Colours.CYAN, "--- Step 1: Completed ---")
     if debug_sleep:
         time.sleep(1)
 
     # Step 2: Setup Symbolic Link Root Directory
-    print(colours.CYAN, f"--- Step 2: Preparing Symbolic Link Root Directory: {root_drive} ---")
+    print(Colours.CYAN, f"--- Step 2: Preparing Symbolic Link Root Directory: {root_drive} ---")
     if os.path.exists(root_drive):
-        print(colours.CYAN, f"Deleting existing root directory for symbolic links: {root_drive}")
+        print(Colours.CYAN, f"Deleting existing root directory for symbolic links: {root_drive}")
         shutil.rmtree(root_drive)
         if debug_sleep:
             time.sleep(1)
     os.makedirs(root_drive, exist_ok=True)
-    print(colours.CYAN, f"Created root directory for symbolic links: {root_drive}")
+    print(Colours.CYAN, f"Created root directory for symbolic links: {root_drive}")
     if debug_sleep:
         time.sleep(0.5)
 
     # Step 3: Generate Asset Mapping
-    print(colours.CYAN, "--- Step 3: Generating Asset Map ---")
+    print(Colours.CYAN, "--- Step 3: Generating Asset Map ---")
     if debug_sleep:
         time.sleep(1)
     asset_map = generate_asset_mapping(root_drive, preinstanced_dir, blend_dir, marker, glb_dir, check_existence=False)
-    print(colours.CYAN, f"Generated map for {len(asset_map)} assets.")
+    print(Colours.CYAN, f"Generated map for {len(asset_map)} assets.")
     if debug_sleep:
         time.sleep(1)
-    print(colours.CYAN, f"--- Saving initial asset map to: {output_file} ---")
+    print(Colours.CYAN, f"--- Saving initial asset map to: {output_file} ---")
     try:
         with open(output_file, "w", encoding="utf-8") as f:
             json.dump(asset_map, f, indent=2, ensure_ascii=False)
-        print(colours.CYAN, f"Initial asset mapping saved to: {output_file}")
+        print(Colours.CYAN, f"Initial asset mapping saved to: {output_file}")
     except Exception as ex:
-        print(colours.CYAN, f"ERROR saving initial asset map: {ex}")
+        print(Colours.CYAN, f"ERROR saving initial asset map: {ex}")
         if debug_sleep:
             time.sleep(2)
     if debug_sleep:
         time.sleep(1)
 
     # Step 4: Create Symbolic Links
-    print(colours.CYAN, f"--- Step 4: Creating Symbolic Links in: {root_drive} ---")
+    print(Colours.CYAN, f"--- Step 4: Creating Symbolic Links in: {root_drive} ---")
     if debug_sleep:
         time.sleep(1)
     create_symbolic_links(asset_map, root_drive)
-    print(colours.CYAN, "--- Step 4: Symbolic links creation process completed. ---")
+    print(Colours.CYAN, "--- Step 4: Symbolic links creation process completed. ---")
     if debug_sleep:
         time.sleep(0.5)
 
     # Save updated asset map
-    print(colours.CYAN, f"--- Saving updated asset map with symlink paths to: {output_file} ---")
+    print(Colours.CYAN, f"--- Saving updated asset map with symlink paths to: {output_file} ---")
     try:
         with open(output_file, "w", encoding="utf-8") as f:
             json.dump(asset_map, f, indent=2, ensure_ascii=False)
-        print(colours.CYAN, f"Successfully saved updated asset mapping to: {output_file}")
+        print(Colours.CYAN, f"Successfully saved updated asset mapping to: {output_file}")
     except Exception as ex:
-        print(colours.CYAN, f"ERROR saving updated asset map: {ex}")
+        print(Colours.CYAN, f"ERROR saving updated asset map: {ex}")
         if debug_sleep:
             time.sleep(2)
     if debug_sleep:
@@ -302,8 +302,8 @@ if __name__ == "__main__":
     try:
         run(args)
     except Exception as e:
-        print(colours.RED, f"An unexpected ERROR occurred: {type(e).__name__} - {e}")
-        print(colours.RED, traceback.format_exc())
+        print(Colours.RED, f"An unexpected ERROR occurred: {type(e).__name__} - {e}")
+        print(Colours.RED, traceback.format_exc())
         exit(1)
 
-    print(colours.CYAN, "Script finished.")
+    print(Colours.CYAN, "Script finished.")

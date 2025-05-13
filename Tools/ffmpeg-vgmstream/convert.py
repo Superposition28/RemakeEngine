@@ -8,7 +8,7 @@ from pathlib import Path
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'Utils')))
-from printer import print, colours, print_error, print_verbose, print_debug, printc
+from printer import print, Colours, print_error, print_verbose, print_debug, printc
 
 
 def parse_args() -> argparse.Namespace:
@@ -60,10 +60,10 @@ def convert_with_ffmpeg(args):
 
     files = list(source_dir.rglob(f"*{args.input_ext}"))
     if not files:
-        print(colours.YELLOW, f"No '{args.input_ext}' files found in {source_dir}.")
+        print(Colours.YELLOW, f"No '{args.input_ext}' files found in {source_dir}.")
         return
 
-    print(colours.CYAN, f"Found {len(files)} '{args.input_ext}' files.")
+    print(Colours.CYAN, f"Found {len(files)} '{args.input_ext}' files.")
     errors = 0
 
     for src in files:
@@ -73,10 +73,10 @@ def convert_with_ffmpeg(args):
         dest_file.parent.mkdir(parents=True, exist_ok=True)
 
         if dest_file.exists() and not args.overwrite:
-            print(colours.YELLOW, f"Skipping existing: {dest_file}")
+            print(Colours.YELLOW, f"Skipping existing: {dest_file}")
             continue
 
-        print(colours.CYAN, f"Converting {src.name} -> {dest_file.name}")
+        print(Colours.CYAN, f"Converting {src.name} -> {dest_file.name}")
         cmd = [
             ffmpeg_executable,
             *( ["-y"] if args.overwrite else [] ),
@@ -90,7 +90,7 @@ def convert_with_ffmpeg(args):
         print_debug(f"Command: {' '.join(cmd)}")
         subprocess.run(cmd)
 
-    print(colours.GREEN, "FFmpeg conversion finished.")
+    print(Colours.GREEN, "FFmpeg conversion finished.")
 
 # -------------------- vgmstream logic -------------------- #
 def convert_with_vgmstream(args):
@@ -110,10 +110,10 @@ def convert_with_vgmstream(args):
 
     files = list(source_dir.rglob(f"*{args.input_ext}"))
     if not files:
-        print(colours.CYAN, f"No {args.input_ext} files found in: {source_dir}")
+        print(Colours.CYAN, f"No {args.input_ext} files found in: {source_dir}")
         return
 
-    print(colours.CYAN, f"Found {len(files)} {args.input_ext} files.")
+    print(Colours.CYAN, f"Found {len(files)} {args.input_ext} files.")
     skip_count = 0
     success_count = 0
     error_count = 0
@@ -127,13 +127,13 @@ def convert_with_vgmstream(args):
             skip_count += 1
             continue
 
-        print(colours.CYAN, f"Converting {rel} -> {dest_file.relative_to(target_dir)}")
+        print(Colours.CYAN, f"Converting {rel} -> {dest_file.relative_to(target_dir)}")
         cmd = [str(vgmstream_cli), "-o", str(dest_file), str(src)]
         try:
             subprocess.run(cmd, check=True, text=True, capture_output=False)
             success_count += 1
         except subprocess.CalledProcessError as e:
-            print(colours.CYAN, f"Error converting {rel}: {e.stderr}", file=sys.stderr)
+            print(Colours.CYAN, f"Error converting {rel}: {e.stderr}", file=sys.stderr)
             if dest_file.exists():
                 try:
                     dest_file.unlink()
@@ -141,8 +141,8 @@ def convert_with_vgmstream(args):
                     pass
             error_count += 1
 
-    print(colours.CYAN, "vgmstream conversion finished.")
-    print(colours.CYAN, f"Success: {success_count}, Skipped: {skip_count}, Errors: {error_count}")
+    print(Colours.CYAN, "vgmstream conversion finished.")
+    print(Colours.CYAN, f"Success: {success_count}, Skipped: {skip_count}, Errors: {error_count}")
 
 # -------------------- Main Entry Point -------------------- #
 def main():
@@ -154,14 +154,14 @@ def main():
     if args.verbose or args.debug:
         print_verbose.enable()
 
-    print(colours.CYAN, f"--- Starting {args.mode.upper()} Conversion ---")
+    print(Colours.CYAN, f"--- Starting {args.mode.upper()} Conversion ---")
 
     if args.mode == "ffmpeg":
         convert_with_ffmpeg(args)
     elif args.mode == "vgmstream":
         convert_with_vgmstream(args)
 
-    print(colours.CYAN, "--- Conversion Completed ---")
+    print(Colours.CYAN, "--- Conversion Completed ---")
 
 """
 

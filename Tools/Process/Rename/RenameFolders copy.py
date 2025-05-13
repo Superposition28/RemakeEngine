@@ -4,7 +4,7 @@ import json
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'Utils')))
-from printer import print, colours, print_error, print_verbose, print_debug, printc
+from printer import print, Colours, print_error, print_verbose, print_debug, printc
 
 def main(project_dir, module_dir) -> None:
 
@@ -15,7 +15,7 @@ def main(project_dir, module_dir) -> None:
     # Directory where the files are located
     strdirectory = config['Extract']['Directories']['StrDirectory']
 
-    print(colours.YELLOW, f"Processing directory: {strdirectory}")
+    print(Colours.YELLOW, f"Processing directory: {strdirectory}")
 
     # Mapping of old names to new names
     rename_map = {
@@ -59,19 +59,19 @@ def main(project_dir, module_dir) -> None:
             if item in rename_map:
                 new_name = rename_map[item]
                 new_path = os.path.join(strdirectory, new_name)
-                print(colours.GRAY, f"Old path: {item_path}")
-                print(colours.GRAY, f"New path: {new_path}")
+                print(Colours.GRAY, f"Old path: {item_path}")
+                print(Colours.GRAY, f"New path: {new_path}")
 
                 # Perform the renaming
                 os.rename(item_path, new_path)
-                print(colours.GREEN, f"Renamed '{item}' to '{new_name}'")
+                print(Colours.GREEN, f"Renamed '{item}' to '{new_name}'")
                 renamed_items += 1
             else:
-                print(colours.CYAN, f"Skipped '{item}' - no matching key in rename map")
+                print(Colours.CYAN, f"Skipped '{item}' - no matching key in rename map")
                 skipped_items += 1
 
     # Log summary
-    print(colours.GREEN, f"Processing complete. Total items: {total_items}, Renamed: {renamed_items}, Skipped: {skipped_items}")
+    print(Colours.GREEN, f"Processing complete. Total items: {total_items}, Renamed: {renamed_items}, Skipped: {skipped_items}")
 
     # Output all variables for debugging
     #print("\n--- Debugging Outputs ---")

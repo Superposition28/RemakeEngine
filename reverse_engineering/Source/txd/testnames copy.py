@@ -20,15 +20,15 @@ def extract_sequences_from_file(txd_filepath, unique_sequences_set):
     Returns:
         int: The number of times the signature was found in this file.
     """
-    print(colours.CYAN, f"Processing TXD file: {txd_filepath}")
+    print(Colours.CYAN, f"Processing TXD file: {txd_filepath}")
     try:
         with open(txd_filepath, "rb") as f:
             data = f.read()
     except FileNotFoundError:
-        print(colours.RED, f"Error: File not found: {txd_filepath}")
+        print(Colours.RED, f"Error: File not found: {txd_filepath}")
         return 0
     except Exception as e:
-        print(colours.RED, f"Error reading file {txd_filepath}: {e}")
+        print(Colours.RED, f"Error reading file {txd_filepath}: {e}")
         return 0
 
     texture_name_signature = b'\x16\x00\x00\x00'
@@ -49,17 +49,17 @@ def extract_sequences_from_file(txd_filepath, unique_sequences_set):
         if sequence_start_offset + bytes_to_extract <= len(data):
             four_byte_sequence = data[sequence_start_offset : sequence_start_offset + bytes_to_extract]
             unique_sequences_set.add(four_byte_sequence)
-            # Optional: print(colours.GREEN, f"  Found signature at 0x{found_idx:X}, next 4 bytes: {four_byte_sequence.hex()}")
+            # Optional: print(Colours.GREEN, f"  Found signature at 0x{found_idx:X}, next 4 bytes: {four_byte_sequence.hex()}")
         else:
-            print(colours.YELLOW, f"  Found signature at 0x{found_idx:X}, but not enough data for 4 subsequent bytes.")
+            print(Colours.YELLOW, f"  Found signature at 0x{found_idx:X}, but not enough data for 4 subsequent bytes.")
 
         current_pos = found_idx + signature_len # Start search for next signature after the current one's data
                                                 # Or use `found_idx + 1` if signatures can overlap
 
     if sequences_found_in_file > 0:
-        print(colours.GREEN, f"  Found {sequences_found_in_file} signature(s) in '{os.path.basename(txd_filepath)}'.")
+        print(Colours.GREEN, f"  Found {sequences_found_in_file} signature(s) in '{os.path.basename(txd_filepath)}'.")
     else:
-        print(colours.BLUE, f"  No '{texture_name_signature.hex()}' signatures found in '{os.path.basename(txd_filepath)}'.")
+        print(Colours.BLUE, f"  No '{texture_name_signature.hex()}' signatures found in '{os.path.basename(txd_filepath)}'.")
 
     return sequences_found_in_file
 
@@ -84,7 +84,7 @@ def main():
     master_unique_sequences = set()
 
     if not os.path.exists(input_path_abs):
-        print(colours.RED, f"Error: Input path '{input_path_abs}' does not exist.")
+        print(Colours.RED, f"Error: Input path '{input_path_abs}' does not exist.")
         sys.exit(1)
 
     txd_files_to_process = []
@@ -92,52 +92,52 @@ def main():
         if input_path_abs.lower().endswith(".txd"):
             txd_files_to_process.append(input_path_abs)
         else:
-            print(colours.RED, f"Error: Input file '{input_path_abs}' is not a .txd file.")
+            print(Colours.RED, f"Error: Input file '{input_path_abs}' is not a .txd file.")
             sys.exit(1)
     elif os.path.isdir(input_path_abs):
-        print(colours.CYAN, f"Scanning directory: {input_path_abs}")
+        print(Colours.CYAN, f"Scanning directory: {input_path_abs}")
         for root, _, files in os.walk(input_path_abs):
             for file in files:
                 if file.lower().endswith(".txd"):
                     txd_files_to_process.append(os.path.join(root, file))
         if not txd_files_to_process:
-            print(colours.YELLOW, f"No .txd files found in directory '{input_path_abs}'.")
+            print(Colours.YELLOW, f"No .txd files found in directory '{input_path_abs}'.")
             return
     else:
-        print(colours.RED, f"Error: Input path '{input_path_abs}' is not a valid file or directory.")
+        print(Colours.RED, f"Error: Input path '{input_path_abs}' is not a valid file or directory.")
         sys.exit(1)
 
     if not txd_files_to_process:
-        print(colours.YELLOW, "No .txd files to process.")
+        print(Colours.YELLOW, "No .txd files to process.")
         return
 
-    print(colours.CYAN, f"Found {len(txd_files_to_process)} .txd file(s) to process.")
+    print(Colours.CYAN, f"Found {len(txd_files_to_process)} .txd file(s) to process.")
 
     for txd_file_path in txd_files_to_process:
-        print(colours.CYAN, f"\n--- Processing file: {os.path.basename(txd_file_path)} ---")
+        print(Colours.CYAN, f"\n--- Processing file: {os.path.basename(txd_file_path)} ---")
         signatures_in_current_file = extract_sequences_from_file(txd_file_path, master_unique_sequences)
 
         if signatures_in_current_file > 0 : # or some other condition to count a file as "processed"
             overall_signatures_found += signatures_in_current_file
         files_processed_count += 1
 
-    print(colours.CYAN, "\n--- Summary ---")
-    print(colours.CYAN, f"Attempted to process {len(txd_files_to_process)} .txd file(s).")
-    print(colours.CYAN, f"Files fully scanned: {files_processed_count}.")
-    print(colours.CYAN, f"Total instances of the signature found across all files: {overall_signatures_found}.")
+    print(Colours.CYAN, "\n--- Summary ---")
+    print(Colours.CYAN, f"Attempted to process {len(txd_files_to_process)} .txd file(s).")
+    print(Colours.CYAN, f"Files fully scanned: {files_processed_count}.")
+    print(Colours.CYAN, f"Total instances of the signature found across all files: {overall_signatures_found}.")
 
     if master_unique_sequences:
-        print(colours.GREEN, f"Found {len(master_unique_sequences)} unique 4-byte sequences following the signature.")
+        print(Colours.GREEN, f"Found {len(master_unique_sequences)} unique 4-byte sequences following the signature.")
         try:
             with open(log_file_path, "w") as lf:
                 lf.write(f"# Unique {len(master_unique_sequences)} four-byte sequences found after signature {b'\\x2D\\x00\\x02\\x1C\\x00\\x00\\x00\\x0A'.hex()}:\n")
                 for seq in sorted(list(master_unique_sequences)): # Sort for consistent output
                     lf.write(f"{seq.hex()}\n")
-            print(colours.GREEN, f"Successfully wrote unique sequences to '{log_file_path}'.")
+            print(Colours.GREEN, f"Successfully wrote unique sequences to '{log_file_path}'.")
         except IOError as e:
-            print(colours.RED, f"Error writing to log file '{log_file_path}': {e}")
+            print(Colours.RED, f"Error writing to log file '{log_file_path}': {e}")
     else:
-        print(colours.YELLOW, "No unique 4-byte sequences were found after the signature in any file.")
+        print(Colours.YELLOW, "No unique 4-byte sequences were found after the signature in any file.")
 
 if __name__ == '__main__':
     main()
