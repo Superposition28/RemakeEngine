@@ -44,15 +44,15 @@ def extract_byte_sequences(txd_filepath,
     Scans the entire TXD file for START_END_DATA_SEGMENT. If found, extracts subsequent
     byte sequences (BYTES_A to J with specified lengths) and adds them to their respective unique sets.
     """
-    print(colours.CYAN, f"Processing TXD file: {txd_filepath}")
+    print(Colours.CYAN, f"Processing TXD file: {txd_filepath}")
     try:
         with open(txd_filepath, "rb") as f:
             data = f.read()
     except FileNotFoundError:
-        print(colours.RED, f"Error: File not found: {txd_filepath}")
+        print(Colours.RED, f"Error: File not found: {txd_filepath}")
         return 0
     except Exception as e:
-        print(colours.RED, f"Error reading file {txd_filepath}: {e}")
+        print(Colours.RED, f"Error reading file {txd_filepath}: {e}")
         return 0
 
     structures_found_in_file = 0
@@ -82,9 +82,9 @@ def extract_byte_sequences(txd_filepath,
         current_pos = found_idx + 1
 
     if structures_found_in_file > 0:
-        print(colours.GREEN, f"  Found and processed {structures_found_in_file} full {TOTAL_STRUCTURE_LEN}-byte structure(s) in '{os.path.basename(txd_filepath)}'.")
+        print(Colours.GREEN, f"  Found and processed {structures_found_in_file} full {TOTAL_STRUCTURE_LEN}-byte structure(s) in '{os.path.basename(txd_filepath)}'.")
     else:
-        print(colours.BLUE, f"  No full structures starting with '{START_END_DATA_SEGMENT[:8].hex()}...' found in '{os.path.basename(txd_filepath)}'.")
+        print(Colours.BLUE, f"  No full structures starting with '{START_END_DATA_SEGMENT[:8].hex()}...' found in '{os.path.basename(txd_filepath)}'.")
 
     return structures_found_in_file
 
@@ -136,7 +136,7 @@ def main():
     }
 
     if not os.path.exists(input_path_abs):
-        print(colours.RED, f"Error: Input path '{input_path_abs}' does not exist.")
+        print(Colours.RED, f"Error: Input path '{input_path_abs}' does not exist.")
         sys.exit(1)
 
     txd_files_to_process = []
@@ -144,30 +144,30 @@ def main():
         if input_path_abs.lower().endswith(".txd"):
             txd_files_to_process.append(input_path_abs)
         else:
-            print(colours.RED, f"Error: Input file '{input_path_abs}' is not a .txd file.")
+            print(Colours.RED, f"Error: Input file '{input_path_abs}' is not a .txd file.")
             sys.exit(1)
     elif os.path.isdir(input_path_abs):
-        print(colours.CYAN, f"Scanning directory: {input_path_abs}")
+        print(Colours.CYAN, f"Scanning directory: {input_path_abs}")
         for root, _, files in os.walk(input_path_abs):
             for file_name in files:
                 if file_name.lower().endswith(".txd"):
                     txd_files_to_process.append(os.path.join(root, file_name))
         if not txd_files_to_process:
-            print(colours.YELLOW, f"No .txd files found in directory '{input_path_abs}'.")
+            print(Colours.YELLOW, f"No .txd files found in directory '{input_path_abs}'.")
             return
     else: 
-        print(colours.RED, f"Error: Input path '{input_path_abs}' is not a valid file or directory.")
+        print(Colours.RED, f"Error: Input path '{input_path_abs}' is not a valid file or directory.")
         sys.exit(1)
 
     if not txd_files_to_process:
-        print(colours.YELLOW, "No .txd files to process.")
+        print(Colours.YELLOW, "No .txd files to process.")
         return
 
-    print(colours.CYAN, f"Found {len(txd_files_to_process)} .txd file(s) to process.")
-    print(colours.CYAN, f"Searching for {TOTAL_STRUCTURE_LEN}-byte structures starting with signature: {START_END_DATA_SEGMENT.hex()}")
+    print(Colours.CYAN, f"Found {len(txd_files_to_process)} .txd file(s) to process.")
+    print(Colours.CYAN, f"Searching for {TOTAL_STRUCTURE_LEN}-byte structures starting with signature: {START_END_DATA_SEGMENT.hex()}")
 
     for txd_file_path in txd_files_to_process:
-        print(colours.CYAN, f"\n--- Analyzing file: {os.path.basename(txd_file_path)} ---")
+        print(Colours.CYAN, f"\n--- Analyzing file: {os.path.basename(txd_file_path)} ---")
         structures_in_current_file = extract_byte_sequences(
             txd_file_path,
             master_unique_sets["BYTES_A"], master_unique_sets["BYTES_B"], master_unique_sets["BYTES_C"],
@@ -180,10 +180,10 @@ def main():
             overall_structures_found += structures_in_current_file
         files_processed_count += 1
 
-    print(colours.CYAN, "\n--- Summary ---")
-    print(colours.CYAN, f"Attempted to process {len(txd_files_to_process)} .txd file(s).")
-    print(colours.CYAN, f"Files scanned: {files_processed_count}.")
-    print(colours.CYAN, f"Total instances of the full {TOTAL_STRUCTURE_LEN}-byte structure found: {overall_structures_found}.")
+    print(Colours.CYAN, "\n--- Summary ---")
+    print(Colours.CYAN, f"Attempted to process {len(txd_files_to_process)} .txd file(s).")
+    print(Colours.CYAN, f"Files scanned: {files_processed_count}.")
+    print(Colours.CYAN, f"Total instances of the full {TOTAL_STRUCTURE_LEN}-byte structure found: {overall_structures_found}.")
     
     lengths_map = {
         "BYTES_A": LEN_BYTES_A, "BYTES_B": LEN_BYTES_B, "BYTES_C": LEN_BYTES_C,
@@ -213,7 +213,7 @@ def main():
 
         if byte_set:
             all_sets_empty = False
-            print(colours.GREEN, f"Found {len(byte_set)} unique {setName} sequences ({setDescription}).")
+            print(Colours.GREEN, f"Found {len(byte_set)} unique {setName} sequences ({setDescription}).")
             try:
                 os.makedirs(os.path.dirname(log_path), exist_ok=True) # Ensure directory exists
                 with open(log_path, "w") as lf:
@@ -221,14 +221,14 @@ def main():
                     lf.write(f"# Preceded by START_END_DATA_SEGMENT: {START_END_DATA_SEGMENT.hex()}" + (f" and prior byte sets." if setName != "BYTES_A" else ".") + "\n")
                     for seq in sorted(list(byte_set)): 
                         lf.write(f"{seq.hex()}\n")
-                print(colours.GREEN, f"Successfully wrote unique {setName} sequences to '{log_path}'.")
+                print(Colours.GREEN, f"Successfully wrote unique {setName} sequences to '{log_path}'.")
             except IOError as e:
-                print(colours.RED, f"Error writing to {setName} log file '{log_path}': {e}")
+                print(Colours.RED, f"Error writing to {setName} log file '{log_path}': {e}")
         else:
-            print(colours.YELLOW, f"No unique {setName} sequences were found.")
+            print(Colours.YELLOW, f"No unique {setName} sequences were found.")
     
     if all_sets_empty and overall_structures_found == 0 :
-        print(colours.YELLOW, "No instances of the target structure were found in any file.")
+        print(Colours.YELLOW, "No instances of the target structure were found in any file.")
 
 if __name__ == '__main__':
     # This is a placeholder for the printer module if it's not found.

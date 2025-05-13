@@ -8,7 +8,7 @@ import argparse
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', '..', '..', 'Utils')))
-from printer import print, colours, print_error, print_verbose, print_debug, printc
+from printer import print, Colours, print_error, print_verbose, print_debug, printc
 
 
 global python_script_path, python_extension_file, asset_mapping_file, blender_exe_path
@@ -32,17 +32,17 @@ def blender_processing():
     global python_script_path, python_extension_file, asset_mapping_file, blender_exe_path
     global verbose, debug_sleep, export, current_dir
     loop_count = 0
-    print(colours.DARKGRAY, "Starting Blender processing using asset mapping file...")
+    print(Colours.DARKGRAY, "Starting Blender processing using asset mapping file...")
     try:
         with open(asset_mapping_file, "r", encoding="utf-8") as f:
             asset_map = json.load(f)
         if isinstance(asset_map, dict):
             for key, asset_info in asset_map.items():
                 loop_count += 1
-                print(colours.RESET, "")
-                print(colours.YELLOW, f"Loop Count: {loop_count}")
-                print(colours.RESET, "")
-                #print(colours.CYAN, f"assetInfo: {asset_info}")
+                print(Colours.RESET, "")
+                print(Colours.YELLOW, f"Loop Count: {loop_count}")
+                print(Colours.RESET, "")
+                #print(Colours.CYAN, f"assetInfo: {asset_info}")
                 if isinstance(asset_info, dict):
                     required_keys = ["preinstanced_symlink", "blend_symlink", "filename", "glb_symlink"]
                     if all(k in asset_info for k in required_keys):
@@ -63,7 +63,7 @@ def blender_processing():
                                         verbose_str = "true" if verbose else "false"
                                         debug_sleep_str = "true" if debug_sleep else "false"
                                         export_str = ", ".join(export) if export else ""
-                                        print(colours.GRAY, "# Start Blender Output")
+                                        print(Colours.GRAY, "# Start Blender Output")
                                         args = [
                                             blender_exe_path,
                                             "-b", blend_symlink_file,
@@ -79,7 +79,7 @@ def blender_processing():
                                             current_dir
                                         ]
                                         blender_command = ' '.join(f'"{a}"' if ' ' in a else a for a in args)
-                                        print(colours.MAGENTA, f"Blender command --> {blender_command}")
+                                        print(Colours.MAGENTA, f"Blender command --> {blender_command}")
 
                                         proc = subprocess.Popen(
                                             args,
@@ -88,52 +88,52 @@ def blender_processing():
                                             text=True
                                         )
                                         output, error = proc.communicate()
-                                        print(colours.RESET, output)
-                                        print(colours.RED, error)
-                                        print(colours.GRAY, "# End Blender Output")
+                                        print(Colours.RESET, output)
+                                        print(Colours.RED, error)
+                                        print(Colours.GRAY, "# End Blender Output")
                                         if export == True:
                                             if os.path.isfile(glb_symlink_file):
                                                 with open(glb_symlink_file, "r", encoding="utf-8", errors="ignore") as f:
                                                     glb_content = f.read()
                                                 if "Error:" in glb_content or "Exception:" in glb_content:
-                                                    print(colours.RED, "Blender encountered an error:")
+                                                    print(Colours.RED, "Blender encountered an error:")
                                                     for line in glb_content.splitlines():
                                                         if "Error:" in line or "Exception:" in line:
-                                                            print(colours.RED, f"  {line}")
+                                                            print(Colours.RED, f"  {line}")
                                                     blank_blender_file = "blank.blend"
                                                     if os.path.isfile(blank_blender_file):
-                                                        print(colours.GREEN, f"Blank Blender file exists: {blank_blender_file}")
+                                                        print(Colours.GREEN, f"Blank Blender file exists: {blank_blender_file}")
                                                     else:
-                                                        print(colours.RED, f"Blank Blender file does not exist: {blank_blender_file}")
+                                                        print(Colours.RED, f"Blank Blender file does not exist: {blank_blender_file}")
                                                 else:
-                                                    print(colours.GREEN, "Blender executed successfully.")
-                                                print(colours.GREEN, f"Output file created successfully: {glb_symlink_file}")
+                                                    print(Colours.GREEN, "Blender executed successfully.")
+                                                print(Colours.GREEN, f"Output file created successfully: {glb_symlink_file}")
                                             else:
-                                                print(colours.RED, f"Failed to create output file: {glb_symlink_file}")
+                                                print(Colours.RED, f"Failed to create output file: {glb_symlink_file}")
                                     else:
-                                        print(colours.RED, f"Error: No corresponding .preinstanced symlink for: {blend_symlink_path}")
+                                        print(Colours.RED, f"Error: No corresponding .preinstanced symlink for: {blend_symlink_path}")
                                         sys.exit(1)
                                 else:
-                                    print(colours.YELLOW, f"Skipping: .glb and .fbx exists for: {blend_symlink_path}")
-                                    print(colours.GREEN, f"glb file already exists: {glb_symlink_file}")
-                                    print(colours.GREEN, f"fbx file already exists: {fbx_symlink_file}")
+                                    print(Colours.YELLOW, f"Skipping: .glb and .fbx exists for: {blend_symlink_path}")
+                                    print(Colours.GREEN, f"glb file already exists: {glb_symlink_file}")
+                                    print(Colours.GREEN, f"fbx file already exists: {fbx_symlink_file}")
                             except Exception as ex:
-                                print(colours.RED, f"Error message: {ex}")
+                                print(Colours.RED, f"Error message: {ex}")
                                 sys.exit(1)
                         else:
-                            print(colours.RED, f"Error: 404 Blend symlink not found: {blend_symlink_file}")
+                            print(Colours.RED, f"Error: 404 Blend symlink not found: {blend_symlink_file}")
                             sys.exit(1)
                     else:
-                        print(colours.YELLOW, f"Warning: Missing required properties in asset mapping entry for key: {key}")
+                        print(Colours.YELLOW, f"Warning: Missing required properties in asset mapping entry for key: {key}")
                 else:
-                    print(colours.YELLOW, f"Warning: Asset info for key: {key} is not a JSON object.")
+                    print(Colours.YELLOW, f"Warning: Asset info for key: {key} is not a JSON object.")
         else:
-            print(colours.RED, "Error: Asset mapping file does not contain a JSON object at the root.")
+            print(Colours.RED, "Error: Asset mapping file does not contain a JSON object at the root.")
     except FileNotFoundError:
-        print(colours.RED, f"Error: Asset mapping file not found: {asset_mapping_file}")
+        print(Colours.RED, f"Error: Asset mapping file not found: {asset_mapping_file}")
         sys.exit(1)
     except json.JSONDecodeError as ex:
-        print(colours.RED, f"Error: Failed to read or parse the asset mapping JSON file: {asset_mapping_file}")
+        print(Colours.RED, f"Error: Failed to read or parse the asset mapping JSON file: {asset_mapping_file}")
         print(ex)
         sys.exit(1)
 
@@ -141,17 +141,17 @@ def main(verbose_param: bool, debug_sleep_param: bool, export_param: set) -> Non
     global verbose, debug_sleep, export
 
     verbose = verbose_param
-    print(colours.BLUE, f"Verbose mode: {verbose}")
+    print(Colours.BLUE, f"Verbose mode: {verbose}")
     debug_sleep = debug_sleep_param
-    print(colours.BLUE, f"Debug sleep: {debug_sleep}")
+    print(Colours.BLUE, f"Debug sleep: {debug_sleep}")
     export = export_param
-    print(colours.BLUE, f"Export formats: {export}")
+    print(Colours.BLUE, f"Export formats: {export}")
 
-    print(colours.BLUE, "Initializing...")
+    print(Colours.BLUE, "Initializing...")
 
-    print(colours.DARKGRAY, "Blender Processing using asset_mapping.json...")
+    print(Colours.DARKGRAY, "Blender Processing using asset_mapping.json...")
     blender_processing()
-    print(colours.GREEN, "Processing complete.")
+    print(Colours.GREEN, "Processing complete.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process some settings for Blender asset export.")
@@ -161,10 +161,10 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     # expected Namespace(verbose=False, debug_sleep=False, export=['fbx glb'])
-    #print(colours.BLUE, f"Arguments: {args}")
+    #print(Colours.BLUE, f"Arguments: {args}")
 
     export = args.export
-    #print(colours.BLUE, f"Export: {export}")
+    #print(Colours.BLUE, f"Export: {export}")
 
     # Handle the case where the export formats are provided as a single string
     if export is not None:
@@ -172,13 +172,13 @@ if __name__ == "__main__":
         if len(export) == 1 and ' ' in export[0]:
             # Split the string into individual formats
             export = export[0].split()
-            #print(colours.BLUE, f"Export formats after split: {export}")
+            #print(Colours.BLUE, f"Export formats after split: {export}")
 
         if len(export) == 2:
             # Unpack to two variables if there are exactly two formats
             export_fbx, export_glb = export
-            print(colours.BLUE, f"Export FBX: {export_fbx}")
-            print(colours.BLUE, f"Export GLB: {export_glb}")
+            print(Colours.BLUE, f"Export FBX: {export_fbx}")
+            print(Colours.BLUE, f"Export GLB: {export_glb}")
             # create a set from the two variables
             export_set = {export_fbx, export_glb}
         elif len(export) == 1:
@@ -188,14 +188,14 @@ if __name__ == "__main__":
                 export_fbx = export_single
             elif export_single == "glb":
                 export_glb = export_single
-            print(colours.BLUE, f"Export: {export_single}")
+            print(Colours.BLUE, f"Export: {export_single}")
             export_set = {export_single}
         else:
             # Handle the case where the list has an unexpected number of formats
-            print(colours.RED, "Error: Expected one or two export formats.")
+            print(Colours.RED, "Error: Expected one or two export formats.")
             exit(1)
     else:
-        print(colours.RED, "Error: No export formats provided.")
+        print(Colours.RED, "Error: No export formats provided.")
         exit(1)
 
     main(verbose, debug_sleep, export_set)

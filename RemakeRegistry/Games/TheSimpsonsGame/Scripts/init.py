@@ -8,7 +8,7 @@ import shutil # Import shutil for file operations
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', 'Utils')))
-from printer import print, colours, print_error, print_verbose, print_debug, printc
+from printer import print, Colours, print_error, print_verbose, print_debug, printc
 
 
 # --- Constants for Directory Lists ---
@@ -44,19 +44,19 @@ ERROR_FILE_OPERATION = "ERROR_FILE_OPERATION" # New status for copy/move errors
 def check_dirs_exist(base_path, required_dirs, list_name=""):
     # (Keep the implementation of check_dirs_exist as it was)
     if not os.path.isdir(base_path):
-        print(colours.RED, f"  Error: The base path '{base_path}' provided for checking subdirs is not a valid directory.")
+        print(Colours.RED, f"  Error: The base path '{base_path}' provided for checking subdirs is not a valid directory.")
         return False
     missing = []
-    print(colours.CYAN, f"  Checking against list '{list_name}':") if list_name else print(colours.CYAN, "  Checking against list:")
+    print(Colours.CYAN, f"  Checking against list '{list_name}':") if list_name else print(Colours.CYAN, "  Checking against list:")
     for dir_name in required_dirs:
         full_path = os.path.join(base_path, dir_name)
         if not os.path.isdir(full_path):
             missing.append(dir_name)
     if not missing:
-        print(colours.DARK_GREEN, f"    Success: All {len(required_dirs)} directories from this list found in '{base_path}'.")
+        print(Colours.DARK_GREEN, f"    Success: All {len(required_dirs)} directories from this list found in '{base_path}'.")
         return True
     else:
-        # print(colours.YELLOW, f"    Info: Missing {len(missing)} subdirectories in '{base_path}': {', '.join(missing)}")
+        # print(Colours.YELLOW, f"    Info: Missing {len(missing)} subdirectories in '{base_path}': {', '.join(missing)}")
         return False
 
 # --- Modified check_or_create_config Function ---
@@ -90,26 +90,26 @@ def check_or_create_config(filename):
 
     # --- Check 1: File Existence ---
     if not os.path.exists(config_file_path):
-        print(colours.YELLOW, f"File '{config_file_path}' not found. Creating it...")
+        print(Colours.YELLOW, f"File '{config_file_path}' not found. Creating it...")
         try:
             with open(config_file_path, 'w', encoding='utf-8') as f:
                 json.dump(default_data, f, indent=4, ensure_ascii=False)
-            print(colours.GREEN, f"File '{config_file_path}' created successfully.")
-            #print(colours.RED, "  Action Required: The 'SourcePath' is empty. Run again to provide it.")
+            print(Colours.GREEN, f"File '{config_file_path}' created successfully.")
+            #print(Colours.RED, "  Action Required: The 'SourcePath' is empty. Run again to provide it.")
             return CREATED, None
         except Exception as e:
-            print(colours.RED, f"Error creating file '{config_file_path}': {e}")
+            print(Colours.RED, f"Error creating file '{config_file_path}': {e}")
             return ERROR_CREATE, None
 
     # --- File Exists: Load and Validate ---
     else:
-        print(colours.BLUE, f"File '{config_file_path}' exists. Verifying content...")
+        print(Colours.BLUE, f"File '{config_file_path}' exists. Verifying content...")
         config_data = None
         try:
             with open(config_file_path, 'r', encoding='utf-8') as f:
                 config_data = json.load(f)
         except Exception as e:
-            print(colours.RED, f"Error reading or parsing '{config_file_path}': {e}")
+            print(Colours.RED, f"Error reading or parsing '{config_file_path}': {e}")
             return ERROR_READ, None
 
         # --- Check 2: SourcePath key existence and validity ---
@@ -125,75 +125,75 @@ def check_or_create_config(filename):
                     path_to_validate = effective_source_path # Start with the effective path
 
                     if os.path.isdir(potential_usrdir_path):
-                        print(colours.BLUE, f"  Info: Found 'USRDIR' subdirectory within effective path.")
-                        print(colours.BLUE, f"  Info: Will check for required subdirectories inside: '{potential_usrdir_path}'")
+                        print(Colours.BLUE, f"  Info: Found 'USRDIR' subdirectory within effective path.")
+                        print(Colours.BLUE, f"  Info: Will check for required subdirectories inside: '{potential_usrdir_path}'")
                         path_to_validate = potential_usrdir_path # Update path for subdir check
 
-                        print(colours.BLUE, f"  Info: Using '{path_to_validate}' for subdirectory validation due to found USRDIR.")
+                        print(Colours.BLUE, f"  Info: Using '{path_to_validate}' for subdirectory validation due to found USRDIR.")
 
-                    print(colours.CYAN, f"  Found SourcePath in config: '{path_from_config}'")
-                    print(colours.CYAN, f"  Validating subdirectories in '{path_to_validate}'...")
+                    print(Colours.CYAN, f"  Found SourcePath in config: '{path_from_config}'")
+                    print(Colours.CYAN, f"  Validating subdirectories in '{path_to_validate}'...")
                     found_original = check_dirs_exist(path_to_validate, USRDIR_DIRS_ORIGINAL, "USRDIR_DIRS_ORIGINAL")
 
                     found_usrdir = False
                     if not found_original:
-                        print(colours.YELLOW, f"  Info: Did not find all directories from the 'ORIGINAL' list. Checking second list ('USRDIR_DIRS')...")
+                        print(Colours.YELLOW, f"  Info: Did not find all directories from the 'ORIGINAL' list. Checking second list ('USRDIR_DIRS')...")
                         found_usrdir = check_dirs_exist(path_to_validate, USRDIR_DIRS, "USRDIR_DIRS")
 
                     # Final validation result
                     if found_usrdir or found_original:
                         source_path_valid_in_file = True
                     else:
-                        print(colours.RED, f"  Error: Validation failed. Could not find all required subdirectories from *either* list within '{path_to_validate}'.")
+                        print(Colours.RED, f"  Error: Validation failed. Could not find all required subdirectories from *either* list within '{path_to_validate}'.")
 
                 else:
-                    print(colours.YELLOW, f"  Warning: Configured SourcePath '{path_from_config}' is not currently a valid directory.")
+                    print(Colours.YELLOW, f"  Warning: Configured SourcePath '{path_from_config}' is not currently a valid directory.")
         except AttributeError:
             pass
 
         # --- Interactive Prompt if SourcePath is Invalid/Missing ---
         if not source_path_valid_in_file:
-            print(colours.YELLOW, f"Warning: 'RemakeEngine.Directories.SourcePath' in '{filename}' is missing, empty, or invalid.")
+            print(Colours.YELLOW, f"Warning: 'RemakeEngine.Directories.SourcePath' in '{filename}' is missing, empty, or invalid.")
             while True:
-                print(colours.CYAN, "Please enter the full path to the source directory:")
+                print(Colours.CYAN, "Please enter the full path to the source directory:")
                 user_input_path = input("> ").strip()
                 if not user_input_path:
-                    print(colours.YELLOW, "Path cannot be empty. Please try again.")
+                    print(Colours.YELLOW, "Path cannot be empty. Please try again.")
                     continue
                 if os.path.isdir(user_input_path):
-                    print(colours.DARK_GREEN, f"  Path '{user_input_path}' is a valid directory.")
+                    print(Colours.DARK_GREEN, f"  Path '{user_input_path}' is a valid directory.")
                     path_from_config = user_input_path
-                    print(colours.YELLOW, f"  Attempting to update '{filename}' with user input path...")
+                    print(Colours.YELLOW, f"  Attempting to update '{filename}' with user input path...")
                     try:
                         if "RemakeEngine" not in config_data: config_data["RemakeEngine"] = {}
                         if "Directories" not in config_data["RemakeEngine"]: config_data["RemakeEngine"]["Directories"] = {}
                         config_data["RemakeEngine"]["Directories"]["MainSourcePath"] = path_from_config
                         with open(config_file_path, 'w', encoding='utf-8') as f:
                             json.dump(config_data, f, indent=4, ensure_ascii=False)
-                        print(colours.GREEN, f"  Success: Config file '{filename}' updated.")
+                        print(Colours.GREEN, f"  Success: Config file '{filename}' updated.")
                     except Exception as e:
-                        print(colours.RED, f"  Error updating config file '{filename}': {e}")
-                        print(colours.YELLOW, "  Warning: Proceeding with the provided path, but config file was not saved.")
+                        print(Colours.RED, f"  Error updating config file '{filename}': {e}")
+                        print(Colours.YELLOW, "  Warning: Proceeding with the provided path, but config file was not saved.")
                     break # Exit loop after getting valid path
                 else:
-                    print(colours.RED, f"  Error: The path '{user_input_path}' is not a valid directory. Please try again.")
+                    print(Colours.RED, f"  Error: The path '{user_input_path}' is not a valid directory. Please try again.")
             # Check if loop somehow exited without valid path (shouldn't happen)
             if not path_from_config:
-                print(colours.RED, "Could not obtain a valid SourcePath. Exiting.")
+                print(Colours.RED, "Could not obtain a valid SourcePath. Exiting.")
                 return USER_PROVIDED_PATH_INVALID, None
 
         # --- Check 3: User choice for handling the source path ---
-        print(colours.MAGENTA, "\n--- Source Path Handling ---")
-        print(colours.CYAN, f"Validated source path: '{path_from_config}'")
-        print(colours.CYAN, f"Local project data path would be: '{local_data_path}'")
+        print(Colours.MAGENTA, "\n--- Source Path Handling ---")
+        print(Colours.CYAN, f"Validated source path: '{path_from_config}'")
+        print(Colours.CYAN, f"Local project data path would be: '{local_data_path}'")
 
         effective_source_path = local_data_path
 
         if not os.path.exists(local_data_path):
-            print(colours.YELLOW, "\nChoose how to use the source files:")
-            print(colours.CYAN, "  1) " + colours.GREEN + "Copy files" + colours.YELLOW + f" from '{os.path.basename(path_from_config)}' to local '{os.path.basename(local_data_path)}' (Recommended, Safe)")
-            print(colours.CYAN, "  2) " + colours.RED + "Move files" + colours.YELLOW + f" from '{os.path.basename(path_from_config)}' to local '{os.path.basename(local_data_path)}' (Warning: Deletes original Files at Source location)")
-            print(colours.CYAN, "  3) " + colours.CYAN + "Use original path" + colours.YELLOW + f" '{os.path.basename(path_from_config)}' directly (Warning: This Tool might modify/corrupt original files)")
+            print(Colours.YELLOW, "\nChoose how to use the source files:")
+            print(Colours.CYAN, "  1) " + colours.GREEN + "Copy files" + colours.YELLOW + f" from '{os.path.basename(path_from_config)}' to local '{os.path.basename(local_data_path)}' (Recommended, Safe)")
+            print(Colours.CYAN, "  2) " + colours.RED + "Move files" + colours.YELLOW + f" from '{os.path.basename(path_from_config)}' to local '{os.path.basename(local_data_path)}' (Warning: Deletes original Files at Source location)")
+            print(Colours.CYAN, "  3) " + colours.CYAN + "Use original path" + colours.YELLOW + f" '{os.path.basename(path_from_config)}' directly (Warning: This Tool might modify/corrupt original files)")
 
             while True:
                 choice = input("Enter your choice (1, 2, or 3): ").strip()
@@ -201,25 +201,25 @@ def check_or_create_config(filename):
                 # --- Option 1: Copy with Progress ---
                 if choice == '1':
                     # --- Start: Enhanced copy logic with progress ---
-                    print(colours.GREEN, f"\nPreparing to copy files from '{path_from_config}' to '{local_data_path}'...")
+                    print(Colours.GREEN, f"\nPreparing to copy files from '{path_from_config}' to '{local_data_path}'...")
 
                     # 1. Pre-calculate total number of files for progress reporting
                     try:
                         total_files = 0
-                        print(colours.CYAN, "Calculating total number of files...")
+                        print(Colours.CYAN, "Calculating total number of files...")
                         for _, _, files in os.walk(path_from_config):
                             total_files += len(files)
-                        print(colours.CYAN, f"Found {total_files} files to copy.")
+                        print(Colours.CYAN, f"Found {total_files} files to copy.")
                         if total_files == 0:
-                            print(colours.GREEN, "Source directory is empty or contains no files. Nothing to copy.")
+                            print(Colours.GREEN, "Source directory is empty or contains no files. Nothing to copy.")
                             effective_source_path = local_data_path # Set path even if empty
                             # Ensure destination exists if source was empty but valid
                             os.makedirs(local_data_path, exist_ok=True)
                             break # Exit the loop successfully
 
                     except OSError as e:
-                        print(colours.RED, f"Error accessing source path '{path_from_config}' to count files: {e}")
-                        print(colours.RED, "Cannot proceed with file operations.")
+                        print(Colours.RED, f"Error accessing source path '{path_from_config}' to count files: {e}")
+                        print(Colours.RED, "Cannot proceed with file operations.")
                         # Consider if this should be a critical error or allow retrying
                         # return ERROR_FILE_OPERATION, None # Option: Critical error
                         continue # Option: Go back to the start of the while loop to re-select choice
@@ -243,7 +243,7 @@ def check_or_create_config(filename):
                         sys.stdout.flush() # Ensure the output is displayed immediately
 
                     # --- Perform the copy operation ---
-                    # print(colours.GREEN + f"Attempting to copy files from '{path_from_config}' to '{local_data_path}'...") # Already announced preparation
+                    # print(Colours.GREEN + f"Attempting to copy files from '{path_from_config}' to '{local_data_path}'...") # Already announced preparation
                     try:
                         # 3. Use copytree with the custom copy_function
                         shutil.copytree(path_from_config,
@@ -254,7 +254,7 @@ def check_or_create_config(filename):
                         # Ensure the final message overwrites the progress line completely
                         sys.stdout.write(LINE_CLEAR) # Clear the line
                         sys.stdout.flush()
-                        print(colours.GREEN, "Copy successful.")
+                        print(Colours.GREEN, "Copy successful.")
                         effective_source_path = local_data_path
                         break # Exit the loop on success
 
@@ -262,44 +262,44 @@ def check_or_create_config(filename):
                         # Ensure the final message overwrites the progress line completely
                         sys.stdout.write(LINE_CLEAR) # Clear the line
                         sys.stdout.flush()
-                        print(colours.RED, f"\nError during copy operation: {e}") # Add newline for clarity
-                        print(colours.RED, "Cannot proceed with file operations.")
+                        print(Colours.RED, f"\nError during copy operation: {e}") # Add newline for clarity
+                        print(Colours.RED, "Cannot proceed with file operations.")
                         return ERROR_FILE_OPERATION, None # Critical error, stop
                     # --- End: Enhanced copy logic ---
 
                 elif choice == '2':
-                    print(colours.RED, f"\nAttempting to move files from '{path_from_config}' to '{local_data_path}'...")
+                    print(Colours.RED, f"\nAttempting to move files from '{path_from_config}' to '{local_data_path}'...")
                     if os.path.exists(local_data_path):
-                        print(colours.RED, f"Error: Destination path '{local_data_path}' already exists. Cannot move.")
-                        print(colours.YELLOW, "Please remove the existing directory or choose 'Copy' (option 1) or 'Use original' (option 3).")
+                        print(Colours.RED, f"Error: Destination path '{local_data_path}' already exists. Cannot move.")
+                        print(Colours.YELLOW, "Please remove the existing directory or choose 'Copy' (option 1) or 'Use original' (option 3).")
                         # Loop again to ask for choice
                         continue
                         # Alternative: Ask user to confirm overwrite (more complex)
                         # confirmed = input(f"Warning: '{local_data_path}' exists. Overwrite? (yes/no): ").lower()
                         # if confirmed == 'yes':
-                        #     try: shutil.rmtree(local_data_path) except Exception as e: print(colours.CYAN, f"Error removing existing dir: {e}"); return ERROR_FILE_OPERATION, None
+                        #     try: shutil.rmtree(local_data_path) except Exception as e: print(Colours.CYAN, f"Error removing existing dir: {e}"); return ERROR_FILE_OPERATION, None
                         # else: continue # Go back to choice prompt
                     try:
                         shutil.move(path_from_config, local_data_path)
-                        print(colours.GREEN, "Move successful.")
+                        print(Colours.GREEN, "Move successful.")
                         effective_source_path = local_data_path
                         break
                     except (shutil.Error, OSError, Exception) as e:
-                        print(colours.RED, f"Error during move operation: {e}")
-                        print(colours.RED, "Cannot proceed with file operations.")
+                        print(Colours.RED, f"Error during move operation: {e}")
+                        print(Colours.RED, "Cannot proceed with file operations.")
                         # Note: If move fails partially, source might be corrupted.
                         return ERROR_FILE_OPERATION, None # Critical error, stop
 
                 elif choice == '3':
-                    print(colours.CYAN, f"\nUsing original path '{path_from_config}' directly.")
-                    print(colours.YELLOW, "Warning: Ensure you have a backup, as subsequent operations might modify these files.")
+                    print(Colours.CYAN, f"\nUsing original path '{path_from_config}' directly.")
+                    print(Colours.YELLOW, "Warning: Ensure you have a backup, as subsequent operations might modify these files.")
                     effective_source_path = path_from_config
                     break
 
                 else:
-                    print(colours.YELLOW, "Invalid choice. Please enter 1, 2, or 3.")
+                    print(Colours.YELLOW, "Invalid choice. Please enter 1, 2, or 3.")
 
-        print(colours.YELLOW, f"  Attempting to update '{filename}' with local Source Path...")
+        print(Colours.YELLOW, f"  Attempting to update '{filename}' with local Source Path...")
         try:
             if "RemakeEngine" not in config_data:
                 config_data["RemakeEngine"] = {}
@@ -308,13 +308,13 @@ def check_or_create_config(filename):
             config_data["RemakeEngine"]["Directories"]["SourcePath"] = effective_source_path
             with open(config_file_path, 'w', encoding='utf-8') as f:
                 json.dump(config_data, f, indent=4, ensure_ascii=False)
-            print(colours.GREEN, f"  Success: Config file '{filename}' updated.")
+            print(Colours.GREEN, f"  Success: Config file '{filename}' updated.")
         except Exception as e:
-            print(colours.RED, f"  Error updating config file '{filename}': {e}")
-            print(colours.YELLOW, "  Warning: Proceeding with the provided path, but config file was not saved.")
+            print(Colours.RED, f"  Error updating config file '{filename}': {e}")
+            print(Colours.YELLOW, "  Warning: Proceeding with the provided path, but config file was not saved.")
 
         # --- Proceed with the 'effective_source_path' ---
-        print(colours.BLUE, f"\nUsing effective source path for validation: '{effective_source_path}'")
+        print(Colours.BLUE, f"\nUsing effective source path for validation: '{effective_source_path}'")
 
         # --- Check 4: USRDIR subdirectory check & potential config update ---
         # This logic now runs on the *effective* path (original, copied, or moved)
@@ -323,32 +323,32 @@ def check_or_create_config(filename):
         config_updated_for_usrdir = False
 
         if os.path.isdir(potential_usrdir_path):
-            print(colours.BLUE, f"  Info: Found 'USRDIR' subdirectory within effective path.")
-            print(colours.BLUE, f"  Info: Will check for required subdirectories inside: '{potential_usrdir_path}'")
+            print(Colours.BLUE, f"  Info: Found 'USRDIR' subdirectory within effective path.")
+            print(Colours.BLUE, f"  Info: Will check for required subdirectories inside: '{potential_usrdir_path}'")
             path_to_validate = potential_usrdir_path # Update path for subdir check
 
-            print(colours.BLUE, f"  Info: Using '{path_to_validate}' for subdirectory validation due to found USRDIR.")
+            print(Colours.BLUE, f"  Info: Using '{path_to_validate}' for subdirectory validation due to found USRDIR.")
 
         else:
-            print(colours.BLUE, f"  Info: 'USRDIR' subdirectory not found within effective path '{effective_source_path}'.")
-            print(colours.BLUE, f"  Info: Will check for required subdirectories directly inside: '{effective_source_path}'")
+            print(Colours.BLUE, f"  Info: 'USRDIR' subdirectory not found within effective path '{effective_source_path}'.")
+            print(Colours.BLUE, f"  Info: Will check for required subdirectories directly inside: '{effective_source_path}'")
             # path_to_validate remains effective_source_path
 
         # --- Check 5: Subdirectory validation using the 'path_to_validate' ---
-        print(colours.CYAN, f"  Starting subdirectory validation using path: '{path_to_validate}'...")
+        print(Colours.CYAN, f"  Starting subdirectory validation using path: '{path_to_validate}'...")
         found_original = check_dirs_exist(path_to_validate, USRDIR_DIRS_ORIGINAL, "USRDIR_DIRS_ORIGINAL")
 
         found_usrdir = False
         if not found_original:
-            print(colours.BLUE, f"  Info: Did not find all directories from the 'ORIGINAL' list. Checking second list ('USRDIR_DIRS')...")
+            print(Colours.BLUE, f"  Info: Did not find all directories from the 'ORIGINAL' list. Checking second list ('USRDIR_DIRS')...")
             found_usrdir = check_dirs_exist(path_to_validate, USRDIR_DIRS, "USRDIR_DIRS")
 
         # Final validation result
         if found_usrdir or found_original:
             list_name = "USRDIR_DIRS" if found_usrdir else "USRDIR_DIRS_ORIGINAL"
-            print(colours.GREEN, f"\nSuccess: Validation passed. All required subdirectories from list '{list_name}' found within '{path_to_validate}'.")
+            print(Colours.GREEN, f"\nSuccess: Validation passed. All required subdirectories from list '{list_name}' found within '{path_to_validate}'.")
 
-            print(colours.YELLOW, f"  Attempting to update '{filename}' with Valid Source Path...")
+            print(Colours.YELLOW, f"  Attempting to update '{filename}' with Valid Source Path...")
             try:
                 if "RemakeEngine" not in config_data:
                     config_data["RemakeEngine"] = {}
@@ -357,22 +357,22 @@ def check_or_create_config(filename):
                 config_data["RemakeEngine"]["Directories"]["SourcePath"] = path_to_validate
                 with open(config_file_path, 'w', encoding='utf-8') as f:
                     json.dump(config_data, f, indent=4, ensure_ascii=False)
-                print(colours.GREEN, f"  Success: Config file '{filename}' updated.")
+                print(Colours.GREEN, f"  Success: Config file '{filename}' updated.")
             except Exception as e:
-                print(colours.RED, f"  Error updating config file '{filename}': {e}")
-                print(colours.YELLOW, "  Warning: Proceeding with the provided path, but config file was not saved.")
+                print(Colours.RED, f"  Error updating config file '{filename}': {e}")
+                print(Colours.YELLOW, "  Warning: Proceeding with the provided path, but config file was not saved.")
 
             return EXISTS_VALID, path_to_validate
         else:
-            print(colours.RED, f"\nError: Validation failed. Could not find all required subdirectories from *either* list within '{path_to_validate}'.")
-            print(colours.GRAY, f"  Checked within path: '{path_to_validate}'.")
+            print(Colours.RED, f"\nError: Validation failed. Could not find all required subdirectories from *either* list within '{path_to_validate}'.")
+            print(Colours.GRAY, f"  Checked within path: '{path_to_validate}'.")
             if path_to_validate != effective_source_path:
-                print(colours.GRAY, f"  (This path was checked because 'USRDIR' was found inside '{effective_source_path}')")
+                print(Colours.GRAY, f"  (This path was checked because 'USRDIR' was found inside '{effective_source_path}')")
             elif effective_source_path != path_from_config:
-                print(colours.GRAY, f"  (This path resulted from a '{'Copy' if choice == '1' else 'Move'} operation' based on original '{path_from_config}')")
+                print(Colours.GRAY, f"  (This path resulted from a '{'Copy' if choice == '1' else 'Move'} operation' based on original '{path_from_config}')")
 
-            print(colours.GRAY, f"  Expected all subdirs from list 'USRDIR_DIRS' OR all from list 'USRDIR_DIRS_ORIGINAL'.")
-            print(colours.RED, f"  Action Required: Verify the contents of '{path_to_validate}'.")
+            print(Colours.GRAY, f"  Expected all subdirs from list 'USRDIR_DIRS' OR all from list 'USRDIR_DIRS_ORIGINAL'.")
+            print(Colours.RED, f"  Action Required: Verify the contents of '{path_to_validate}'.")
             # Return the path that failed validation
             return EXISTS_INVALID_SUBDIRS, path_to_validate
 
@@ -384,41 +384,41 @@ def main():
     # Call the function to check/create/validate/prompt/operate
     status, path_value = check_or_create_config(config_file_name)
 
-    print(colours.BLUE, f"\n--- Final Status: {status} ---")
+    print(Colours.BLUE, f"\n--- Final Status: {status} ---")
     if status == CREATED:
-        print(colours.GREEN, "Configuration file was newly created.")
-        print(colours.RED, "Action Required: Running the script again, provide the 'SourcePath' and choose handling.")
+        print(Colours.GREEN, "Configuration file was newly created.")
+        print(Colours.RED, "Action Required: Running the script again, provide the 'SourcePath' and choose handling.")
         main()
     elif status == EXISTS_VALID:
-        print(colours.GREEN, f"Configuration is valid. Effective source path '{path_value}' contains required subdirectories.")
+        print(Colours.GREEN, f"Configuration is valid. Effective source path '{path_value}' contains required subdirectories.")
     elif status == EXISTS_MISSING_SOURCEPATH: # Less likely now
-        print(colours.YELLOW, "Configuration file exists but is missing a valid 'SourcePath'.")
-        print(colours.RED, "Action Required: Run again to provide the path when prompted.")
+        print(Colours.YELLOW, "Configuration file exists but is missing a valid 'SourcePath'.")
+        print(Colours.RED, "Action Required: Run again to provide the path when prompted.")
     elif status == EXISTS_INVALID_SUBDIRS:
-        print(colours.RED, f"Validation failed: Required subdirectories are missing within the path '{path_value}'.")
-        print(colours.RED, "Action Required: Check the contents of this directory.")
+        print(Colours.RED, f"Validation failed: Required subdirectories are missing within the path '{path_value}'.")
+        print(Colours.RED, "Action Required: Check the contents of this directory.")
     elif status == ERROR_INVALID_SOURCEPATH_DIR:
-        print(colours.RED, f"Configuration file exists, but the configured/provided SourcePath ('{path_value}') is not a directory.")
-        print(colours.RED, "Action Required: Correct the 'SourcePath' or provide a valid path when prompted.")
+        print(Colours.RED, f"Configuration file exists, but the configured/provided SourcePath ('{path_value}') is not a directory.")
+        print(Colours.RED, "Action Required: Correct the 'SourcePath' or provide a valid path when prompted.")
     elif status == USER_PROVIDED_PATH_INVALID:
-        print(colours.RED, "Failed to obtain a valid source directory path from user input.")
-        print(colours.RED, "Action Required: Run the script again and provide a valid directory path.")
+        print(Colours.RED, "Failed to obtain a valid source directory path from user input.")
+        print(Colours.RED, "Action Required: Run the script again and provide a valid directory path.")
     elif status == ERROR_FILE_OPERATION:
-        print(colours.RED, f"A critical error occurred during file Copy/Move operations.")
-        print(colours.RED, "Action Required: Check disk space, permissions, and previous error messages. The source/destination state may be inconsistent.")
+        print(Colours.RED, f"A critical error occurred during file Copy/Move operations.")
+        print(Colours.RED, "Action Required: Check disk space, permissions, and previous error messages. The source/destination state may be inconsistent.")
     elif status == ERROR_CREATE or status == ERROR_READ:
-        print(colours.RED, "An error occurred during config file creation or reading.")
-        print(colours.RED, "Action Required: Check file permissions or disk space.")
+        print(Colours.RED, "An error occurred during config file creation or reading.")
+        print(Colours.RED, "Action Required: Check file permissions or disk space.")
     else:
-        print(colours.MAGENTA, "An unexpected status was returned.")
+        print(Colours.MAGENTA, "An unexpected status was returned.")
 
     # Example use of path_value
     if status == EXISTS_VALID and path_value:
-        print(colours.GREEN, f"\nProceeding with operations using validated source directory: {path_value}")
+        print(Colours.GREEN, f"\nProceeding with operations using validated source directory: {path_value}")
         # Add application logic here...
         pass
     elif status not in [CREATED]: # Don't print 'Cannot proceed' if just created
-        print(colours.RED, "\nCannot proceed due to configuration or file operation issues.")
+        print(Colours.RED, "\nCannot proceed due to configuration or file operation issues.")
 
     return status, path_value
 

@@ -43,9 +43,12 @@ __pycache__/
 .pyc
 **/__pycache__/init.cpython-313.pyc
 
-
+/TMP/
+/TMP/Downloads/
 
 # no no files
+/Godot/
+
 localereftableD4815ED6.txt
 LightTOC
 StreamSetConfig
