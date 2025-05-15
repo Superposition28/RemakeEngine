@@ -31,9 +31,12 @@ Tools/Blender/blender-4.0.2-windows-x64
 # Temporary/Backup
 old/
 
+.*/
+
 # Asset/Texture mapping
 texture_mapping.json
 asset_mapping.json
+asset_map.sqlite
 
 # Python cache
 __pycache__

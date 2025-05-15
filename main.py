@@ -260,10 +260,10 @@ def main_tool_logic():
             op_title_for_log = op_config.get("Name") or f"Init Operation #{op_idx+1}"
             print(Colours.MAGENTA, f"\nFound initialization script: '{op_title_for_log}' for {selected_game_name}. Attempting to run...")
 
-            init_instructions = op_config.get("Instructions")
-            if init_instructions:
-                print(Colours.CYAN, "\nInstructions for this initialization step:")
-                print(Colours.WHITE, init_instructions)
+            #init_instructions = op_config.get("Instructions")
+            #if init_instructions:
+            #    print(Colours.CYAN, "\nInstructions for this initialization step:")
+            #    print(Colours.WHITE, init_instructions)
 
             python_exe = op_config.get("python_executable", "python")
             script_rel_path_str = op_config.get("script")
@@ -395,18 +395,18 @@ def main_tool_logic():
         op_title_for_log = selected_op_config.get("Name") or "Unnamed Operation"
         print(Colours.GREEN, f"\nPreparing to run: '{op_title_for_log}' for {selected_game_name}")
 
-        instructions = selected_op_config.get("Instructions")
-        if instructions:
-            print(Colours.CYAN, "\nInstructions for this step:")
-            print(Colours.WHITE, instructions)
+        #instructions = selected_op_config.get("Instructions")
+        #if instructions:
+        #    print(Colours.CYAN, "\nInstructions for this step:")
+        #    print(Colours.WHITE, instructions)
 
         python_exe = selected_op_config.get("python_executable", "python")
         script_rel_path = selected_op_config.get("script")
 
         if not script_rel_path:
             print(Colours.YELLOW, f"\nInfo: Operation '{op_title_for_log}' has no script to execute.")
-            if not instructions:
-                print(Colours.YELLOW, "       This operation may be for informational purposes only or is misconfigured.")
+            #if not instructions:
+            #    print(Colours.YELLOW, "       This operation may be for informational purposes only or is misconfigured.")
             input("\nPress Enter to return to the menu.")
             continue
 

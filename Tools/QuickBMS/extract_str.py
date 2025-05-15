@@ -12,7 +12,7 @@ def extract_str_file(file_path: str):
     relative_path = os.path.relpath(file_path, start=STR_INPUT_DIR)
     # if in path A:\\Dev\\Games\\TheSimpsonsGame\\PAL\\test\\in\\loc\loc_global.txd and out path is A:\Dev\Games\TheSimpsonsGame\PAL\test\out then outpath is A:\Dev\Games\TheSimpsonsGame\PAL\test\out\loc\loc_global_txd
     output_dir = os.path.join(OUTPUT_BASE_DIR, os.path.dirname(relative_path))
-    output_dir = os.path.join(output_dir, os.path.splitext(os.path.basename(file_path))[0])
+    output_dir = os.path.join(output_dir, os.path.splitext(os.path.basename(file_path))[0]+ "_" + FILE_EXTENSIONS[1:])
     os.makedirs(output_dir, exist_ok=True)
 
     print(f"Extracting {file_path} to {output_dir}...")
