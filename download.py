@@ -113,7 +113,7 @@ def load_downloads(file_path: Path, game_name_key: str) -> list:
         print_error(f"Error loading operations from '{file_path}': {e}")
         return []
 
-def resolve_placeholders(value_with_placeholders: str, context_data: dict) -> str:
+def resolve_placeholders(value_with_placeholders: str, context_data: dict) -> list:
     """
     Recursively resolves placeholders in strings, lists, or dictionaries.
     Placeholders are in the format {{path.to.value}}.
@@ -122,9 +122,18 @@ def resolve_placeholders(value_with_placeholders: str, context_data: dict) -> st
     placeholder_pattern = re.compile(r"\{\{(.*?)\}\}")
 
     def replace_match(match):
-        key_path_str = match.group(1).strip() # Strip whitespace from key path
+        """
+        Replaces a regex match object representing a placeholder with its resolved value from context_data.
+
+        Args:
+            match: The regex match object for a placeholder in the format {{path.to.value}}.
+
+        Returns:
+            The string representation of the resolved value if found, otherwise the original placeholder.
+        """
+        key_path_str = str(match.group(1).strip()) # Strip whitespace from key path
         if not key_path_str:
-            print_verbose(f"Warning: Empty placeholder '{{{{}}}}' found.")
+            print_verbose("Warning: Empty placeholder '{{}}' found.")
             return match.group(0) # Return original if key path is empty
 
         key_path = key_path_str.split('.')
