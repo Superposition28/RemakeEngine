@@ -10,6 +10,7 @@ import json
 import subprocess
 import urllib.request
 import urllib.parse
+import urllib.error
 import zipfile
 import tarfile
 import shutil
@@ -190,32 +191,35 @@ def download_progress_hook(count: int, block_size: int, total_size: int) -> None
         sys.stdout.write("\n") # New line after download is complete
 
 def perform_download(op_config: dict, game_root_path: Path, context: dict) -> bool:
-    """Handles the download operation based on the provided config and context."""
+    """Handles the download operation with security checks for archive unpacking."""
     op_name = op_config.get("Name", "Unnamed Download Operation")
     print(Colours.GREEN, f"\nExecuting download: '{op_name}'")
 
-    # Resolve parameters using the context (which now includes game root and prompt answers)
+    # Thresholds for archive bomb protection - can be overridden by op_config
+    # Max number of entries in an archive
+    THRESHOLD_ENTRIES = op_config.get("unpack_threshold_entries", 10000)
+    # Max total uncompressed size of an archive in bytes (e.g., 1GB)
+    THRESHOLD_SIZE = op_config.get("unpack_threshold_size_bytes", 1 * 1024 * 1024 * 1024)
+    # Max compression ratio for individual ZIP file members (uncompressed_size / compressed_size)
+    THRESHOLD_RATIO = op_config.get("unpack_threshold_compression_ratio", 10)
+
     resolved_url = resolve_placeholders(op_config.get("url", ""), context)
     if not resolved_url:
         print_error(f"Error: Download operation '{op_name}' has no 'url' defined after placeholder resolution.")
         return False
 
-
     resolved_destination_str = Path(str(resolve_placeholders(op_config.get("destination", "."), context)))
-    resolved_filename = resolve_placeholders(op_config.get("filename", ""), context)
+    resolved_filename = str(resolve_placeholders(op_config.get("filename", ""), context))
     unpack = op_config.get("unpack", False)
     resolved_unpack_destination_str = Path(str(resolve_placeholders(op_config.get("unpack_destination", "."), context)))
 
-    # Determine the full download path relative to the game root
     full_destination_dir = game_root_path / resolved_destination_str
     full_unpack_path = game_root_path / resolved_unpack_destination_str
 
-    # Determine the final filename if not explicitly provided
     if not resolved_filename:
         try:
-            # Attempt to get filename from URL
             resolved_filename = os.path.basename(urllib.parse.urlparse(resolved_url).path)
-            if not resolved_filename or resolved_filename.endswith('/'): # Handle URLs ending with /
+            if not resolved_filename or resolved_filename.endswith('/'):
                 print_verbose(f"Warning: Could not determine filename from URL '{resolved_url}'. Defaulting to 'downloaded_file'.")
                 resolved_filename = "downloaded_file"
         except Exception as e:
@@ -228,70 +232,44 @@ def perform_download(op_config: dict, game_root_path: Path, context: dict) -> bo
     print_verbose(f"Saving to: {final_file_path}")
     if unpack:
         print_verbose(f"Unpacking to: {full_unpack_path}")
+        print_verbose(f"Archive security thresholds: Entries={THRESHOLD_ENTRIES}, Size={THRESHOLD_SIZE}B, ZipRatio={THRESHOLD_RATIO}")
 
-    # Create destination directory if it doesn't exist
     try:
         os.makedirs(full_destination_dir, exist_ok=True)
     except OSError as e:
         print_error(f"Error creating destination directory '{full_destination_dir}': {e}")
         return False
 
-
-    # Use the specific User-Agent string that worked with curl
-    USER_AGENT = "curl/8.11.1"
-
-    # Build a custom opener with the specific User-Agent header
+    USER_AGENT = "curl/8.11.1" # As per original code
     opener = urllib.request.build_opener()
     opener.addheaders = [('User-Agent', USER_AGENT)]
-
-    # Install the opener globally so urlretrieve uses it
     urllib.request.install_opener(opener)
 
     try:
         print(Colours.CYAN, "Starting download...")
-        # urlretrieve will now use the installed opener with the custom User-Agent
         urllib.request.urlretrieve(resolved_url, final_file_path, reporthook=download_progress_hook)
         print(Colours.GREEN, "Download complete.")
-
     except urllib.error.HTTPError as e:
-        # Catch specifically HTTP errors
         print_error(f"HTTP Error during download from '{resolved_url}' to '{final_file_path}': {e.code} - {e.reason}")
-        # Clean up potentially incomplete file
         if os.path.exists(final_file_path):
-            try:
-                os.remove(final_file_path)
-                print_verbose(f"Removed incomplete file: {final_file_path}")
-            except OSError as cleanup_e:
-                print_verbose(f"Warning: Could not remove incomplete file '{final_file_path}': {cleanup_e}")
-        exit(1)
+            try: os.remove(final_file_path); print_verbose(f"Removed incomplete file: {final_file_path}")
+            except OSError as cleanup_e: print_verbose(f"Warning: Could not remove incomplete file '{final_file_path}': {cleanup_e}")
+        exit(1) # Original code uses exit(1)
     except urllib.error.URLError as e:
-        # Catch other URL errors
         print_error(f"URL Error during download from '{resolved_url}' to '{final_file_path}': {e.reason}")
-        # Clean up potentially incomplete file
         if os.path.exists(final_file_path):
-            try:
-                os.remove(final_file_path)
-                print_verbose(f"Removed incomplete file: {final_file_path}")
-            except OSError as cleanup_e:
-                print_verbose(f"Warning: Could not remove incomplete file '{final_file_path}': {cleanup_e}")
-        exit(1)
+            try: os.remove(final_file_path); print_verbose(f"Removed incomplete file: {final_file_path}")
+            except OSError as cleanup_e: print_verbose(f"Warning: Could not remove incomplete file '{final_file_path}': {cleanup_e}")
+        exit(1) # Original code uses exit(1)
     except Exception as e:
-        # Catch any other unexpected errors
         print_error(f"An unexpected error occurred during download from '{resolved_url}' to '{final_file_path}': {e}")
-        # Clean up potentially incomplete file
         if os.path.exists(final_file_path):
-            try:
-                os.remove(final_file_path)
-                print_verbose(f"Removed incomplete file: {final_file_path}")
-            except OSError as cleanup_e:
-                print_verbose(f"Warning: Could not remove incomplete file '{final_file_path}': {cleanup_e}")
-        exit(1)
+            try: os.remove(final_file_path); print_verbose(f"Removed incomplete file: {final_file_path}")
+            except OSError as cleanup_e: print_verbose(f"Warning: Could not remove incomplete file '{final_file_path}': {cleanup_e}")
+        exit(1) # Original code uses exit(1)
 
-    # Perform unpacking if requested
     if unpack:
         print(Colours.CYAN, "Starting unpacking...")
-        total_members = 0
-        extracted_members = 0
 
         try:
             os.makedirs(full_unpack_path, exist_ok=True)
@@ -300,43 +278,97 @@ def perform_download(op_config: dict, game_root_path: Path, context: dict) -> bo
             if file_extension == '.zip':
                 with zipfile.ZipFile(final_file_path, 'r') as zip_ref:
                     member_list = zip_ref.infolist()
-                    total_members = len(member_list)
-                    print_verbose(f"Found {total_members} members in the zip archive.")
-                    for member in member_list:
-                        zip_ref.extract(member, full_unpack_path)
-                        extracted_members += 1
-                        percent = int(extracted_members * 100 / total_members)
-                        sys.stdout.write(f"\rUnpacking... {percent}% ")
-                        sys.stdout.flush()
-                sys.stdout.write("\n") # New line after unpacking is complete
-                print(Colours.GREEN, "Zip archive unpacked successfully.")
+                    num_members = len(member_list)
+                    print_verbose(f"Found {num_members} members in the zip archive.")
 
-            elif file_extension in ['.tar', '.gz', '.tgz', '.bz2', '.xz']:
-                with tarfile.open(final_file_path, 'r:*') as tar_ref:
-                    member_list = tar_ref.getmembers()
-                    total_members = len(member_list)
-                    print_verbose(f"Found {total_members} members in the tar archive.")
-                    for member in member_list:
-                        tar_ref.extract(member, full_unpack_path)
-                        extracted_members += 1
-                        percent = int(extracted_members * 100 / total_members)
-                        sys.stdout.write(f"\rUnpacking... {percent}% ")
+                    if num_members > THRESHOLD_ENTRIES:
+                        print_error(f"Error: Zip archive '{final_file_path}' exceeds entry threshold ({num_members}/{THRESHOLD_ENTRIES}). Potential zip bomb.")
+                        return False
+
+                    current_total_uncompressed_size = 0
+                    for i, member_info in enumerate(member_list):
+                        if member_info.compress_size > 0: # Avoid division by zero
+                            ratio = member_info.file_size / member_info.compress_size
+                            if ratio > THRESHOLD_RATIO:
+                                print_error(f"Error: Member '{member_info.filename}' in zip '{final_file_path}' exceeds compression ratio threshold ({ratio:.2f}/{THRESHOLD_RATIO}). Potential zip bomb.")
+                                return False
+
+                        current_total_uncompressed_size += member_info.file_size
+                        if current_total_uncompressed_size > THRESHOLD_SIZE:
+                            print_error(f"Error: Zip archive '{final_file_path}' would exceed total size threshold ({current_total_uncompressed_size}/{THRESHOLD_SIZE}) with member '{member_info.filename}'. Potential zip bomb.")
+                            return False
+
+                        # Path traversal check (ZipFile.extract has some protections, but good to be aware)
+                        # Target path for member
+                        # member_target_path = full_unpack_path / member_info.filename
+                        # resolved_member_target_path = member_target_path.resolve()
+                        # resolved_full_unpack_path = full_unpack_path.resolve()
+                        # if not str(resolved_member_target_path).startswith(str(resolved_full_unpack_path)):
+                        #     print_error(f"Error: Member '{member_info.filename}' attempts to extract outside target directory. Aborting.")
+                        #     return False
+
+                        zip_ref.extract(member_info, full_unpack_path)
+                        percent = int((i + 1) * 100 / num_members) if num_members > 0 else 100
+                        sys.stdout.write(f"\rUnpacking zip... {percent}% ({i+1}/{num_members})")
                         sys.stdout.flush()
-                sys.stdout.write("\n") # New line after unpacking is complete
-                print(Colours.GREEN, "Tar archive unpacked successfully.")
+                    sys.stdout.write("\n")
+                    if num_members == 0:
+                        print(Colours.GREEN, "Zip archive is empty but processed successfully.")
+                    else:
+                        print(Colours.GREEN, "Zip archive unpacked successfully after security checks.")
+
+            elif file_extension in ['.tar', '.gz', '.tgz', '.bz2', '.xz']: # .gz, .tgz etc. are often tar files
+                # For .gz, .bz2, .xz that are not tar files, tarfile.open will fail.
+                # This logic assumes these extensions imply a tar archive.
+                try:
+                    with tarfile.open(final_file_path, 'r:*') as tar_ref:
+                        member_list = tar_ref.getmembers()
+                        num_members = len(member_list)
+                        print_verbose(f"Found {num_members} members in the tar archive.")
+
+                        if num_members > THRESHOLD_ENTRIES:
+                            print_error(f"Error: Tar archive '{final_file_path}' exceeds entry threshold ({num_members}/{THRESHOLD_ENTRIES}). Potential tar bomb.")
+                            return False
+
+                        current_total_uncompressed_size = 0
+                        for member_info in member_list:
+                            current_total_uncompressed_size += member_info.size # member_info.size is uncompressed
+
+                        if current_total_uncompressed_size > THRESHOLD_SIZE:
+                            print_error(f"Error: Tar archive '{final_file_path}' exceeds total uncompressed size threshold ({current_total_uncompressed_size}/{THRESHOLD_SIZE}). Potential tar bomb.")
+                            return False
+
+                        print_verbose("Tar security checks passed. Starting extraction.")
+                        for i, member_info in enumerate(member_list):
+                            # tarfile.extract has built-in protections against common path traversal (absolute paths, '..')
+                            # For symlinks, ensure behavior is understood (default is to extract them if they point within the archive)
+                            try:
+                                tar_ref.extract(member_info, full_unpack_path, numeric_owner=True)
+                            except Exception as e_extract:
+                                sys.stdout.write("\n")
+                                print_error(f"Error extracting member '{member_info.name}' from tar: {e_extract}")
+                                return False # Fail entire operation if one member fails
+
+                            percent = int((i + 1) * 100 / num_members) if num_members > 0 else 100
+                            sys.stdout.write(f"\rUnpacking tar... {percent}% ({i+1}/{num_members})")
+                            sys.stdout.flush()
+                        sys.stdout.write("\n")
+                        if num_members == 0:
+                            print(Colours.GREEN, "Tar archive is empty but processed successfully.")
+                        else:
+                            print(Colours.GREEN, "Tar archive unpacked successfully after security checks.")
+                except tarfile.ReadError as te: # Catch if it's not a valid tar file (e.g. plain .gz)
+                    sys.stdout.write("\n")
+                    print(Colours.YELLOW + f"Warning: File '{final_file_path}' with extension '{file_extension}' could not be opened as a tar archive: {te}. If it's a single compressed file, it won't be unpacked by this routine.")
+                    print_verbose(f"File left at: {final_file_path}")
+                    return False # Treat as failure if unpacking requested but format not fully handled for non-tar compressed files
 
             else:
                 print(Colours.YELLOW + f"Warning: Unpacking requested but file extension '{file_extension}' is not supported for automatic unpacking (.zip or .tar.*).")
                 print_verbose(f"File left at: {final_file_path}")
-                # return False # Treat as failure if unpacking requested but not supported/successful
-                # Depending on desired behavior, you might want to return True here
-                # if the download itself was successful, just unpacking wasn't.
-                # For now, keeping the original logic to indicate unpacking failure.
-                return False
+                return False # Unpacking requested but not supported
 
-
-            # Optional: Clean up the downloaded archive after successful unpack
-            cleanup_archive = op_config.get("cleanup_archive", False) if 'op_config' in locals() else False # Added check for op_config existence
+            cleanup_archive = op_config.get("cleanup_archive", False)
             if cleanup_archive:
                 try:
                     os.remove(final_file_path)
@@ -344,25 +376,19 @@ def perform_download(op_config: dict, game_root_path: Path, context: dict) -> bo
                 except OSError as cleanup_e:
                     print_verbose(f"Warning: Could not clean up archive '{final_file_path}': {cleanup_e}")
 
-            # If we reached here and unpacking was attempted, it was successful for supported types
-            if file_extension in ['.zip', '.tar', '.gz', '.tgz', '.bz2', '.xz']:
-                return True
-            else:
-                # If unpacking was requested but not supported, we returned False earlier
-                pass
+            return True # Unpacking process (if attempted for supported type) was successful
 
-        except (zipfile.BadZipFile, tarfile.ReadError, Exception) as e:
+        except (zipfile.BadZipFile, tarfile.TarError, Exception) as e: # tarfile.TarError is base for tar issues
             # Ensure a newline is printed if the progress was interrupted by an error
-            if total_members > 0 and extracted_members < total_members:
-                sys.stdout.write("\n")
+            # Check if progress was being printed (total_members might not be defined if error was early)
+            # A simple sys.stdout.write("\n") should be safe here.
+            sys.stdout.write("\n")
             print_error(f"Error during unpacking '{final_file_path}': {e}")
             return False
     else:
         print(Colours.GREEN, "Download completed successfully, not unpacked.")
-        return True # Assuming download success implies overall success if no unpacking requested.
+        return True
 
-
-    return True # Indicate success
 
 def main_tool_logic():
     """Main function to run the interactive tool."""
@@ -557,8 +583,8 @@ def main_tool_logic():
                         answer = questionary.text(prompt_message, default=str(default_val), style=custom_style_fancy, validate=validate_func).ask()
                     # Add other prompt types (select, path, etc.) here if needed
                     else:
-                         print_error(f"Warning: Unknown prompt type '{prompt_type}' for prompt '{prompt_name}'. Skipping.")
-                         continue # Skip this prompt
+                        print_error(f"Warning: Unknown prompt type '{prompt_type}' for prompt '{prompt_name}'. Skipping.")
+                        continue # Skip this prompt
 
                     if answer is None: # User cancelled the prompt (Ctrl+C)
                         operation_cancelled_by_user = True
