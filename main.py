@@ -116,6 +116,7 @@ def resolve_placeholders(value_with_placeholders, context_data: dict):
 		if key_path_str in context_data.get("_direct_mapping_", {}):
 			return str(context_data["_direct_mapping_"][key_path_str])
 
+
 		key_path = key_path_str.split('.')
 		current_value = context_data
 		try:
