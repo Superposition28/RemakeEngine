@@ -9,6 +9,7 @@ import re
 import json
 import subprocess
 import urllib.request
+import urllib.parse
 import zipfile
 import tarfile
 import shutil
@@ -112,7 +113,7 @@ def load_downloads(file_path: Path, game_name_key: str) -> list:
         print_error(f"Error loading operations from '{file_path}': {e}")
         return []
 
-def resolve_placeholders(value_with_placeholders, context_data: dict):
+def resolve_placeholders(value_with_placeholders: str, context_data: dict) -> str:
     """
     Recursively resolves placeholders in strings, lists, or dictionaries.
     Placeholders are in the format {{path.to.value}}.
@@ -169,30 +170,32 @@ def resolve_placeholders(value_with_placeholders, context_data: dict):
         # print_debug("After resolving placeholders (unchanged):", value_with_placeholders)
         return value_with_placeholders
 
-def download_progress_hook(count, block_size, total_size):
+def download_progress_hook(count: int, block_size: int, total_size: int) -> None:
     """A hook function for urllib.request.urlretrieve to display download progress."""
     percent = int(count * block_size * 100 / total_size)
-    if percent > 100: percent = 100 # Cap at 100%
+    if percent > 100:
+        percent = 100 # Cap at 100%
     sys.stdout.write(f"\rDownloading... {percent}% ")
     sys.stdout.flush()
     if percent == 100:
         sys.stdout.write("\n") # New line after download is complete
 
-def perform_download(op_config: dict, game_root_path: Path, context: dict):
+def perform_download(op_config: dict, game_root_path: Path, context: dict) -> bool:
     """Handles the download operation based on the provided config and context."""
     op_name = op_config.get("Name", "Unnamed Download Operation")
     print(Colours.GREEN, f"\nExecuting download: '{op_name}'")
 
     # Resolve parameters using the context (which now includes game root and prompt answers)
-    resolved_url = resolve_placeholders(op_config.get("url"), context)
+    resolved_url = resolve_placeholders(op_config.get("url", ""), context)
     if not resolved_url:
         print_error(f"Error: Download operation '{op_name}' has no 'url' defined after placeholder resolution.")
         return False
 
-    resolved_destination_str = resolve_placeholders(op_config.get("destination", "."), context)
-    resolved_filename = resolve_placeholders(op_config.get("filename"), context)
+
+    resolved_destination_str = Path(str(resolve_placeholders(op_config.get("destination", "."), context)))
+    resolved_filename = resolve_placeholders(op_config.get("filename", ""), context)
     unpack = op_config.get("unpack", False)
-    resolved_unpack_destination_str = resolve_placeholders(op_config.get("unpack_destination", "."), context)
+    resolved_unpack_destination_str = Path(str(resolve_placeholders(op_config.get("unpack_destination", "."), context)))
 
     # Determine the full download path relative to the game root
     full_destination_dir = game_root_path / resolved_destination_str
@@ -278,12 +281,12 @@ def perform_download(op_config: dict, game_root_path: Path, context: dict):
     # Perform unpacking if requested
     if unpack:
         print(Colours.CYAN, "Starting unpacking...")
+        total_members = 0
+        extracted_members = 0
+
         try:
             os.makedirs(full_unpack_path, exist_ok=True)
             file_extension = final_file_path.suffix.lower()
-
-            total_members = 0
-            extracted_members = 0
 
             if file_extension == '.zip':
                 with zipfile.ZipFile(final_file_path, 'r') as zip_ref:

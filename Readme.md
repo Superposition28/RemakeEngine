@@ -1,65 +1,168 @@
-# The Simpsons Game (2007) Asset Extraction Tool
+# Remake Engine
 
-## Overview
+**An extensible, interactive command-line engine for managing and executing complex workflows for various games, with a focus on community-driven configurations for reverse engineering and modding.**
 
+Remake Engine provides a streamlined interface for developers, modders, and reverse engineers to run predefined tasks—from executing custom scripts to managing asset extraction and conversion—for a collection of games. Its power lies in its configuration-driven approach, allowing new games and their specific workflows to be added easily by defining them in JSON, without modifying the core engine.
 
-## Features
+## Key Features
 
-*   **Automated Initialization:** Attempts to Sets up the necessary environment and tools for the extraction processes.
-*   **Asset Conversion:**         Converts extracted files (audio, video, textures, 3D models) into more compatible modern formats.
-## "Tools" - Module,
-*   "STR Archive Extraction" - Extract,    Extracts Asset files, 3d, texture, etc from .str archives using [QuickBMS](https://aluigi.altervista.org/quickbms.htm) with [Simpsons Str - Simpsons Game STR . dk2 . SToc . 0x10fb \[simpsons_str.bms\]](https://aluigi.altervista.org/bms/simpsons_str.bms)
-*   "Directory restructuring"               changes base folder names and directory structure to be more human.
-*   "Audio Conversion" - Audio,             converts .snu audio files into .wav using [vgmstream-cli r1980](https://github.com/vgmstream/vgmstream/releases/tag/r1980)
-*   "Video Conversion" - Video,             converts .vp6 movie files into .ogv using [FFmpeg](https://www.ffmpeg.org/download.html)
-*   "Blender" - Model,                      converts .rws.PS3.preinstanced & .dff.PS3.preinstanced 3D models into .blend files, optionally generates .glb or .fbx assets
-*   "Texture Extraction" - Texture,         extracts textures from the .txd files using Noesis, requires some manual input.
-*   "Godot test" - Godot                    generates basic godot game with .blend assets imported and auto assigned to nodes to make a game world preview, no textures
-*   "Asset Registry"                        indexes all assets and attempts to define relation ships between files, like textures and models
-*   "Auto Repair"                           uses preset fix files and manually created maps to fix issues like broken UV maps in assets, and better define relation ships
+* **Highly Extensible:** Add support for new games by simply creating a configuration file and associated scripts/tools.
+* **Interactive CLI:** User-friendly menus powered by `questionary` for easy navigation and operation execution.
+* **Configuration-Driven:** All games and operations are defined in simple JSON files (`operations.json`).
+* **Powerful Placeholder System:** Use placeholders like `{{RemakeEngine.Directories.SourcePath}}` or `{{Game.RootPath}}` in your configurations for dynamic values.
+* **Orchestrates Custom Scripts & External Tools:** Natively runs Python scripts and can easily integrate command-line tools (like QuickBMS, FFmpeg).
+* **Advanced User Input:** A flexible prompt system gathers necessary inputs before execution, supporting conditional questions and validation.
+* **Community Focused:** Designed to be a platform for sharing tools and operational knowledge for various games.
+* **Clear Feedback:** Colorized output for status, warnings, and errors.
 
-## prerequisites
+## How It Works
 
-ensure windows long paths are enabled
+Remake Engine operates on a simple "engine vs. content" model:
 
+* **Engine:** The core Python scripts that provide the interactive interface, load configurations, resolve placeholders, and execute operations via `subprocess`.
+* **Content:**
+    * **Game Configurations:** Each game has its directory within `RemakeRegistry/Games/`. Inside, `operations.json` defines the game's name and its list of workflow steps (operations).
+    * **Global Configuration:** A `project.json` file in the tool's root directory can store global settings (like base paths), accessible via placeholders.
+    * **Scripts & Tools:** A `Tools/` directory (or similar structure) holds reusable scripts and external executables orchestrated by the engine. Game-specific scripts can live within their game's directory.
 
-
-## Dependencies
-
-* python
-* ffmpeg
-* vgmstream-cli
-
+When run (ideally from the project root), the engine scans for games, lets you select one, and then presents its specific operations.
 
 ## Getting Started
 
-Clone the repo with submodules:
+### Prerequisites
+
+* Python 3.13.2+
+* `pip` (Python package installer)
+
+### Installation
+
+1.  **Clone the repository:**
+    ```pwsh
+    git clone https://github.com/Superposition28/RemakeEngine
+    ```
+    ```pwsh
+    cd RemakeEngine
+    ```
+
+2.  **Install dependencies:**
+    ```pwsh
+    pip install questionary
+    ```
+TODO Add other dependencies
+
+
+3.  **Configure `project.json`:**
+    * Create a `project.json` file in the root directory (you might start by copying `project.json.example` if one exists).
+    * Edit it to set up *your* specific paths (e.g., game source locations). **Note:** This file often contains user-specific absolute paths and might be excluded from Git via `.gitignore`.
+
+4.  **Acquire External Tools:**
+    * Ensure any external tools referenced in `operations.json` (like `quickbms.exe`, `ffmpeg.exe`) are placed in their expected locations (e.g., under `Tools/`).
+
+### Running the Tool
+
+Execute the main script **from the project's root directory**:
 
 ```pwsh
-git clone https://github.com/Superposition28/RemakeEngine.git
+python main.py
+```
+or for tool downloads
+```pwsh
+python download.py
 ```
 
 
-# how to
+# Directory Structure
+```
+RemakeEngine/
+├── main.py                 # Main engine script
+├── download.py             # tool downloads
+├── project.json            # global configuration
+├── Tools/                  # Reusable scripts and external executables
+    +---Blender
+    |   |   asset_map.sqlite
+    |   |
+    |   \---blender-4.0.2-windows-x64
+    |          blender.exe
+    |
+    +---ffmpeg-vgmstream
+    |      convert.py
+    |
+    +---Process
+    |   +---Flat
+    |   |      flat.py
+    |   |
+    |   \---Rename
+    |          RenameFolders copy.py
+    |          RenameFolders.py
+    |          __init__.py
+    |
+    \---QuickBMS
+        |   bms_extract.py
+        |
+        \---exe
+            quickbms.exe
+|
+├── RemakeRegistry/
+│   └── Games/
+│       └── <GameName Platform/Variant>/
+│           ├── readme.md
+│           ├── operations.json # defines the main menu options and scripts
+│           ├── Scripts/
+│           │   ├── init.py
+│           │   ├── *.bms
+|           |   └── **
+│           └── PrimaryIndex.db   # Game file index, listing all files at each stage of extraction, modification etc and meta data
+└── Utils/
+    └── printer.py            # Utility for colored console output
+```
 
-just run main.py
+# Usage
+1. Run the main script from the project root.
+2. Select a game.
+3. Select an operation.
+4. Answer any prompts.
+5. Observe the execution.
+6. Return to the menu or change games.
 
+# Contributing (Adding New Game Support)
+1. Create a new directory under RemakeRegistry/Games/.
+2. Inside it, create your operations.json.
+3. Define your operations. Assume operations are of type "script" unless other types are added later. Ensure paths to scripts (script key) and arguments (args key) are relative to the project root or absolute. Use {{Game.RootPath}} (path to this game's folder) and {{RemakeEngine...}} placeholders where needed.
+4. Add any game-specific scripts or data files to your game's directory.
+5. If you need new reusable tools, add them under the Tools/ directory (discuss with project maintainers if applicable).
 
+### Example operations.json Entry:
 
-## Obligatory Legal Disclaimer
+```json
+{
+    "Name": "Extract Archives (.STR)",
+    "Instructions": "run quickbms script using RemakeRegistry/Games/TheSimpsonsGame PS3/Scripts/simpsons_str.bms",
+    "python_executable": "python",
+    "script": "Tools/QuickBMS/bms_extract.py", // Path relative to project root
+    "args": [
+        "--quickbms", "Tools/QuickBMS/exe/quickbms.exe",
+        "--script", "RemakeRegistry/Games/TheSimpsonsGame PS3/Scripts/simpsons_str.bms",
+        "--input", "{{RemakeEngine.Directories.SourcePath}}", // Placeholder use
+        "--output", "GameFiles/STROUT", // Relative path (will be created in CWD or handle abs path)
+        "--extension", ".str"
+    ]
+}
+```
 
-**Please read this disclaimer carefully before using this project.**
+#### (Please refer to CONTRIBUTING.md for detailed guidelines.)
 
-This project provides code that automates the process of extracting assets (3D models, sounds, and videos) from variouse games. It is intended for personal use only, Ie:.. hobby projects, learning purposes, research, etc .. nothing commercial or distributed.
+# Configuration Details
+`project.json` (Global Configuration)
 
-**Key Points to Understand:**
+* Stores global settings, often user-specific paths.
+* Values are accessible via {{RemakeEngine.Key.SubKey}} placeholders.
 
-*   **Requires Ownership of the Game:** This tool requires you to possess your own legally obtained ISO copy of game for the PlayStation 3. It does not provide access to the game files themselves.
-*   **Respect Copyright:** The assets extracted from game are copyrighted by Electronic Arts (EA) and Disney. This tool is provided solely to facilitate personal exploration and modification of assets from a game you legally own. You are solely responsible for ensuring your use of these assets complies with all applicable copyright laws and the game's End User License Agreement (EULA) or Terms of Service.
-*   **No Distribution of Assets:** This project does not involve the distribution of any copyrighted game assets. It only provides the code to automate the extraction process from your own game files.
-*   **Compliance with Takedown Requests:** The developer of this project respects the intellectual property rights of EA and Disney. If either Electronic Arts or Disney (or their legal representatives) requests the removal of this code, the developer will promptly comply.
+`operations.json` (Game Manifest File)
 
-**By using this project, you acknowledge that you have read and understood this disclaimer and agree to use it responsibly and in accordance with all applicable laws and terms of service.**
+* Defines the game name and its workflow steps (operations).
+* Supports init scripts for automatic execution.
+* Defines Name, Instructions, python_executable, script, args, and prompts for each operation.
 
+# License
 
-# DO NOT USE THIS FOR COMMERCIAL PURPOSES OR DISTRIBUTE ANY EXTRACTED ASSETS WITHOUT PERMISSION FROM THE COPYRIGHT HOLDERS.
+(Please specify your project's license here, e.g., MIT License.)
