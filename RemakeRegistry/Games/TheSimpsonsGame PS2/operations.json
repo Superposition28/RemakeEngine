@@ -1,10 +1,10 @@
 {
 	"The Simpsons Game (PS2)": [
 		{
-			"init": false,
+			"init": true,
 			"Instructions": "run main init",
 			"python_executable": "python",
-			"script": "RemakeRegistry/Games/TheSimpsonsGame (PS2)/Scripts/init.py",
+			"script": "RemakeRegistry/Games/TheSimpsonsGame PS2/Scripts/init.py",
 			"args": []
 		},
 		{
@@ -12,39 +12,32 @@
 			"Instructions": "run rename script",
 			"python_executable": "python",
 			"script": "Tools/Process/Rename/RenameFolders.py",
-			"args": ["{{RemakeEngine.Directories.SourcePath}}", "--map-db-file", "RemakeRegistry/Games/TheSimpsonsGame (PS2)/RenameMap.db"]
+			"args": ["{{RemakeEngine.Directories.TSGPS2SourcePath}}", "--map-db-file", "RemakeRegistry/Games/TheSimpsonsGame PS2/RenameMap.db"]
 		},
 		{
-			"Name": "validate game files",
-			"Instructions": "run validate against the `RemakeRegistry/Games/TheSimpsonsGame (PS2)/PrimaryIndex.db`, specifically the root files in the source folder",
+			"Name": "Extract Archives (.ASR)",
+			"Instructions": "run quickbms script using RemakeRegistry/Games/TheSimpsonsGame PS2/Scripts/Asura engine (.asr .pc .en).bms",
 			"python_executable": "python",
-			"script": "RemakeRegistry/Games/TheSimpsonsGame (PS2)/Scripts/ValidateSource-1.py",
-			"args": ["RemakeRegistry/Games/TheSimpsonsGame (PS2)/PrimaryIndex.db", "{{RemakeEngine.Directories.SourcePath}}"]
+			"script": "Tools/QuickBMS/bms_extract.py",
+			"args": ["--quickbms", "Tools/QuickBMS/exe/quickbms.exe", "--script", "RemakeRegistry/Games/TheSimpsonsGame PS2/Scripts/Asura engine (.asr .pc .en).bms", "--input", "{{RemakeEngine.Directories.TSGPS2SourcePath}}", "--output", "GameFiles/SimpGamePS2OUT", "--extension", ".asr"]
 		},
 		{
-			"Name": "Extract Archives (.STR)",
-			"Instructions": "run quickbms script using RemakeRegistry/Games/TheSimpsonsGame (PS2)/Scripts/simpsons_str.bms",
+			"Name": "Extract Archives (.EN)",
+			"Instructions": "run quickbms script using RemakeRegistry/Games/TheSimpsonsGame PS2/Scripts/Asura engine (.asr .pc .en).bms",
 			"python_executable": "python",
-			"script": "Tools/QuickBMS/extract_str.py",
-			"args": ["--quickbms", "Tools/QuickBMS/exe/quickbms.exe", "--script", "RemakeRegistry/Games/TheSimpsonsGame (PS2)/Scripts/simpsons_str.bms", "--input", "{{RemakeEngine.Directories.SourcePath}}", "--output", "GameFiles/STROUT", "--extension", ".str"]
+			"script": "Tools/QuickBMS/bms_extract.py",
+			"args": ["--quickbms", "Tools/QuickBMS/exe/quickbms.exe", "--script", "RemakeRegistry/Games/TheSimpsonsGame PS2/Scripts/Asura engine (.asr .pc .en).bms", "--input", "{{RemakeEngine.Directories.TSGPS2SourcePath}}", "--output", "GameFiles/SimpGamePS2OUT", "--extension", ".en"]
 		},
 		{
 			"Name": "Extract Textures (.txd -> .dds)",
 			"python_executable": "python",
-			"script": "RemakeRegistry/Games/TheSimpsonsGame (PS2)/Scripts/Texture/Export_txd.py",
-			"args": ["GameFiles/STROUT"]
-		},
-		{
-			"Name": "validate extracted game files",
-			"Instructions": "run validate against the `RemakeRegistry/Games/TheSimpsonsGame (PS2)/PrimaryIndex.db`",
-			"python_executable": "python",
-			"script": "RemakeRegistry/Games/TheSimpsonsGame (PS2)/Scripts/ValidateExtracted-1.py",
-			"args": ["RemakeRegistry/Games/TheSimpsonsGame (PS2)/PrimaryIndex.db", "GameFiles/STROUT"]
+			"script": "",
+			"args": ["GameFiles/SimpGamePS2OUT"]
 		},
 		{
 			"Name": "Convert Models (.preinstanced -> .blend)",
 			"python_executable": "python",
-			"script": "RemakeRegistry/Games/TheSimpsonsGame (PS2)/Scripts/Blender/Main/run.py",
+			"script": "",
 			"args": [],
 			"prompts": [
 				{
@@ -82,26 +75,30 @@
 			"Name": "Convert Videos (.vp6 -> .ogv)",
 			"python_executable": "python",
 			"script": "Tools/ffmpeg-vgmstream/convert.py",
-			"args": ["-m", "ffmpeg", "-s", "{{RemakeEngine.Directories.SourcePath}}\\Assets_1_Video_Movies", "-t", "GameFiles\\STROUT\\Assets_1_Video_Movies", "-f", "ffmpeg.exe", "-i", ".vp6", "-o", ".ogv", "--overwrite"]
+			"args": ["-m", "ffmpeg", "-s", "{{RemakeEngine.Directories.TSGPS2SourcePath}}\\Assets_1_Video_Movies", "-t", "GameFiles\\SimpGamePS2OUT\\Assets_1_Video_Movies", "-f", "ffmpeg.exe", "-i", ".vp6", "-o", ".ogv", "--overwrite"]
 		},
 		{
-			"Name": "Reorganise Audio Files",
-			"python_executable": "python",
-			"script": "RemakeRegistry/Games/TheSimpsonsGame (PS2)/Scripts/SetupAudioDir.py",
-			"args": ["{{RemakeEngine.Directories.SourcePath}}\\Assets_1_Audio_Streams"]
-		},
-		{
-			"Name": "Convert Audio (.snu -> .wav)",
+			"Name": "Convert Audio (AGV.wav -> .wav)",
 			"python_executable": "python",
 			"script": "Tools/ffmpeg-vgmstream/convert.py",
-			"args": ["-m", "vgmstream", "-s", "{{RemakeEngine.Directories.SourcePath}}\\Assets_1_Audio_Streams", "-t", "GameFiles\\STROUT\\Assets_1_Audio_Streams", "--vgmstream-cli", "vgmstream-cli.exe", "-i", ".snu", "-o", ".wav"]
+			"args": [
+				"-m", "ffmpeg",
+				"-s", "GameFiles\\SimpGamePS2OUT\\SOUNDS",
+				"-t", "GameFiles\\SimpGamePS2OUT\\Converted\\Assets_1_SOUNDS",
+				"-f", "ffmpeg.exe",
+				"-i", ".wav",
+				"-o", ".wav",
+				"--overwrite",
+				"--audio-codec", "pcm_s16le",
+				"--audio-quality", "0"
+			]
 		},
 		{
 			"Name": "flatten folder structure",
 			"Instructions": "run flatten script",
 			"python_executable": "python",
 			"script": "Tools/Process/Flat/flat.py",
-			"args": ["GameFiles/STROUT", "GameFiles/ExtractedOut", "--rules", "RemakeRegistry/Games/TheSimpsonsGame (PS2)/PathRules.json", "--separator", "++", "--verbose"]
+			"args": ["GameFiles/SimpGamePS2OUT", "GameFiles/ExtractedOut", "--rules", "RemakeRegistry/Games/TheSimpsonsGame PS2/PathRules.json", "--separator", "++", "--verbose"]
 		}
 	]
 }
