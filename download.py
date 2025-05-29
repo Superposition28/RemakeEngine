@@ -433,7 +433,8 @@ def main_tool_logic():
 
     selected_game_data = available_games_map[selected_game_name]
     operations_file_for_game = selected_game_data["ops_file"]
-    game_root_path = Path(__file__).parent.resolve()
+    game_root_path = selected_game_data["game_root"]
+	#game_root_path = Path(__file__).parent.resolve()
 
     print(Colours.CYAN, f"Selected game's root path: {game_root_path}")
     print(Colours.CYAN, f"Loading operations for game: '{selected_game_name}' from {operations_file_for_game}")
