@@ -163,6 +163,12 @@ RemakeEngine/
 * Supports init scripts for automatic execution.
 * Defines Name, Instructions, python_executable, script, args, and prompts for each operation.
 
-# License
+## License & Legal Disclaimer
 
-(Please specify your project's license here, e.g., MIT License.)
+This project is licensed for **non-commercial use only**.  
+It is intended for educational or archival purposes, especially regarding game file structures.
+
+Use of this tool for **any commercial purpose** or in violation of a game's Terms of Service or copyright law is strictly prohibited.
+
+See the [LICENSE](./LICENSE) file for details.
+
