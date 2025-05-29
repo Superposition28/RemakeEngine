@@ -156,6 +156,16 @@ def resolve_placeholders(value_with_placeholders, context_data: dict):
 		return value_with_placeholders
 
 def check_scripts_exist(operations: list, ops_file_path_for_logging: Path) -> bool:
+    """
+    Checks whether all scripts referenced in the operations list exist as files.
+
+    Args:
+        operations (list): List of operation dictionaries, each potentially containing a 'script' key.
+        ops_file_path_for_logging (Path): Path to the operations file, used for logging purposes.
+
+    Returns:
+        bool: True if all scripts exist or are not required, False if any script is missing.
+    """
     all_exist = True
     if not operations:
         return True
