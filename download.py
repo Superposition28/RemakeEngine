@@ -252,14 +252,20 @@ def perform_download(op_config: dict, game_root_path: Path, context: dict) -> bo
     except urllib.error.HTTPError as e:
         print_error(f"HTTP Error during download from '{resolved_url}' to '{final_file_path}': {e.code} - {e.reason}")
         if os.path.exists(final_file_path):
-            try: os.remove(final_file_path); print_verbose(f"Removed incomplete file: {final_file_path}")
-            except OSError as cleanup_e: print_verbose(f"Warning: Could not remove incomplete file '{final_file_path}': {cleanup_e}")
+            try:
+                os.remove(final_file_path)
+                print_verbose(f"Removed incomplete file: {final_file_path}")
+            except OSError as cleanup_e:
+                print_verbose(f"Warning: Could not remove incomplete file '{final_file_path}': {cleanup_e}")
         exit(1) # Original code uses exit(1)
     except urllib.error.URLError as e:
         print_error(f"URL Error during download from '{resolved_url}' to '{final_file_path}': {e.reason}")
         if os.path.exists(final_file_path):
-            try: os.remove(final_file_path); print_verbose(f"Removed incomplete file: {final_file_path}")
-            except OSError as cleanup_e: print_verbose(f"Warning: Could not remove incomplete file '{final_file_path}': {cleanup_e}")
+            try:
+                os.remove(final_file_path)
+                print_verbose(f"Removed incomplete file: {final_file_path}")
+            except OSError as cleanup_e:
+                print_verbose(f"Warning: Could not remove incomplete file '{final_file_path}': {cleanup_e}")
         exit(1) # Original code uses exit(1)
     except Exception as e:
         print_error(f"An unexpected error occurred during download from '{resolved_url}' to '{final_file_path}': {e}")
