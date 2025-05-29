@@ -25,7 +25,7 @@
 			"Name": "Extract Archives (.STR)",
 			"Instructions": "run quickbms script using RemakeRegistry/Games/TheSimpsonsGame PS3/Scripts/simpsons_str.bms",
 			"python_executable": "python",
-			"script": "Tools/QuickBMS/extract_str.py",
+			"script": "Tools/QuickBMS/bms_extract.py",
 			"args": ["--quickbms", "Tools/QuickBMS/exe/quickbms.exe", "--script", "RemakeRegistry/Games/TheSimpsonsGame PS3/Scripts/simpsons_str.bms", "--input", "{{RemakeEngine.Directories.SourcePath}}", "--output", "GameFiles/STROUT", "--extension", ".str"]
 		},
 		{

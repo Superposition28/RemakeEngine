@@ -78,7 +78,7 @@ def check_or_create_config(filename):
     """
     config_file_path = os.path.abspath(filename)
     project_base_dir = os.path.dirname(config_file_path)
-    local_data_path = os.path.join(project_base_dir, "Source")
+    local_data_path = os.path.join(project_base_dir, "Source\\GameFiles\\SimpGamePS3")
 
     default_data = {
         "RemakeEngine": {

@@ -1,0 +1,851 @@
+    Directory: A:\Dev\Games\RemakeEngine\Main\Source\GameFiles\The Simpsons Game (Europe, Australia) (En,No,Da,Fi) PS2
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          17/05/2025  2:13 PM                ENVS
+d----           5/10/2007  1:20 PM                FMV
+d----          17/05/2025  2:05 PM                GRAPHICS
+d----          17/05/2025  2:05 PM                GUIMENU
+d----           5/10/2007  1:20 PM                IRX
+d----          17/05/2025  2:05 PM                MISC
+d----          17/05/2025  2:05 PM                SOUNDS
+d----          17/05/2025  2:05 PM                SUBTITLE
+-ar--           4/10/2007  4:07 PM        3028048 SLES_549.04
+-ar--           2/10/2007  5:26 PM             56 SYSTEM.CNF
+
+PS A:\Dev\Games\RemakeEngine\Main\GameFiles\SimpGamePS2OUT\GRAPHICS> tree /A /F
+Folder PATH listing for volume Dev A:
+Volume serial number is 560F-B8F0
+
+longer hex dumps are cut off as they are too long
+A:.
+|   BEAMS.ASR
+|   BUTTONS.ASR
+|   GFX.ASR
+|   MEMCARD.ICO
+|   SIMPFONT.ASR
+|
++---BEAMS_asr // this was an archive file named beams.asr, the following are the contents, and the files hex data
+|   +---graphics
+|   |       beams.tm2
+54 49 4D 32 04 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 04 01 00 00 04 00 00 00 00 01 00 80 00 00 01 00 01 03 03 80 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 41 53 55 52 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 E1 85 00 00 8B 3A 00 00 41 2E 00 00 2
+|   +---ignr_chunk
+|   |       .3.dat
+78 61 33 37 64 64 34 35 66 66 65 31 30 30 62 66 66 66 63 63 39 37 35 33 61 61 62 61 63 33 32 35 66 30 37 63 62 33 66 61 32 33 31 31 34 34 66 65 32 65 33 33 61 65 34 37 38 33 66 65 65 61 64 32 62 38 61 37 33 66 66 30 32 31 66 61 63 33 32 36 64 66 30 65 66 39 37 35 33 61 62 39 63 64 66 36 35 37 33 64 64 66 66 30 33 31 32 66 61 62 30 62 30 66 66 33 39 37 37 39 65 61 66 66 33 31 32 61 34 66 35 64 65 36 35 38 39 32 66 66 65 65 33 33 61 34 34 35 36 39 62 65 62 66 32 31 66 36 36 64 32 32 65 35 34 61 32 32 33 34 37 65 66 64 33 37 35 39 38 31 31 38 38 37 34 33 61 66 64 39 39 62 61 61 63 63 33 34 32 64 38 38 61 39 39 33 32 31 32 33 35 37 39 38 37 32 35 66 65 64 63 62 66 34 33 32 35 32 36 36 39 64 61 64 65 33 32 34 31 35 66 65 65 38 39 64 61 35 34 33 62 66 32 33 64 34 65 78 20 20
+|   +---RSFL_chunk
+|   |       .0.dat
+01 00 00 00 5C 67 72 61 70 68 69 63 73 5C 6D 6F 72 65 2E 61 73 72 00 00 7C 05 01 00 14 01 00 00 01 00 00 00
+|   \---TTXT_chunk
+|           .1.dat
+01 00 00 00 62 65 61 6D 73 2E 74 6D 32 00 00 00 00 00 00 3B 00 00 00 3B 00 00 81 3E 00 00 81 3E 00 00 80 43 00 00 80 43 52 6F 70 65 2E 74 67 61 00 00 00 00
+|
++---BUTTONS_asr // this was an archive file named buttons.asr, the following are the contents, and the files hex data
+|   +---graphics
+|   |       buttons.tm2
+54 49 4D 32 04 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 04 01 00 00 04 00 00 00 00 01 00 80 00 00 01 00 01 03 03 80 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 41 53 55 52 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 01 01 01 01 0
+|   |
+|   \---TTXT_chunk
+|           .0.dat
+16 00 00 00 62 75 74 74 6F 6E 73 2E 74 6D 32 00 00 00 00 3B 00 00 00 3B 00 00 89 3E 00 00 EC 3D 00 00 80 43 00 00 80 43 70 73 32 5F 63 6F 6E 5F 73 65 6C 65 63 74 2E 74 67 61 00 00 00 00 89 3E 00 00 00 3B 00 80 01 3F 00 00 EC 3D 00 00 80 43 00 00 80 43 70 73 32 5F 63 6F 6E 5F 73 74 61 72 74 2E 74 67 61 00 00 00 00 80 01 3F 00 00 00 3B 00 80 34 3F 00 00 EC 3D 00 00 80 43 00 00 80 43 70 73 32 5F 74 72 69 67 67 65 72 5F 6C 65 66 74 31 2E 74 67 61 00 00 00 00 80 34 3F 00 00 00 3B 00 80 67 3F 00 00 EC 3D 00 00 80 43 00 00 80 43 70 73 32 5F 74 72 69 67 67 65 72 5F 6C 65 66 74 32 2E 74 67 61 00 00 00 00 00 00 3B 00 00 EC 3D 00 00 4E 3E 00 00 6A 3E 00 00 80 43 00 00 80 43 70 73 32 5F 74 72 69 67 67 65 72 5F 72 69 67 68 74 31 2E 74 67 61 00 00 00 00 00 3B 00 00 6A 3E 00 00 4E 3E 00 00 
+|
++---GFX_asr // this was an archive file named GFX.asr, the following are the contents, and the files hex data
+|   \---graphics
+|       \---tools
+|               font.dds
+54 49 4D 32 04 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 44 00 00 00 04 00 00 00 40 00 00 80 00 00 01 00 01 03 03 40 00 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 41 53 55 52 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FC 00 00 00 80 
+|
+\---SIMPFONT_asr // this was an archive file named SIMPFONT.asr, the following are the contents, and the files hex data
+    +---FNFO_chunk
+    |       .1.dat
+	00 00 00 00 07 00 00 00
+    |
+    +---FNTK_chunk
+    |       .4.dat
+	A8 02 00 00 01 00 31 00 FE FF 03 00 54 00 FF FF 56 00 FF FF 59 00 FE FF 03 00 31 00 FE FF 19 20 FF FF 1D 20 FF FF 02 00 2C 00 FF FF 2E 00 FF FF 02 00 2C 00 FD FF 3A 00 FE FF 0F 00 2C 00 01 00 2D 00 01 00 2E 00 01 00 43 00 FF FF 47 00 FF FF 4F 00 FF FF 51 00 FF FF 54 00 FE FF 55 00 FF FF 56 00 FF FF 57 00 FF FF 59 00 FE FF 79 00 FF FF 19 20 FF FF 1D 20 FF FF 03 00 56 00 FF FF 57 00 FF FF 59 00 FF FF 03 00 41 00 01 00 4F 00 FF FF C6 00 01 00 09 00 2C 00 FE FF 2E 00 FE FF 41 00 FF FF 4A 00 FF FF 54 00 FF FF 56 00 FF FF 57 00 FF FF 58 00 FF FF 59 00 FF FF 0D 00 2C 00 FE FF 2E 00 FE FF 41 00 FE FF 4A 00 FF FF 61 00 FF FF 65 00 FF FF 6A 00 FF FF 72 00 FF FF E0 00 FF FF E1 00 FF FF E3 00 FF FF E4 00 FF FF E5 00 FF FF 06 00 43 00 FF FF 47 00 FF FF 4F 00 FF FF 53 00 01 00 61 00 01 00 79 00 FE FF 0C 
+    |
+    +---FONT_chunk
+    |       .2.dat
+	49 54 43 20 48 69 67 68 6C 61 6E 64 65 72 20 53 74 64 20 4D 65 64 69 75 6D 5F 32 34 5F 42 6F 6C 64 2E 61 73 72 00 44 4F 57 53 00 54 45 4D 50 3D 43 3A 5C 44 4F 43 55 4D 45 7E 31 5C 41 4E 44 52 45 57 7E 31 2E 48 41 49 5C 4C 4F 43 41 4C 53 7E 31 5C 54 65 6D 70 00 54 4D 50 3D 43 3A 5C 44 4F 43 55 4D 45 00 00 18 42 01 00 00 00 5C 66 6F 6E 74 73 5C 49 54 43 20 48 69 67 68 6C 61 6E 64 65 72 20 53 74 64 20 4D 65 64 69 75 6D 5F 32 34 5F 42 6F 6C 64 5F 30 2E 74 67 61 00 4C 4C 49 4F 4E 00 55 53 45 52 4E 41 4D 45 3D 61 6E 64 72 65 77 2E 68 61 69 74 68 00 55 53 45 52 50 52 4F 46 49 4C 45 3D 43 3A 5C 44 6F 63 75 6D 65 6E 74 73 20 61 6E 64 20 00 00 00 00 20 00 22 21 00 02 00 00 00 02 00 00 B0 00 00 00 00 00 10 3C 00 00 E0 3B 00 00 10 41 20 00 FF FF 00 00 0C 3D 00 00 E0 3B 00 00 10 41 21 00 FF FF 00 00 86 3D 00
+    |
+    +---graphics
+    |   \---fonts
+    |           itc highlander std medium_24_bold_0.tga
+54 49 4D 32 04 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 02 00 80 00 00 00 00 00 02 00 80 00 20 00 00 01 03 04 00 02 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 41 53 55 52 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+    |
+    \---RSFL_chunk
+            .0.dat
+	02 00 00 00 5C 66 6F 6E 74 73 5C 69 74 63 20 68 69 67 68 6C 61 6E 64 65 72 20 73 74 64 20 6D 65 64 69 75 6D 5F 32 34 5F 62 6F 6C 64 2E 61 73 72 00 00 00 00 20 00 00 00 F8 0B 00 00 01 00 00 00 5C 66 6F 6E 74 73 5C 69 74 63 20 68 69 67 68 6C 61 6E 64 65 72 20 73 74 64 20 6D 65 64 69 75 6D 5F 32 34 5F 62 6F 6C 64 5F 6B 2E 61 73 72 00 00 EC 0D 02 00 64 05 00 00 01 00 00 00
+
+PS A:\Dev\Games\RemakeEngine\Main\Source\GameFiles\The Simpsons Game (Europe, Australia) (En,No,Da,Fi) PS2\MISC> tree /A /F
+Folder PATH listing for volume Dev A:
+Volume serial number is 560F-B8F0
+A:.
+|   COMMON.ASR
+|   MPEG_DLL.ASR
+|
++---COMMON_asr
+|   +---AXAT_chunk
+|   |       .4.dat
+|   |
+|   +---BLUE_chunk
+|   |       .2.dat
+|   |       .3.dat
+|   |
+|   +---FNFO_chunk
+|   |       .0.dat
+|   |
+|   \---RSFL_chunk
+|           .1.dat
+|
++---GOALS
+|   |   GOALS_DA.ASR
+|   |   GOALS_EN.ASR
+|   |   GOALS_FI.ASR
+|   |   GOALS_NO.ASR
+|   |
+|   +---GOALS_DA_asr
+|   |   \---HTXT_chunk
+|   |           .0.dat
+|   |
+|   +---GOALS_EN_asr
+|   |   \---HTXT_chunk
+|   |           .0.dat
+|   |
+|   +---GOALS_FI_asr
+|   |   \---HTXT_chunk
+|   |           .0.dat
+|   |
+|   \---GOALS_NO_asr
+|       \---HTXT_chunk
+|               .0.dat
+|
++---MENU
+|   |   MENU_DA.ASR
+|   |   MENU_EN.ASR
+|   |   MENU_FI.ASR
+|   |   MENU_NO.ASR
+|   |
+|   +---MENU_DA_asr
+|   |   \---HTXT_chunk
+|   |           .0.dat
+|   |
+|   +---MENU_EN_asr
+|   |   \---HTXT_chunk
+|   |           .0.dat
+|   |
+|   +---MENU_FI_asr
+|   |   \---HTXT_chunk
+|   |           .0.dat
+|   |
+|   \---MENU_NO_asr
+|       \---HTXT_chunk
+|               .0.dat
+|
++---MPEG_DLL_asr
+|   +---FNFO_chunk
+|   |       .0.dat
+|   |
+|   \---ps2_ee_release
+|           ps2_mpeg.rel
+|
+\---SYSTEM
+    |   SYS_DA.ASR
+    |   SYS_EN.ASR
+    |   SYS_FI.ASR
+    |   SYS_NO.ASR
+    |
+    +---SYS_DA_asr
+    |   \---HTXT_chunk
+    |           .0.dat
+    |
+    +---SYS_EN_asr
+    |   \---HTXT_chunk
+    |           .0.dat
+    |
+    +---SYS_FI_asr
+    |   \---HTXT_chunk
+    |           .0.dat
+    |
+    \---SYS_NO_asr
+        \---HTXT_chunk
+                .0.dat
+
+
+PS A:\Dev\Games\RemakeEngine\Main\Source\GameFiles\The Simpsons Game (Europe, Australia) (En,No,Da,Fi) PS2\FMV> tree /A /F
+Folder PATH listing for volume Dev A:
+Volume serial number is 560F-B8F0
+
+Full Motion Video
+
+these are all Video files, easily converted to mp4
+first 3 letters are level names, 80B being 80 bytes, BRT being Bartman, LOC being land of chocolate, etc.
+A:.
+\---PAL
+    |   EA.PSS
+    |   FOX.PSS
+    |   GRACIE.PSS
+    |
+    \---EN
+            80B_01.PSS
+            80B_02.PSS
+            80B_02A.PSS
+            80B_03.PSS
+            BIN_01.PSS
+            BIN_01A.PSS
+            BIN_01B.PSS
+            BRT_01.PSS
+            BRT_02.PSS
+            BSH_01.PSS
+            BSH_01B.PSS
+            BSH_01C.PSS
+            BSH_01D.PSS
+            BSH_01E.PSS
+            BSH_02.PSS
+            BSH_03.PSS
+            BSH_04.PSS
+            BSH_05.PSS
+            BSH_14.PSS
+            CHE_01.PSS
+            CHE_01A.PSS
+            CHE_02.PSS
+            CHE_02A.PSS
+            DOD_01.PSS
+            DOD_03.PSS
+            GAM_01.PSS
+            GAM_02.PSS
+            GAM_03.PSS
+            GAM_04.PSS
+            GAM_05.PSS
+            GAM_06.PSS
+            GAM_07.PSS
+            GTS_01.PSS
+            GTS_02.PSS
+            GTS_03.PSS
+            HUG_01.PSS
+            HUG_02.PSS
+            HUG_02A.PSS
+            HUG_03.PSS
+            HUG_03A.PSS
+            HUG_05.PSS
+            LOC_01.PSS
+            LOC_02.PSS
+            MOB_01.PSS
+            MOB_02.PSS
+            MOB_03.PSS
+            MOB_03A.PSS
+            MOH_00.PSS
+            MOH_01.PSS
+            MOH_01A.PSS
+            MOH_02.PSS
+            MOH_03.PSS
+            MTP_01.PSS
+            MTP_02.PSS
+            MTP_02A.PSS
+            MTP_02B.PSS
+            MTP_04.PSS
+            NVQ_01.PSS
+            NVQ_02.PSS
+            NVQ_04.PSS
+            PS2STUB.PSS
+            RWC_01.PSS
+            RWC_02.PSS
+            RWC_03.PSS
+            SCD_01.PSS
+            SCD_02A.PSS
+            SCD_02B.PSS
+            SCD_03.PSS
+            SSS_01.PSS
+            SSS_02.PSS
+            SSS_03.PSS
+
+PS A:\Dev\Games\RemakeEngine\Main\Source\GameFiles\The Simpsons Game (Europe, Australia) (En,No,Da,Fi) PS2\ENVS> tree /A /F
+Folder PATH listing for volume Dev A:
+Volume serial number is 560F-B8F0
+the .dat files extracted from .en all contain references to audio files and text of the exact lines within the audio
+they are likely for subtitles
+A:.
+|   01_HOUSE.DA
+|   01_HOUSE.EN
+|   01_HOUSE.FI
+|   01_HOUSE.NO
+|   01_HOUSE.PS2
+|   01_LOC.DA
+|   01_LOC.EN
+|   01_LOC.FI
+|   01_LOC.NO
+|   01_LOC.PS2
+|   02_BMB.DA
+|   02_BMB.EN
+|   02_BMB.FI
+|   02_BMB.NO
+|   02_BMBA.PS2
+|   02_BMBB.PS2
+|   02_BMBC.PS2
+|   03_80B.DA
+|   03_80B.EN
+|   03_80B.FI
+|   03_80B.NO
+|   03_80B.PS2
+|   04_TREE.DA
+|   04_TREE.EN
+|   04_TREE.FI
+|   04_TREE.NO
+|   04_TREE.PS2
+|   05_MOB.DA
+|   05_MOB.EN
+|   05_MOB.FI
+|   05_MOB.NO
+|   05_MOBA.PS2
+|   05_MOBB.PS2
+|   06_CCPE.DA
+|   06_CCPE.EN
+|   06_CCPE.FI
+|   06_CCPE.NO
+|   06_CCPEA.PS2
+|   06_CCPEB.PS2
+|   06_CCPEC.PS2
+|   06_CCPED.PS2
+|   07_DOD.DA
+|   07_DOD.EN
+|   07_DOD.FI
+|   07_DOD.NO
+|   07_DODA.PS2
+|   07_DODB.PS2
+|   08_SHAD.DA
+|   08_SHAD.EN
+|   08_SHAD.FI
+|   08_SHAD.NO
+|   08_SHAD.PS2
+|   09_DSSS.DA
+|   09_DSSS.EN
+|   09_DSSS.FI
+|   09_DSSS.NO
+|   09_DSSSA.PS2
+|   09_DSSSB.PS2
+|   10_BARG.DA
+|   10_BARG.EN
+|   10_BARG.FI
+|   10_BARG.NO
+|   10_BARG.PS2
+|   11_NEVQ.DA
+|   11_NEVQ.EN
+|   11_NEVQ.FI
+|   11_NEVQ.NO
+|   11_NEVQA.PS2
+|   11_NEVQB.PS2
+|   11_NEVQC.PS2
+|   11_NEVQD.PS2
+|   11_NEVQE.PS2
+|   12_GTS.DA
+|   12_GTS.EN
+|   12_GTS.FI
+|   12_GTS.NO
+|   12_GTS.PS2
+|   13_MOH.DA
+|   13_MOH.EN
+|   13_MOH.FI
+|   13_MOH.NO
+|   13_MOHA.PS2
+|   13_MOHB.PS2
+|   14_BSH.DA
+|   14_BSH.EN
+|   14_BSH.FI
+|   14_BSH.NO
+|   14_BSHA.PS2
+|   14_BSHB.PS2
+|   15_RWC.DA
+|   15_RWC.EN
+|   15_RWC.FI
+|   15_RWC.NO
+|   15_RWCA.PS2
+|   15_RWCB.PS2
+|   15_RWCC.PS2
+|   16_MTP.DA
+|   16_MTP.EN
+|   16_MTP.FI
+|   16_MTP.NO
+|   16_MTPA.PS2
+|   16_MTPB.PS2
+|   16_MTPC.PS2
+|   CD_ENVS.TXT
+|   FRONTEND.DA
+|   FRONTEND.EN
+|   FRONTEND.FI
+|   FRONTEND.NO
+|   FRONTEND.PS2
+|   GAMEHUB.DA
+|   GAMEHUB.EN
+|   GAMEHUB.FI
+|   GAMEHUB.NO
+|   GAMEHUB.PS2
+|   GARDEN.DA
+|   GARDEN.EN
+|   GARDEN.FI
+|   GARDEN.NO
+|   GARDEN.PS2
+|
++---01_HOUSE_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+...
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---01_LOC_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+|   |       .11.dat
+	63 68 63 62 5F 78 78 78 5F 30 30 30 30 62 32 65 00 00 00 00 C0 62 BC 72 41 D6 13 5C 0E 4C A5 9B 07 78 8A 05 FD 1B A1 3F 18 00 00 00 49 00 20 00 68 00 6F 00 70 00 65 00 20 00 79 00 6F 00 75 00 20 00 63 00 68 00 6F 00 6B 00 65 00 20 00 6F 00 6E 00 20 00 6D 00 65 00 21 00 00 00
+...
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |       .3.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---02_BMB_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+|   |       .342.dat
+|   |       .343.dat
+...
+|   |       .91.dat
+|   |       .92.dat
+|   |       .93.dat
+|   |       .94.dat
+|   |       .95.dat
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |       .3.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---03_80B_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+|   |       .101.dat
+|   |       .102.dat
+...
+|   |       .91.dat
+|   |       .92.dat
+|   |       .93.dat
+|   |       .94.dat
+|   |       .95.dat
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---04_TREE_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+|   |       .101.dat
+...
+|   |       .93.dat
+|   |       .94.dat
+|   |       .95.dat
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |       .3.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---05_MOB_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+|   |       .1000.dat
+|   |       .1001.dat
+|   |       .1002.dat
+|   |       .1003.dat
+...
+|   |       .983.dat
+|   |       .984.dat
+|   |       .985.dat
+|   |       .986.dat
+|   |       .987.dat
+|   |       .988.dat
+|   |       .989.dat
+|   |       .99.dat
+|   |       .990.dat
+|   |       .991.dat
+|   |       .992.dat
+|   |       .993.dat
+|   |       .994.dat
+|   |       .995.dat
+|   |       .996.dat
+|   |       .997.dat
+|   |       .998.dat
+|   |       .999.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---06_CCPE_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+...
+|   |       .86.dat
+|   |       .87.dat
+|   |       .88.dat
+|   |       .89.dat
+|   |       .9.dat
+|   |       .90.dat
+|   |       .91.dat
+|   |       .92.dat
+|   |       .93.dat
+|   |       .94.dat
+|   |       .95.dat
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |       .3.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---07_DOD_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+|   |       .101.dat
+...
+|   |       .85.dat
+|   |       .86.dat
+|   |       .87.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |       .3.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---08_SHAD_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+|   |       .101.dat
+|   |       .102.dat
+|   |       .103.dat
+|   |       .104.dat
+|   |       .105.dat
+...
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---09_DSSS_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+|   |       .101.dat
+|   |       .102.dat
+|   |       .103.dat
+|   |       .104.dat
+|   |       .105.dat
+...
+|   |       .95.dat
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |       .3.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---10_BARG_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+...
+|   |       .95.dat
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---11_NEVQ_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+...
+|   |       .93.dat
+|   |       .94.dat
+|   |       .95.dat
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |       .3.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---12_GTS_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+...
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---13_MOH_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+...
+|   |       .85.dat
+|   |       .86.dat
+|   |       .87.dat
+|   |       .88.dat
+|   |       .89.dat
+|   |       .9.dat
+|   |       .90.dat
+|   |       .91.dat
+|   |       .92.dat
+|   |       .93.dat
+|   |       .94.dat
+|   |       .95.dat
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |       .3.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---14_BSH_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+...
+|   |       .95.dat
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |       .3.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---15_RWC_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+...
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |       .3.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---16_MTP_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+...
+|   |       .93.dat
+|   |       .94.dat
+|   |       .95.dat
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---FRONTEND_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+...
+|   |       .94.dat
+|   |       .95.dat
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
++---GAMEHUB_en
+|   |   streamed sounds
+|   |
+|   +---DLLN_chunk
+|   |       .10.dat
+|   |       .100.dat
+...
+|   |       .93.dat
+|   |       .94.dat
+|   |       .95.dat
+|   |       .96.dat
+|   |       .97.dat
+|   |       .98.dat
+|   |       .99.dat
+|   |
+|   +---DLLT_chunk
+|   |       .1.dat
+|   |       .2.dat
+|   |
+|   \---FNFO_chunk
+|           .0.dat
+|
+\---GARDEN_en
+    |   streamed sounds
+    |
+    +---DLLN_chunk
+    |       .10.dat
+    |       .100.dat
+...
+    |       .98.dat
+    |       .99.dat
+    |
+    +---DLLT_chunk
+    |       .1.dat
+    |       .2.dat
+    |
+    \---FNFO_chunk
+            .0.dat
+

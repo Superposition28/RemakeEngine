@@ -28,10 +28,10 @@ PYTHON_EXECUTABLE = sys.executable  # Path to current python interpreter
 
 # Path to the extraction script, relative to this script's location or project root
 # More robustly determined in main() if needed
-_EXTRACT_SCRIPT_NAME = "Modules/Extract/extract_str.py"
+_EXTRACT_SCRIPT_NAME = "Modules/Extract/bms_extract.py"
 
 # This is the base directory where the original .str files are located.
-# It MUST match the STR_INPUT_DIR that extract_str.py uses for its relpath logic.
+# It MUST match the STR_INPUT_DIR that bms_extract.py uses for its relpath logic.
 STR_INPUT_DIR_FOR_EXTRACTION = r"A:\Dev\Games\TheSimpsonsGame\PAL\Source\USRDIR"
 
 
@@ -165,7 +165,7 @@ def find_str_archives_directly(conn, search_value, search_field):
 def main():
     print("--- Granular STR Archive Finder ---")
     
-    # Determine script's own directory for robust relative path to extract_str.py
+    # Determine script's own directory for robust relative path to bms_extract.py
     script_dir = Path(__file__).resolve().parent
     extract_script_full_path = script_dir / _EXTRACT_SCRIPT_NAME
 
@@ -290,7 +290,7 @@ def main():
                                 process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8', errors='replace')
                                 if process.stdout:
                                     for line in iter(process.stdout.readline, ''):
-                                        print(f"    [extract_str.py] {line.strip()}")
+                                        print(f"    [bms_extract.py] {line.strip()}")
                                     process.stdout.close()
                                 return_code = process.wait()
 
